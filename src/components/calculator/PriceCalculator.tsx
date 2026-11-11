@@ -10,7 +10,9 @@ import {
   ShieldCheck, 
   CheckCircle2, 
   Phone,
-  RotateCcw
+  RotateCcw,
+  Clock,
+  Gauge
 } from 'lucide-react';
 import { calculateRouteDistance, RouteCalculationResult } from '@/lib/distance-calculator';
 
@@ -452,6 +454,39 @@ export default function PriceCalculator() {
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          {/* Dynamic ETA & Distance Real-time Indicator (Pure Informational, No Calculation Interference) */}
+          <div className="mt-4 p-3.5 rounded-xl bg-slate-950/70 border border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div className="flex items-center gap-2 text-slate-300">
+              <Clock size={16} className="text-amber-400 shrink-0" />
+              <span>
+                {distanceKm <= 30 ? (
+                  isAr 
+                    ? 'وقت الوصول التقديري إلى موقعك في بوخوم ومحيطها: ca. 20–35 دقيقة (Express)' 
+                    : isEn 
+                    ? 'Estimated arrival on site in Bochum & vicinity: ca. 20–35 min (Express)' 
+                    : 'Geschätzte Eintreffzeit vor Ort (Bochum & Nahbereich): ca. 20–35 Min. (Express)'
+                ) : distanceKm <= 75 ? (
+                  isAr 
+                    ? 'وقت الوصول التقديري في نطاق حوض الرور: ca. 35–55 دقيقة' 
+                    : isEn 
+                    ? 'Estimated arrival in Ruhr metropolitan area: ca. 35–55 min' 
+                    : 'Geschätzte Eintreffzeit im Ruhrgebiet: ca. 35–55 Min.'
+                ) : (
+                  isAr 
+                    ? `مدة النقل المباشر للمسافات الطويلة (${distanceKm} كم): ca. ${Math.round(distanceKm / 75 * 10) / 10} ساعة (رحلة مباشرة)` 
+                    : isEn 
+                    ? `Direct long-distance transit time (${distanceKm} km): ca. ${Math.round(distanceKm / 75 * 10) / 10} hrs (no transshipment)` 
+                    : `Fahrtzeit für Fernüberführung (${distanceKm} km): ca. ${Math.round(distanceKm / 75 * 10) / 10} Std. (Direktfahrt ohne Umladen)`
+                )}
+              </span>
+            </div>
+
+            <div className="flex items-center gap-1.5 text-slate-400 font-mono text-[11px] shrink-0">
+              <Gauge size={14} className="text-sky-400" />
+              <span>{distanceKm} km</span>
+            </div>
           </div>
 
           {/* Action CTAs */}
