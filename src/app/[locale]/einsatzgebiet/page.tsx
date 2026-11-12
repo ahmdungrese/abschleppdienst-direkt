@@ -137,15 +137,19 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
       <main className="min-h-screen bg-slate-950 text-white py-12 sm:py-20">
         <div className="container mx-auto px-4 max-w-5xl">
           
-          {/* Back Navigation */}
-          <div className="mb-8">
+          {/* Navigation Breadcrumb */}
+          <div className="mb-8 flex items-center gap-2 text-xs text-slate-400">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:text-white hover:border-amber-400 transition-colors text-xs font-bold shadow-sm"
+              className="hover:text-amber-400 transition-colors flex items-center gap-1 font-semibold"
             >
-              <ArrowLeft size={16} className="rtl:rotate-180 text-amber-400" />
+              <ArrowLeft size={14} className="rtl:rotate-180" />
               <span>{isAr ? "العودة للرئيسية" : isEn ? "Back to Homepage" : "Zurück zur Startseite"}</span>
             </Link>
+            <span>/</span>
+            <span className="text-slate-300">
+              {isAr ? "نطاق العمل ومناطق التغطية" : isEn ? "Service Area" : "Einsatzgebiet & Streckennetz"}
+            </span>
           </div>
 
           {/* Page Hero Header */}
