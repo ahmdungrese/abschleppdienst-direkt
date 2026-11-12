@@ -64,7 +64,7 @@ const serviceDatabase: Record<string, ServiceDetail> = {
       'Express-Eintreffzeit in 20–40 Minuten im Ruhrgebiet',
       'Elektrische Seilwinde für schonendes, ruckfreies Hochziehen',
       'Ordnungsgemäße Rechnung für Kfz-Schutzbrief & Versicherung',
-      'Inhaber Wassem Al Dalati persönlich am Einsatzort'
+      'Unser erfahrener Fahrer Adam persönlich am Einsatzort'
     ],
     pricingHint: 'Faire Notfall-Grundpauschale zzgl. gefahrener Kilometer. Keine versteckten Fantasiegebühren.'
   },
@@ -199,9 +199,9 @@ const serviceDatabase: Record<string, ServiceDetail> = {
   },
   'fahrzeugueberfuehrung': {
     slug: 'fahrzeugueberfuehrung',
-    title: 'Fahrzeugüberführung (von A nach B)',
-    subtitle: 'Exklusiver, sicherer und pünktlicher Einzeltransport von PKW aller Art im Ruhrgebiet und ganz Deutschland.',
-    tag: 'Fahrzeugüberführung',
+    title: 'Fahrzeugüberführung von A nach B (Bundesweit)',
+    subtitle: 'Exklusiver, sicherer und pünktlicher Einzeltransport von PKW aller Art von A nach B – in NRW und ganz Deutschland.',
+    tag: 'Bundesweit & ganz Deutschland',
     overview: 'Sie haben ein Auto ohne Zulassung gekauft, möchten einen Oldtimer sicher transportieren oder ein Fahrzeug zwischen zwei Standorten überführen? Wir bieten Ihnen einen individuellen Einzeltransport auf einem modernen Spezialplateau. Ihr Fahrzeug wird nicht mit Fremdfahrzeugen auf Sammeltransportern zusammengepfercht, sondern genießt volle Aufmerksamkeit und maximalen Schutz.',
     scenarios: [
       'Überführung von neu gekauften Fahrzeugen ohne Kennzeichen / ohne TÜV',
@@ -287,9 +287,9 @@ const serviceDatabase: Record<string, ServiceDetail> = {
   },
   'pannenhilfe-starthilfe': {
     slug: 'pannenhilfe-starthilfe',
-    title: 'Pannenhilfe & Vor-Ort Starthilfe (NOCO Boost)',
-    subtitle: 'Schnelle Soforthilfe bei leerer Batterie mit dem 800 € Profi-Booster NOCO Boost Max (5250A) in Bochum und Ruhrgebiet.',
-    tag: 'Vor-Ort Pannenhilfe',
+    title: 'Pannenhilfe & Vor-Ort Starthilfe (Bochum & Autobahnen)',
+    subtitle: 'Schnelle Soforthilfe bei leerer Batterie mit dem 800 € Profi-Booster NOCO Boost Max (5250A) lokal in Bochum und auf A40, A43, A448.',
+    tag: 'Lokal in Bochum & Autobahnen',
     overview: 'Nicht jede Panne erfordert gleich einen teuren Werkstattaufenthalt. Oft sind es alltägliche Missgeschicke: Sie wachen an einem frostigen Wintermorgen auf, möchten zur Arbeit fahren und beim Drehen des Schlüssels hören Sie nur ein mattes Klacken. Bei extremer Kälte verlangsamen sich die elektrochemischen Prozesse in der Starterbatterie, wodurch geschwächte Akkus schlagartig einbrechen. Ein anderes typisches Szenario: Sie haben das Auto abgestellt und unbemerkt das Standlicht brennen lassen. Am nächsten Tag ist die Batterie tiefentladen. WICHTIG: Billige Starthilfekabel können bei modernen Autos mit Dutzenden vernetzten Steuergeräten verheerende Überspannungsschäden verursachen. Deshalb setzen wir auf Werkstatt-Technik der Spitzenklasse: Mit unserem 800 Euro teuren NOCO Boost Max GB250+ (5.250 Ampere Spitzenstrom) starten wir Ihr Fahrzeug 100% funkenfrei und mit aktivem Verpolungsschutz – absolut sicher für moderne Steuergeräte, Mild-Hybride und Premium-Fahrzeuge.',
     scenarios: [
       'Winter-Kälteschock: Batterie bricht bei Minusgraden elektrochemisch zusammen',
@@ -537,8 +537,9 @@ export default async function ServiceDetailPage({
 
         {/* Hero Header of Service - Clean Editorial Style */}
         <div className="mb-10 pb-8 border-b border-white/10">
-          <div className="inline-block px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
-            {service.tag}
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-4">
+            <span className="w-5 h-px bg-amber-400/80"></span>
+            <span>{service.tag}</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
@@ -549,7 +550,7 @@ export default async function ServiceDetailPage({
             {service.subtitle}
           </p>
 
-          {/* Quick CTAs */}
+          {/* Quick CTAs - Emergency Call + Smooth Scroll to Bottom Inquiry */}
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <a
               href="tel:+4915565500442"
@@ -560,13 +561,10 @@ export default async function ServiceDetailPage({
             </a>
 
             <a
-              href={`https://wa.me/4915565500442?text=Hallo%20Abschleppdienst%20Direkt%2C%20ich%20interessiere%20mich%20f%C3%BCr%3A%20${encodeURIComponent(service.title)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-md text-sm transition-all"
+              href="#anfrage"
+              className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3.5 px-6 rounded-xl shadow-md text-sm transition-all"
             >
-              <MessageCircle size={18} />
-              <span>Per WhatsApp anfragen</span>
+              <span>Preisanfrage &amp; Kalkulation ↓</span>
             </a>
           </div>
         </div>
@@ -642,7 +640,7 @@ export default async function ServiceDetailPage({
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-300">
               {service.guarantees.map((g, idx) => (
                 <li key={idx} className="flex items-center gap-2.5">
-                  <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0" />
+                  <CheckCircle2 size={16} className="text-amber-400 flex-shrink-0" />
                   <span>{g}</span>
                 </li>
               ))}

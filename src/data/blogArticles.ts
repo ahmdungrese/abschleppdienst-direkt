@@ -79,7 +79,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '6 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Bergungsexperte',
     serviceSlugLink: 'abschleppdienst-pkw',
     featuredImage: {
@@ -138,7 +138,7 @@ export const blogArticles: BlogArticle[] = [
           {
             number: '01',
             title: 'Anruf & Sofortige Standortabstimmung',
-            description: 'Sie rufen uns an oder senden uns Ihren WhatsApp-Live-Standort. Sie sprechen direkt mit Wassem Al Dalati – kein Vermittler dazwischen. Wir schätzen sofort die Situation ein und machen uns auf den Weg (in Bochum meist in 20–40 Minuten vor Ort).',
+            description: 'Sie rufen uns an oder senden uns Ihren WhatsApp-Live-Standort. Sie sprechen direkt mit unserem Fahrer Adam – kein Vermittler dazwischen. Wir schätzen sofort die Situation ein und machen uns auf den Weg (in Bochum meist in 20–40 Minuten vor Ort).',
             focusNote: 'Persönlicher Kontakt ohne Warteschleife'
           },
           {
@@ -350,7 +350,7 @@ export const blogArticles: BlogArticle[] = [
           {
             number: '01',
             title: 'Call & Immediate Location Sharing',
-            description: 'You call us or send your live location via WhatsApp. You speak directly with Wassem Al Dalati – no call center. We assess the situation and dispatch immediately (usually 20–40 min in Bochum).',
+            description: 'You call us or send your live location via WhatsApp. You speak directly with our driver Adam – no call center. We assess the situation and dispatch immediately (usually 20–40 min in Bochum).',
             focusNote: 'Direct, personal phone contact'
           },
           {
@@ -424,7 +424,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '7 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Bergungsexperte',
     serviceSlugLink: 'abschleppdienst-suv',
     featuredImage: {
@@ -736,7 +736,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '6 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Bergungsexperte',
     serviceSlugLink: 'abschleppdienst-busse',
     featuredImage: {
@@ -1048,7 +1048,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '7 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Bergungsexperte',
     serviceSlugLink: 'fahrzeugueberfuehrung',
     featuredImage: {
@@ -1378,7 +1378,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '6 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Bergungsexperte',
     serviceSlugLink: 'warentransport-logistik',
     featuredImage: {
@@ -1689,7 +1689,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '9 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Bergungsexperte für Hochvolt- & Automatikfahrzeuge',
     serviceSlugLink: 'elektroauto-automatik-abschleppen',
     featuredImage: {
@@ -2072,7 +2072,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '8 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & erfahrener Bergungsleiter auf NRW-Autobahnen',
     serviceSlugLink: 'abschleppdienst-pkw',
     featuredImage: {
@@ -2455,7 +2455,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '7 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Berater für Pannen- & Versicherungsabrechnung',
     serviceSlugLink: 'abschleppdienst-werkstatt',
     featuredImage: {
@@ -2793,7 +2793,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '7 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Bergungsexperte',
     serviceSlugLink: 'abschleppdienst-werkstatt',
     featuredImage: {
@@ -3146,7 +3146,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '8 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Bergungsexperte',
     serviceSlugLink: 'fahrzeugueberfuehrung',
     featuredImage: {
@@ -3258,7 +3258,7 @@ export const blogArticles: BlogArticle[] = [
         ],
         ctaTitle: 'Sicherer Transport wie auf Händen getragen – flexibel & ohne Sorgen',
         ctaText: 'Egal ob kostbarer Oldtimer, getunter Sportwagen, Firmenwagen oder Alltagsauto: Wir behandeln jedes Fahrzeug mit absolutem Respekt und modernster VDI-2700-Sicherungstechnik. Keine Kratzer an den Alufelgen, keine verformten Achsen und keine bösen Überraschungen.',
-        ctaSubtext: 'Planen Sie eine Überführung oder brauchen Sie einen sicheren Pannen-Transport? Rufen Sie Wassem Al Dalati direkt an oder schreiben Sie kurz per WhatsApp – wir nennen Ihnen sofort einen transparenten Festpreis.',
+        ctaSubtext: 'Planen Sie eine Überführung oder brauchen Sie einen sicheren Pannen-Transport? Rufen Sie unser Team oder Fahrer Adam direkt an oder schreiben Sie kurz per WhatsApp – wir nennen Ihnen sofort einen transparenten Festpreis.',
         ctaButtonCall: 'Direkt anrufen: 0155 65500442',
         ctaButtonWhatsApp: 'Transportanfrage via WhatsApp',
         faqs: [
@@ -3379,7 +3379,7 @@ export const blogArticles: BlogArticle[] = [
         ],
         ctaTitle: 'نقل سيارتك بعناية تامة وكأنها محمولة على راحة اليد',
         ctaText: 'سواء كانت سيارة كلاسيكية نادرة، سيارة رياضية منخفضة، سيارة عمل أو سيارتك اليومية: نحن نتعامل مع كل مركبة بأعلى درجات الاحترام والحرص المهني باستخدام أحدث تقنيات التلبيط الألمانية VDI 2700. لا خدوش في جنوطك، لا التواء في مقصاتك، وبدون أي قلق.',
-        ctaSubtext: 'تخطط لنقل سيارة أو تحتاج خدمة سحب آمنة بعد عطل؟ اتصل بـ Wassem Al Dalati مباشرة أو راسلنا عبر واتساب لنعطيك سعراً ثابتاً وتعاملاً شفافاً.',
+        ctaSubtext: 'تخطط لنقل سيارة أو تحتاج خدمة سحب آمنة بعد عطل؟ اتصل بسائقنا آدم وفريق العمل مباشرة أو راسلنا عبر واتساب لنعطيك سعراً ثابتاً وتعاملاً شفافاً.',
         ctaButtonCall: 'اتصال مباشر: 015565500442',
         ctaButtonWhatsApp: 'طلب نقل آمن عبر واتساب',
         faqs: [
@@ -3500,7 +3500,7 @@ export const blogArticles: BlogArticle[] = [
         ],
         ctaTitle: 'Your vehicle transported with utmost care – safe and stress-free',
         ctaText: 'Whether a rare classic car, lowered sports coupe, company vehicle, or your everyday family car: We treat every automobile with total respect and modern German VDI 2700 securing standards. Zero rim scratches, zero suspension strain, and zero worries.',
-        ctaSubtext: 'Planning a vehicle transfer or need gentle breakdown recovery? Call Wassem Al Dalati directly or send a message via WhatsApp – we provide instant, transparent fixed prices.',
+        ctaSubtext: 'Planning a vehicle transfer or need gentle breakdown recovery? Call our driver Adam and our team directly or send a message via WhatsApp – we provide instant, transparent fixed prices.',
         ctaButtonCall: 'Call Directly: +49 155 65500442',
         ctaButtonWhatsApp: 'Inquire Safe Transport via WhatsApp',
         faqs: [
@@ -3535,7 +3535,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '7 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Bergungsexperte',
     serviceSlugLink: 'pannenhilfe-starthilfe',
     featuredImage: {
@@ -3588,7 +3588,7 @@ export const blogArticles: BlogArticle[] = [
         processSteps: [
           {
             number: '01',
-            title: 'Schneller Anruf bei Wassem Al Dalati (0155 65500442)',
+            title: 'Schneller Anruf bei unserem Fahrer Adam (0155 65500442)',
             description: 'Ein kurzer Anruf genügt. Sie nennen uns Ihre Adresse in Bochum oder Nachbarstädten. Wir rücken sofort aus – ohne lange Warteschleifen eines anonymen Callcenters.',
             focusNote: 'Direkter Draht zum Fahrer'
           },
@@ -3697,7 +3697,7 @@ export const blogArticles: BlogArticle[] = [
         processSteps: [
           {
             number: '01',
-            title: 'اتصال سريع بـ Wassem Al Dalati مباشرة (0155 65500442)',
+            title: 'اتصال سريع بسائقنا آدم وفريق العمل (0155 65500442)',
             description: 'مكالمة هاتفية قصيرة تذكر فيها موقعك في بوخوم؛ لا وسطاء ولا قائمة انتظار لمراكز اتصالات مجهولة، بل نتحرك إليك فوراً.',
             focusNote: 'اتصال مباشر وسريع'
           },
@@ -3806,7 +3806,7 @@ export const blogArticles: BlogArticle[] = [
         processSteps: [
           {
             number: '01',
-            title: 'Quick direct call to Wassem Al Dalati (+49 155 65500442)',
+            title: 'Quick direct call to our driver Adam (+49 155 65500442)',
             description: 'One quick phone call stating your location in Bochum. No automated call-center holding loops – we dispatch immediately.',
             focusNote: 'Direct phone contact'
           },
@@ -3888,7 +3888,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '8 Min. Lesezeit',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Bergungsexperte',
     serviceSlugLink: 'bundesweite-ueberfuehrung',
     featuredImage: {
@@ -3989,8 +3989,8 @@ export const blogArticles: BlogArticle[] = [
             content: 'Als gewerblicher, ordnungsgemäß angemeldeter Transportbetrieb ist jedes von uns transportierte Fahrzeug während der gesamten Verladung, der Fahrt und der Abladung lückenlos versichert. Sie tragen keinerlei finanzielles Risiko.'
           },
           {
-            title: 'Inhaber Wassem Al Dalati persönlich am Steuer',
-            content: 'Bei Abschleppdienst Direkt gibt es keine undurchsichtigen Subunternehmer-Ketten, bei denen Ihr Auftrag an fremde Fahrer weiterverkauft wird. Inhaber Wassem Al Dalati transportiert Ihr Fahrzeug mit über 10 Jahren praktischer Erfahrung persönlich und mit höchster Sorgfalt.'
+            title: 'Unser erfahrener Fahrer Adam persönlich am Steuer',
+            content: 'Bei Abschleppdienst Direkt gibt es keine undurchsichtigen Subunternehmer-Ketten, bei denen Ihr Auftrag an fremde Fahrer weiterverkauft wird. Inhaber Unser erfahrener Fahrer Adam transportiert Ihr Fahrzeug mit über 10 Jahren praktischer Erfahrung persönlich und mit höchster Sorgfalt.'
           },
           {
             title: 'Einfache Vollmacht genügt für Abholung & Übergabe',
@@ -4109,8 +4109,8 @@ export const blogArticles: BlogArticle[] = [
             content: 'كشركة نقل رسمية مسجلة في ألمانيا، فإن أي مركبة ننقلها مغطاة بتأمين شامل طوال مراحل التحميل، والقيادة، والتفريغ. لا تتحمل أي مخاطرة مالية.'
           },
           {
-            title: 'المالك Wassem Al Dalati شخصياً خلف المقود',
-            content: 'لا نعتمد على سلاسل وسطاء أو سائقين مجهولين؛ بل يتولى وسيم الدالاتي شخصياً نقل سيارتك بخبرة ميدانية تفوق 10 سنوات وبأعلى درجات الأمانة والحرص.'
+            title: 'سائقنا الخبير آدم شخصياً خلف المقود',
+            content: 'لا نعتمد على وسطاء أو سائقين مجهولين؛ بل يتولى سائقنا الخبير آدم شخصياً نقل سيارتك بأمان وبخبرة ميدانية تفوق 10 سنوات وبأعلى درجات الأمانة والحرص.'
           },
           {
             title: 'تفويض بسيط يكفي للاستلام والتسليم',
@@ -4229,8 +4229,8 @@ export const blogArticles: BlogArticle[] = [
             content: 'As a formally registered commercial transport carrier, every vehicle we transport is fully insured throughout loading, transit, and unloading. You bear zero financial liability.'
           },
           {
-            title: 'Owner Wassem Al Dalati personally behind the wheel',
-            content: 'At Abschleppdienst Direkt, we do not pass your transport down a chain of unknown subcontractors. Wassem Al Dalati personally transports your car with over 10 years of road experience and utmost diligence.'
+            title: 'Our seasoned driver Adam personally behind the wheel',
+            content: 'At Abschleppdienst Direkt, we do not pass your transport down a chain of unknown subcontractors. Our experienced driver Adam personally transports your car with over 10 years of road experience and utmost diligence.'
           },
           {
             title: 'A simple written authorization suffices',
@@ -4273,7 +4273,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '6 Min.',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Einsatzleiter Abschleppdienst Direkt',
     serviceSlugLink: 'abschleppdienst-werkstatt',
     featuredImage: {
@@ -4295,7 +4295,7 @@ export const blogArticles: BlogArticle[] = [
         introHeadline: 'Wenn der Motor plötzlich streikt: Ruhig bleiben, absichern und direkt den Profi rufen',
         introParagraphs: [
           'Ein dumpfer Knall, metallisches Rasseln im Motorraum, die rote Öllampe blinkt hektisch auf oder das Gaspedal reagiert plötzlich überhaupt nicht mehr: Ein Motorschaden während der Fahrt gehört zu den stressigsten und beängstigendsten Momenten, die man als Autofahrer erleben kann. Mitten im dichten Berufsverkehr auf der A40, A43 oder auf einer vielbefahrenen Kreuzung in Bochum stirbt der Motor ab, die Servolenkung fällt aus und die Bremsen werden schwer.',
-          'In dieser heiklen Situation zählt jede Minute. Wenn Sie bei Abschleppdienst Direkt anrufen, landen Sie in keinem anonymen Callcenter mit endlosen Warteschleifen. Bei uns sprechen Sie direkt mit mir, Wassem Al Dalati. Ich habe über 10 Jahre Straßenerfahrung im Ruhrgebiet und weiß genau, wie sich diese Hilflosigkeit anfühlt. Wir leiten Sie am Telefon sofort an, wie Sie sich und Ihre Mitfahrer in Sicherheit bringen, und machen unseren Abschleppwagen unmittelbar startklar.',
+          'In dieser heiklen Situation zählt jede Minute. Wenn Sie bei Abschleppdienst Direkt anrufen, landen Sie in keinem anonymen Callcenter mit endlosen Warteschleifen. Bei uns sprechen Sie direkt mit unserem Fahrer Adam. Ich habe über 10 Jahre Straßenerfahrung im Ruhrgebiet und weiß genau, wie sich diese Hilflosigkeit anfühlt. Wir leiten Sie am Telefon sofort an, wie Sie sich und Ihre Mitfahrer in Sicherheit bringen, und machen unseren Abschleppwagen unmittelbar startklar.',
           'Das Wichtigste für Sie: Bei uns gibt es absolut keinen Werkstatt-Zwang! Viele Notdienste oder Versicherungsportale schleppen Fahrzeuge ungefragt auf eigene Verwahrplätze oder zu weit entfernten Vertragspartnern. Bei Abschleppdienst Direkt haben Sie 100% freie Werkstattwahl. Wir bringen Ihr Auto genau dorthin, wo Sie es reparieren lassen wollen – sei es zu Ihrem vertrauten Meisterbetrieb um die Ecke, zur Marken-Vertragswerkstatt oder sicher vor Ihre eigene Haustür.'
         ],
         equipmentTitle: 'Spezial-Ausrüstung für schonendes Bergen bei Motorschaden',
@@ -4339,7 +4339,7 @@ export const blogArticles: BlogArticle[] = [
           {
             number: '02',
             title: 'Direktruf bei Abschleppdienst Direkt (0155 65500442)',
-            description: 'Rufen Sie unsere Notrufnummer an. Sie sprechen direkt mit Wassem Al Dalati. Teilen Sie uns Ihren genauen Standort (Straßenname, Kreuzung oder Autobahn-Kilometer) sowie das Schadensbild mit. Wir nennen Ihnen sofort eine verbindliche Ankunftszeit (meist 20–35 Minuten) und den Festpreis.',
+            description: 'Rufen Sie unsere Notrufnummer an. Sie sprechen direkt mit unserem Fahrer Adam. Teilen Sie uns Ihren genauen Standort (Straßenname, Kreuzung oder Autobahn-Kilometer) sowie das Schadensbild mit. Wir nennen Ihnen sofort eine verbindliche Ankunftszeit (meist 20–35 Minuten) und den Festpreis.',
             focusNote: 'Kein Callcenter, direkter Draht zum Fahrer.'
           },
           {
@@ -4414,7 +4414,7 @@ export const blogArticles: BlogArticle[] = [
         introHeadline: 'عندما يتوقف المحرك فجأة: حافظ على هدوئك، أمّن نفسك، واتصل بالمحترف مباشرة',
         introParagraphs: [
           'صوت طقطقة مفاجئ من غرفة المحرك، ضوء الزيت أو المحرك يرمش باللون الأحمر، وفجأة تنعدم استجابة دواسة الوقود وتتوقف السيارة وسط زحام شوارع بوخوم أو على الطريق السريع A40 أو A43. مع توقف المحرك، يثقل مقود السيارة وتفقد الفرامل مساندتها الهيدروليكية، مما يجعل الموقف مرعباً ومربكاً لأي سائق.',
-          'في هذه اللحظة الحرجة والمقلقة، لا وقت للانتظار في مراكز الاتصال الآلية لساعات طويلة. عند اتصالك بـ Abschleppdienst Direkt، تتحدث مباشرة مع وسيم الدالاتي، بخبرة أكثر من 10 سنوات على طرقات الرور وبوخوم. سنوجهك خطوة بخطوة عبر الهاتف لتأمين نفسك وعائلتك فوراً، ونتحرك إليك بشاحنة السحب المجهزة دون أي تأخير.',
+          'في هذه اللحظة الحرجة والمقلقة، لا وقت للانتظار في مراكز الاتصال الآلية لساعات طويلة. عند اتصالك بـ Abschleppdienst Direkt، تتحدث مباشرة مع سائقنا الميداني آدم وفريقنا، بخبرة تفوق 10 سنوات على طرقات الرور وبوخوم. سنوجهك خطوة بخطوة عبر الهاتف لتأمين نفسك وعائلتك فوراً، ونتحرك إليك بشاحنة السحب المجهزة دون أي تأخير.',
           'والأهم من ذلك كله: معنا أنت صاحب القرار بنسبة 100% في اختيار الورشة! الكثير من شركات السحب تجبر العميل على نقل سيارته لورش شريكة لا يعرفها أو لساحات حجز تفرض رسوماً يومية. معنا في Abschleppdienst Direkt، ننقل سيارتك إلى ورشة ميكانيكك الخاص الموثوق، أو إلى وكالة سيارتك المعتمدة، أو حتى أمام باب منزلك.'
         ],
         equipmentTitle: 'معدات متخصصة لرفع وسحب السيارة دون التسبب بأي أضرار إضافية',
@@ -4458,7 +4458,7 @@ export const blogArticles: BlogArticle[] = [
           {
             number: '02',
             title: 'الاتصال المباشر بـ Abschleppdienst Direkt (0155 65500442)',
-            description: 'اتصل برقمنا المباشر لتتحدث فوراً مع وسيم الدالاتي. أخبرنا بموقعك الدقيق ووصف العطل. سنعطيك تقديراً دقيقاً لوقت الوصول (عادة 20-35 دقيقة) مع سعر ثابت وواضح.',
+            description: 'اتصل برقمنا المباشر لتتحدث فوراً مع سائقنا الميداني آدم. أخبرنا بموقعك الدقيق ووصف العطل. سنعطيك تقديراً دقيقاً لوقت الوصول (عادة 20-35 دقيقة) مع سعر ثابت وواضح.',
             focusNote: 'تواصل مباشر مع السائق دون أجهزة رد آلي.'
           },
           {
@@ -4533,7 +4533,7 @@ export const blogArticles: BlogArticle[] = [
         introHeadline: 'When the engine suddenly quits: Stay safe, keep calm, and call the local pro directly',
         introParagraphs: [
           'A sudden metallic knocking, the check engine or oil pressure lamp flashing bright red, or the accelerator pedal going completely dead in the middle of peak hour traffic on the A40, A43, or a busy intersection in Bochum: An engine breakdown while driving is one of the most stressful roadside emergencies a motorist can face.',
-          'With Abschleppdienst Direkt, you never end up stuck in an automated call center listening to hold music. You speak directly with owner Wassem Al Dalati, who brings over a decade of hands-on recovery experience on Ruhrgebiet roads. We guide you calmly on how to secure your immediate safety and dispatch our tow truck right away.',
+          'With Abschleppdienst Direkt, you never end up stuck in an automated call center listening to hold music. You speak directly with our driver Adam and our team, who brings over a decade of hands-on recovery experience on Ruhrgebiet roads. We guide you calmly on how to secure your immediate safety and dispatch our tow truck right away.',
           'Crucially: You have 100% free choice of workshop! Unlike automotive club contracts that drag your car to distant partner centers, we take your vehicle exactly where you want it – whether to your trusted neighborhood mechanic, an official brand dealership, or directly outside your private driveway.'
         ],
         equipmentTitle: 'Specialized Recovery Equipment for Defective Engines',
@@ -4577,7 +4577,7 @@ export const blogArticles: BlogArticle[] = [
           {
             number: '02',
             title: 'Direct Call to Abschleppdienst Direkt (+49 155 65500442)',
-            description: 'Dial our emergency number to reach Wassem Al Dalati directly. Share your exact location and symptoms. We confirm our estimated arrival time (typically 20–35 minutes) and a clear, upfront fixed quote.',
+            description: 'Dial our emergency number to reach our driver Adam and dedicated team directly. Share your exact location and symptoms. We confirm our estimated arrival time (typically 20–35 minutes) and a clear, upfront fixed quote.',
             focusNote: 'Direct driver contact, zero automated switchboards.'
           },
           {
@@ -4646,7 +4646,7 @@ export const blogArticles: BlogArticle[] = [
     }
   },
   {
-    slug: 'auto-panne-weiterfahren-oder-anhalten-kostenlose-beratung-wassem',
+    slug: 'auto-panne-weiterfahren-oder-anhalten-kostenlose-beratung',
     category: 'kostenlose-beratung',
     categoryLabel: {
       de: 'Kostenlose Pannen-Beratung',
@@ -4655,32 +4655,32 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '5 Min.',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Kfz-Experte Abschleppdienst Direkt',
     serviceSlugLink: 'abschleppdienst-pkw',
     featuredImage: {
       src: '/images/real/tow-truck-audi-clean-user.jpg',
-      alt: 'Wassem Al Dalati Abschleppdienst Direkt kostenlose telefonische Beratung bei Autopanne und Weiterfahrt',
+      alt: 'Abschleppdienst Direkt kostenlose telefonische Beratung bei Autopanne und Weiterfahrt',
       caption: {
-        de: 'Unsicher vor der Fahrt? Wassem Al Dalati berät Sie kostenlos am Telefon, ob die Weiterfahrt sicher ist.',
-        ar: 'متردد قبل الانطلاق؟ وسيم يقدم لك استشارة هاتفية مجانية حول إمكانية متابعة السير بأمان.',
-        en: 'Unsure before driving? Wassem Al Dalati provides free phone guidance on whether it is safe to proceed.'
+        de: 'Unsicher vor der Fahrt? Unser Team berät Sie kostenlos am Telefon, ob die Weiterfahrt sicher ist.',
+        ar: 'متردد قبل الانطلاق؟ سائقنا آدم وفريقنا يقدم لك استشارة هاتفية مجانية حول إمكانية متابعة السير بأمان.',
+        en: 'Unsure before driving? Our team provides free phone guidance on whether it is safe to proceed.'
       }
     },
     translations: {
       de: {
-        title: 'Unsicher bei Autopanne oder Geräuschen? Weiterfahren oder anhalten? Fragen Sie Wassem – 100% kostenlose Beratung',
+        title: 'Unsicher bei Autopanne oder Geräuschen? Weiterfahren oder anhalten? Fragen Sie unser Team – 100% kostenlose Beratung',
         subtitle: 'Ihr Auto macht seltsame Geräusche, eine Lampe leuchtet auf und Sie wissen nicht, ob Sie noch fahren oder eine Reise antreten können? Rufen Sie mich an: Ich gebe Ihnen eine ehrliche Ersteinschätzung aus 10 Jahren Straßenerfahrung – völlig gratis.',
-        metaTitle: 'Auto macht Probleme: Weiterfahren oder stehenlassen? Kostenlose Beratung Wassem | Abschleppdienst Direkt',
-        metaDescription: 'Unsicher, ob Sie mit Ihrem Auto noch fahren können? Rufen Sie Wassem Al Dalati an: 100% kostenlose telefonische Einschätzung bei Geräuschen, Warnleuchten & Pannen.',
+        metaTitle: 'Auto macht Probleme: Weiterfahren oder stehenlassen? Kostenlose Erstberatung | Abschleppdienst Direkt',
+        metaDescription: 'Unsicher, ob Sie mit Ihrem Auto noch fahren können? Rufen Sie unser Team an: 100% kostenlose telefonische Einschätzung bei Geräuschen, Warnleuchten & Pannen.',
         badge: 'Kostenloser Fahrer-Service Ruhrgebiet',
         introHeadline: 'Zwischen Sorge und Ungewissheit: Lieber einmal den Profi fragen, bevor ein teurer Motorschaden entsteht',
         introParagraphs: [
           'Sie möchten morgens zur Arbeit fahren, einen wichtigen Geschäftstermin wahrnehmen oder mit der Familie in den Urlaub aufbrechen. Doch plötzlich leuchtet eine gelbe Warnlampe im Tacho auf, der Motor nagelt ungewohnt, beim Lenken quietscht es oder das Auto vibriert ab 60 km/h: Sofort schießt Ihnen die Frage in den Kopf: „Kann ich damit noch 20, 50 oder gar 500 Kilometer weiterfahren – oder riskiere ich gerade einen Getriebe- oder Motortotalschaden?“',
-          'Genau in diesem Moment der Unsicherheit stehe ich Ihnen zur Seite. Ich heiße Wassem Al Dalati, Inhaber von Abschleppdienst Direkt. Seit über 10 Jahren bin ich Tag und Nacht auf den Straßen des Ruhrgebiets unterwegs und habe tausende Pannen von allen Fahrzeugmarken gesehen. Ich weiß genau, welche Symptome harmlos sind und welche Fehler Ihnen innerhalb weniger Kilometer den Motor zerschlagen können.',
+          'Genau in diesem Moment der Unsicherheit stehe ich Ihnen zur Seite. Ich bin Adam vom Team Abschleppdienst Direkt. Seit über 10 Jahren bin ich Tag und Nacht auf den Straßen des Ruhrgebiets unterwegs und habe tausende Pannen von allen Fahrzeugmarken gesehen. Ich weiß genau, welche Symptome harmlos sind und welche Fehler Ihnen innerhalb weniger Kilometer den Motor zerschlagen können.',
           'Deshalb biete ich Ihnen diesen besonderen Service an: Rufen Sie mich an oder schicken Sie mir per WhatsApp ein kurzes Video oder eine Sprachnachricht von dem Geräusch oder der Warnleuchte. Ich gebe Ihnen eine ehrliche, fachmännische Ersteinschätzung – zu 100% kostenlos und unverbindlich. Wenn Sie gefahrlos noch bis zur Werkstatt fahren können, sage ich Ihnen das offen und ehrlich. Und wenn Gefahr im Verzug ist, rette ich Sie vor einem 8.000-Euro-Motorschaden oder einem gefährlichen Unfall.'
         ],
-        equipmentTitle: 'Wann Sie Wassem anrufen sollten: Typische Symptome für eine Ersteinschätzung',
+        equipmentTitle: 'Wann Sie unser Team anrufen sollten: Typische Symptome für eine Ersteinschätzung',
         equipmentSubtitle: 'Wenn Sie eines dieser Anzeichen bemerken und unsicher sind, greifen Sie zum Hörer:',
         equipmentItems: [
           {
@@ -4709,7 +4709,7 @@ export const blogArticles: BlogArticle[] = [
             highlight: 'Absolut Gratis'
           }
         ],
-        processTitle: 'So funktioniert die kostenlose Beratung mit Wassem',
+        processTitle: 'So funktioniert die kostenlose Beratung mit unserem Team',
         processSubtitle: 'Schnell, unkompliziert und direkt – in drei einfachen Schritten Klarheit schaffen:',
         processSteps: [
           {
@@ -4720,7 +4720,7 @@ export const blogArticles: BlogArticle[] = [
           },
           {
             number: '02',
-            title: 'Wassem direkt anrufen oder per WhatsApp kontaktieren (0155 65500442)',
+            title: 'Unser Team direkt anrufen oder per WhatsApp kontaktieren (0155 65500442)',
             description: 'Wählen Sie unsere Nummer oder tippen Sie auf den WhatsApp-Button. Beschreiben Sie kurz: Welches Auto fahren Sie? Was ist passiert? Wie weit wollten Sie eigentlich fahren?',
             focusNote: 'Direkter Kontakt zum erfahrenen Fachmann.'
           },
@@ -4749,12 +4749,12 @@ export const blogArticles: BlogArticle[] = [
         ],
         ctaTitle: 'Unsicher, ob Sie mit Ihrem Auto noch fahren können? Rufen Sie mich an!',
         ctaText: 'Zögern Sie nicht und riskieren Sie keinen teuren Schaden. Rufen Sie mich jetzt an oder schicken Sie mir Ihr Problem per WhatsApp. Ich helfe Ihnen persönlich, ehrlich und völlig kostenlos.',
-        ctaSubtext: '100% Kostenlose Beratung • WhatsApp-Schnellcheck • Wassem Al Dalati – Abschleppdienst Direkt',
-        ctaButtonCall: 'Wassem anrufen: 0155 65500442',
+        ctaSubtext: '100% Kostenlose Beratung • WhatsApp-Schnellcheck • Abschleppdienst Direkt Team',
+        ctaButtonCall: 'Unser Team anrufen: 0155 65500442',
         ctaButtonWhatsApp: 'WhatsApp Video/Sprachnachricht senden',
         faqs: [
           {
-            question: 'Ist die telefonische Beratung von Wassem wirklich komplett kostenlos?',
+            question: 'Ist die telefonische Beratung wirklich komplett kostenlos?',
             answer: 'Ja, absolut zu 100%! Es gibt keine versteckten Kosten, keine Mitgliedschaften und kein Kleingedrucktes. Sie rufen mich an, schildern das Problem, und ich gebe Ihnen meine ehrliche Einschätzung als erfahrener Kraftfahrer.'
           },
           {
@@ -4772,18 +4772,18 @@ export const blogArticles: BlogArticle[] = [
         ]
       },
       ar: {
-        title: 'متردد في قيادة سيارتك بسبب عطل أو صوت غريب؟ استشر وسيم هاتفياً مجاناً قبل أن تخاطر على الطريق',
-        subtitle: 'أضاءت لمبة في الطبلون، ظهر صوت طقطقة أو اهتزاز غير معتاد ولست متأكداً إن كان يمكنك السفر أم لا؟ اتصل بوسيم مباشرة: سيعطيك تقييماً صادقاً من واقع 10 سنوات خبرة ميدانية – مجاناً 100% دون أي التزام.',
-        metaTitle: 'هل تسافر بسيارتك المعطلة أم توقفها؟ استشارة هاتفية مجانية من وسيم | Abschleppdienst Direkt',
-        metaDescription: 'متردد قبل السفر بسيارتك بسبب صوت أو لمبة تحذير؟ اتصل بوسيم الدالاتي: استشارة هاتفية مجانية 100% لتقييم الأعطال والأصوات قبل أن تخاطر بمحركك على الطريق.',
+        title: 'متردد في قيادة سيارتك بسبب عطل أو صوت غريب؟ استشر فريقنا وسائقنا آدم هاتفياً مجاناً قبل أن تخاطر على الطريق',
+        subtitle: 'أضاءت لمبة في الطبلون، ظهر صوت طقطقة أو اهتزاز غير معتاد ولست متأكداً إن كان يمكنك السفر أم لا؟ اتصل بسائقنا آدم وفريقنا مباشرة: سيعطيك تقييماً صادقاً من واقع 10 سنوات خبرة ميدانية – مجاناً 100% دون أي التزام.',
+        metaTitle: 'هل تسافر بسيارتك المعطلة أم توقفها؟ استشارة هاتفية مجانية من فريقنا | Abschleppdienst Direkt',
+        metaDescription: 'متردد قبل السفر بسيارتك بسبب صوت أو لمبة تحذير؟ اتصل بسائقنا آدم وفريقنا: استشارة هاتفية مجانية 100% لتقييم الأعطال والأصوات قبل أن تخاطر بمحركك على الطريق.',
         badge: 'خدمة استشارية مجانية للسائقين في الرور',
         introHeadline: 'بين الحيرة والقلق: اسأل صاحب الخبرة مجاناً قبل أن تدفع آلاف اليوروهات في صيانة المحرك',
         introParagraphs: [
           'تستعد في الصباح للذهاب إلى عملك، أو لديك موعد عمل هام، أو ترتب للسفر مع عائلتك في رحلة طويلة. وفجأة، تضيء لمبة تحذير صفراء في لوحة القيادة، أو يصدر المحرك صوتاً غير مألوف، أو تسمع صريراً حاداً عند الانعطاف أو اهتزازاً بعد سرعة 60 كم/ساعة: فوراً تتردد في داخلك أسئلة مقلقة: "هل يمكنني القيادة بهذه الحالة لمسافة 50 أو 200 كم؟ أم أنني أخاطر بكسر المحرك أو القير وتعطلي في منتصف الأوتوبان؟"',
-          'في هذه اللحظة من التردد والحيرة، أنا هنا لمساعدتك. اسمي وسيم الدالاتي، صاحب شركة Abschleppdienst Direkt. لأكثر من 10 سنوات وأنا أعمل ليلاً ونهاراً على طرقات حوض الرور السريعة، تعاملت مع آلاف السيارات من مختلف الماركات والموديلات، وأعرف بدقة ما هي الأعطال البسيطة التي يمكن متابعة السير معها، وما هي الإشارات القاتلة التي تعني دمار المحرك في غضون كيلومترات معدودة.',
+          'في هذه اللحظة من التردد والحيرة، أنا هنا لمساعدتك. أنا آدم من فريق Abschleppdienst Direkt. لأكثر من 10 سنوات وأنا أعمل ليلاً ونهاراً على طرقات حوض الرور السريعة، تعاملت مع آلاف السيارات من مختلف الماركات والموديلات، وأعرف بدقة ما هي الأعطال البسيطة التي يمكن متابعة السير معها، وما هي الإشارات القاتلة التي تعني دمار المحرك في غضون كيلومترات معدودة.',
           'لذلك أقدم لك هذه الخدمة الحصرية: اتصل بي مباشرة أو أرسل لي مقطع فيديو أو رسالة صوتية عبر واتساب تظهر الصوت أو لمبة التحذير. سأعطيك تقييماً ميكانيكياً صادقاً ومبنياً على الخبرة – مجاناً 100% ودون أي مقابل أو التزام. إن كان بإمكانك التوجه بحذر إلى أقرب ورشة سأخبرك بصدق، وإن كانت هناك خطورة سأنقذك من خسارة محرك قد تكلفك أكثر من 8,000 يورو أو وقوع حادث خطير.'
         ],
-        equipmentTitle: 'متى يجب عليك الاتصال بوسيم واستشارته فوراً؟',
+        equipmentTitle: 'متى يجب عليك الاتصال بفريقنا واستشارته فوراً؟',
         equipmentSubtitle: 'إذا لاحظت أياً من هذه العلامات وكنت في حيرة من أمرك، لا تتردد في رفع سماعة الهاتف:',
         equipmentItems: [
           {
@@ -4812,7 +4812,7 @@ export const blogArticles: BlogArticle[] = [
             highlight: 'مجاناً بالكامل'
           }
         ],
-        processTitle: 'كيف تحصل على الاستشارة المجانية من وسيم؟',
+        processTitle: 'كيف تحصل على الاستشارة المجانية من فريقنا؟',
         processSubtitle: 'بثلاث خطوات بسيطة وسريعة تزيل كل الشكوك:',
         processSteps: [
           {
@@ -4823,9 +4823,9 @@ export const blogArticles: BlogArticle[] = [
           },
           {
             number: '02',
-            title: 'اتصل بوسيم أو راسله عبر واتساب (0155 65500442)',
+            title: 'اتصل بفريقنا أو راسلنا عبر واتساب (0155 65500442)',
             description: 'اضغط على زر الاتصال أو الواتساب. اشرح باختصار: ما هو نوع سيارتك؟ وماذا حدث بالتحديد؟ وما هي المسافة التي كنت تنوي قطعها؟',
-            focusNote: 'تواصل مباشر مع الخبير وسيم.'
+            focusNote: 'تواصل مباشر مع فريقنا وسائقنا آدم.'
           },
           {
             number: '03',
@@ -4852,12 +4852,12 @@ export const blogArticles: BlogArticle[] = [
         ],
         ctaTitle: 'هل تشعر بالتردد حيال سيارتك قبل الانطلاق؟ اتصل بي الآن!',
         ctaText: 'لا تجازف بمحرك سيارتك أو سلامة عائلتك. اتصل بي هاتفياً أو أرسل استفسارك بالواتساب، وسأعطيك رأيي الشخصي بكل صدق ومجاناً تماماً.',
-        ctaSubtext: 'استشارة مجانية 100% • تقييم سريع بالواتساب • وسيم الدالاتي – Abschleppdienst Direkt',
-        ctaButtonCall: 'اتصل بوسيم مباشرة: 0155 65500442',
+        ctaSubtext: 'استشارة مجانية 100% • تقييم سريع بالواتساب • Abschleppdienst Direkt Team',
+        ctaButtonCall: 'اتصل بفريقنا مباشرة: 0155 65500442',
         ctaButtonWhatsApp: 'أرسل فيديو/صوت العطل بالواتساب',
         faqs: [
           {
-            question: 'هل استشارة وسيم الهاتفية مجانية حقاً بالكامل؟',
+            question: 'هل الاستشارة الهاتفية من فريقنا مجانية حقاً بالكامل؟',
             answer: 'نعم، مجانية 100%! لا توجد أي رسوم خفية أو اشتراكات أو قيود. اتصل، اشرح ما تواجهه، وسأقدم لك رأيي وخبرتي لوجه الله وبكل أمانة.'
           },
           {
@@ -4875,18 +4875,18 @@ export const blogArticles: BlogArticle[] = [
         ]
       },
       en: {
-        title: 'Unsure About a Car Noise or Symptom? Proceed or Stop? Ask Wassem – 100% Free Consultation',
+        title: 'Unsure About a Car Noise or Symptom? Proceed or Stop? Ask Our Team – 100% Free Consultation',
         subtitle: 'Unusual engine noise, a warning light, or strange vibration and you do not know whether you can embark on your trip? Call me: I will provide an honest assessment based on 10 years of road experience – completely free of charge.',
-        metaTitle: 'Car Symptom: Drive or Stop? Free Expert Assessment by Wassem | Abschleppdienst Direkt',
-        metaDescription: 'Hesitant whether your car is safe to drive? Call Wassem Al Dalati for a 100% free phone assessment regarding dashboard lights, strange noises, and breakdown signs.',
+        metaTitle: 'Car Symptom: Drive or Stop? Free Expert Assessment by Our Team | Abschleppdienst Direkt',
+        metaDescription: 'Hesitant whether your car is safe to drive? Call our team for a 100% free phone assessment regarding dashboard lights, strange noises, and breakdown signs.',
         badge: 'Free Driver Advisory Ruhr Area',
         introHeadline: 'Between doubt and anxiety: Ask an experienced craftsman before risking a costly engine failure',
         introParagraphs: [
           'You are preparing to head to work, drive to a critical business appointment, or leave for a holiday with your family. Suddenly, an amber warning icon lights up on the gauge cluster, the engine makes an unusual clattering sound, or the vehicle shakes above 60 km/h: Anxious thoughts race through your mind: "Can I safely drive another 20, 50, or 500 km – or am I about to destroy the engine or transmission on the autobahn?"',
-          'In this exact moment of uncertainty, I am here for you. My name is Wassem Al Dalati, owner of Abschleppdienst Direkt. For over 10 years, I have been responding to roadside breakdowns across the Ruhr area day and night, handling thousands of vehicles across every brand. I know exactly which symptoms are benign and which warning signs can destroy an engine within minutes.',
+          'In this exact moment of uncertainty, I am here for you. I am Adam from the Abschleppdienst Direkt team. For over 10 years, I have been responding to roadside breakdowns across the Ruhr area day and night, handling thousands of vehicles across every brand. I know exactly which symptoms are benign and which warning signs can destroy an engine within minutes.',
           'That is why I offer this complimentary driver service: Give me a call or send a short WhatsApp video or voice message of the sound or warning light. I will give you an honest, craftsman-level assessment – 100% free and without obligation. If it is safe to coast to a workshop, I will tell you candidly. And if severe danger looms, I will prevent an €8,000 engine catastrophe or a dangerous high-speed breakdown.'
         ],
-        equipmentTitle: 'When to Call Wassem: Common Warning Signs for Remote Evaluation',
+        equipmentTitle: 'When to Call Our Team: Common Warning Signs for Remote Evaluation',
         equipmentSubtitle: 'If you encounter any of the following symptoms and feel uncertain, pick up the phone:',
         equipmentItems: [
           {
@@ -4915,7 +4915,7 @@ export const blogArticles: BlogArticle[] = [
             highlight: 'Completely Free'
           }
         ],
-        processTitle: 'How Wassem’s Free Consultation Works',
+        processTitle: 'How Our Free Consultation Works',
         processSubtitle: 'Fast, uncomplicated, and straightforward – gain peace of mind in three easy steps:',
         processSteps: [
           {
@@ -4926,9 +4926,9 @@ export const blogArticles: BlogArticle[] = [
           },
           {
             number: '02',
-            title: 'Call Wassem Directly or Message on WhatsApp (+49 155 65500442)',
+            title: 'Call Our Team Directly or Message on WhatsApp (+49 155 65500442)',
             description: 'Dial our direct number or tap the WhatsApp button. Provide your car make/model, what happened, and where you intended to drive.',
-            focusNote: 'Direct line to Wassem Al Dalati.'
+            focusNote: 'Direct line to our driver Adam and our team.'
           },
           {
             number: '03',
@@ -4955,12 +4955,12 @@ export const blogArticles: BlogArticle[] = [
         ],
         ctaTitle: 'Unsure whether your car is safe to drive? Give me a call!',
         ctaText: 'Do not gamble with your engine or your family’s safety. Call me right now or send your symptom via WhatsApp. I will help you personally, honestly, and 100% free of charge.',
-        ctaSubtext: '100% Free Consultation • Fast WhatsApp Check • Wassem Al Dalati – Abschleppdienst Direkt',
-        ctaButtonCall: 'Call Wassem: +49 155 65500442',
+        ctaSubtext: '100% Free Consultation • Fast WhatsApp Check • Abschleppdienst Direkt Team',
+        ctaButtonCall: 'Call Our Team: +49 155 65500442',
         ctaButtonWhatsApp: 'Send WhatsApp Video / Voice Message',
         faqs: [
           {
-            question: 'Is Wassem’s telephone assessment genuinely 100% free?',
+            question: 'Is the telephone assessment genuinely 100% free?',
             answer: 'Yes, absolutely 100%! There are zero hidden fees, zero memberships, and zero fine print. You call, explain what happened, and receive an honest craftsman evaluation.'
           },
           {
@@ -4989,7 +4989,7 @@ export const blogArticles: BlogArticle[] = [
     },
     readTime: '7 Min.',
     publishDate: '2026-11-10',
-    author: 'Wassem Al Dalati',
+    author: 'Adam (Abschleppdienst Direkt)',
     authorRole: 'Inhaber & Spezialist für Sportwagen-Transporte',
     serviceSlugLink: 'abschleppdienst-pkw',
     featuredImage: {
@@ -5094,7 +5094,7 @@ export const blogArticles: BlogArticle[] = [
           }
         ],
         ctaTitle: 'Besitzen Sie einen Sportwagen oder ein tiefergelegtes Auto? Wir transportieren mit Leidenschaft!',
-        ctaText: 'Keine Angst vor Kratzern oder aufsetzenden Spoilern: Wassem Al Dalati transportiert Ihren Sportwagen mit höchster Sorgfalt, flachem Plateau und felgenschonenden VDI-2700-Gurten.',
+        ctaText: 'Keine Angst vor Kratzern oder aufsetzenden Spoilern: Unser erfahrener Fahrer Adam transportiert Ihren Sportwagen mit höchster Sorgfalt, flachem Plateau und felgenschonenden VDI-2700-Gurten.',
         ctaSubtext: '100% Spoilerschutz • Audi RS, BMW M, Porsche, AMG & Tuning • Bochum & ganz NRW',
         ctaButtonCall: 'Sportwagen-Transport anfragen: 0155 65500442',
         ctaButtonWhatsApp: 'Fahrzeugdaten & Fotos per WhatsApp senden',
@@ -5209,7 +5209,7 @@ export const blogArticles: BlogArticle[] = [
           }
         ],
         ctaTitle: 'هل تمتلك سيارة رياضية أو منخفضة وتريد نقلها بأمان فائق؟',
-        ctaText: 'لا تخاطر بالسبويلرات أو الجنوط مع شركات السحب العادية: وسيم الدالاتي ينقل سيارتك الرياضية بأعلى درجات العناية وزوايا صعود مخصصة وأحزمة VDI 2700.',
+        ctaText: 'لا تخاطر بالسبويلرات أو الجنوط مع شركات السحب العادية: سائقنا الخبير آدم ينقل سيارتك الرياضية بأعلى درجات العناية وزوايا صعود مخصصة وأحزمة VDI 2700.',
         ctaSubtext: 'حماية 100% للسبويلرات • سيارات Audi RS و Porsche و AMG و M Power • بوخوم وكافة ألمانيا',
         ctaButtonCall: 'طلب نقل سيارة رياضية: 0155 65500442',
         ctaButtonWhatsApp: 'أرسل تفاصيل وصور السيارة عبر واتساب',
@@ -5324,7 +5324,7 @@ export const blogArticles: BlogArticle[] = [
           }
         ],
         ctaTitle: 'Do you own a sports car or lowered vehicle? We transport with true passion!',
-        ctaText: 'No fear of scraped splitters or rim damage: Wassem Al Dalati moves your performance vehicle with utmost care, low-angle flatbeds, and VDI 2700 wheel straps.',
+        ctaText: 'No fear of scraped splitters or rim damage: Our driver Adam moves your performance vehicle with utmost care, low-angle flatbeds, and VDI 2700 wheel straps.',
         ctaSubtext: '100% Spoiler Protection • Audi RS, Porsche, BMW M, AMG & Tuned Cars • Bochum & Across NRW',
         ctaButtonCall: 'Inquire Sports Car Transport: +49 155 65500442',
         ctaButtonWhatsApp: 'Send Vehicle Details & Photos via WhatsApp',
@@ -5360,7 +5360,7 @@ export const blogArticles: BlogArticle[] = [
     },
     "readTime": "8 Min. Lesezeit",
     "publishDate": "2026-11-11",
-    "author": "Wassem Al Dalati",
+    "author": "Adam (Abschleppdienst Direkt)",
     "authorRole": "Inhaber & Bergungsexperte",
     "serviceSlugLink": "pannenhilfe-starthilfe",
     "featuredImage": {
@@ -5381,7 +5381,7 @@ export const blogArticles: BlogArticle[] = [
         "badge": "Praxis-Ratgeber • Winter-Pannenhilfe & Batterie",
         "introHeadline": "Ein eisiger Morgen in Bochum, der Schlüssel dreht sich – und nur ein müdes Klacken: Was wirklich in Ihrer Batterie passiert",
         "introParagraphs": [
-          "Ich bin Wassem Al Dalati, Inhaber von Abschleppdienst Direkt. Sobald im November und Dezember im Ruhrgebiet die ersten frostigen Nächte einbrechen und die Temperaturen unter den Gefrierpunkt fallen, steht unser Notruf-Telefon in Bochum nicht mehr still. Für viele Autofahrer kommt der Schock völlig unerwartet: Gestern fuhr der Wagen noch problemlos, doch heute Morgen bei -5 Grad rührt sich beim Schlüsseldreh plötzlich gar nichts mehr – die Scheinwerfer flackern matt, der Anlasser stöhnt gequält oder es ertönt lediglich ein monotones, leises Klacken des Magnetschalters.",
+          "Ich bin Adam vom Team Abschleppdienst Direkt. Sobald im November und Dezember im Ruhrgebiet die ersten frostigen Nächte einbrechen und die Temperaturen unter den Gefrierpunkt fallen, steht unser Notruf-Telefon in Bochum nicht mehr still. Für viele Autofahrer kommt der Schock völlig unerwartet: Gestern fuhr der Wagen noch problemlos, doch heute Morgen bei -5 Grad rührt sich beim Schlüsseldreh plötzlich gar nichts mehr – die Scheinwerfer flackern matt, der Anlasser stöhnt gequält oder es ertönt lediglich ein monotones, leises Klacken des Magnetschalters.",
           "Die meisten Menschen glauben, die Kälte würde eine Autobatterie einfach nur entleeren. Doch als Pannenhelfer und KFZ-Praktiker sehe ich täglich die wahren physikalischen und chemischen Hintergründe. Eine Autobatterie ist kein passiver Strombehälter, sondern ein hochkomplexes elektrochemisches Kraftwerk. Wenn die Außentemperatur sinkt, verlangsamen sich die chemischen Reaktionen im Inneren der Blei-Säure- oder AGM-Zellen dramatisch. Die Schwefelsäure wird zähflüssiger, der Innenwiderstand schnellt in die Höhe und die Ionen können sich zwischen den Bleiplatten nur noch im Zeitlupentempo bewegen.",
           "Das bedeutet konkret: Bereits bei 0 °C verliert eine Starterbatterie etwa 20 bis 30 Prozent ihrer nutzbaren Kapazität. Bei extremen Minusgraden von -10 °C bis -15 °C bricht die Leistung um bis zu 50 Prozent ein! Und hier entsteht die tückische physikalische Zange: Genau in dem Moment, in dem die Batterie nur noch die Hälfte ihrer Kraft zur Verfügung stellen kann, benötigt der eiskalte Motor die zwei- bis dreifache Startleistung, weil das Motoröl bei Frost zäh wie Honig ist. Wenn die Batterie dann bereits Vorschäden hat oder der Wagen tagelang unbewegt im Frost stand, bricht die Klemmenspannung beim Kaltstart sofort in den Keller."
         ],
@@ -5485,7 +5485,7 @@ export const blogArticles: BlogArticle[] = [
         "badge": "دليل الخبرة الشتوي • طوارئ البطارية والإنقاذ",
         "introHeadline": "صباح شتوي قارس في بوخوم، تدير مفتاح التشغيل فتسمع فقط تكتكة خافتة: إليك ما يحدث حقاً داخل بطاريتك",
         "introParagraphs": [
-          "أنا وسيم الدالاتي، صاحب شركة Abschleppdienst Direkt. بمجرد أن تهب أولى موجات الصقيع وتنخفض درجات الحرارة إلى ما دون الصفر المئوي في بوخوم ومنطقة الرور، لا يتوقف هاتف الطوارئ لدينا عن الرنين. بالنسبة لكثير من السائقين، تكون الصدمة مفاجئة تماماً: السيارة كانت تعمل بالأمس بسلاسة، ولكن في صباح اليوم عند درجة حرارة -5 مئوية، لا تدور السيارة إطلاقاً – الأضواء باهتة، محرك السلف يئن ببطء شديد، أو تسمع فقط صوت طقطقة متكررة خافتة لمرحل التشغيل (المارش).",
+          "أنا آدم من فريق Abschleppdienst Direkt. بمجرد أن تهب أولى موجات الصقيع وتنخفض درجات الحرارة إلى ما دون الصفر المئوي في بوخوم ومنطقة الرور، لا يتوقف هاتف الطوارئ لدينا عن الرنين. بالنسبة لكثير من السائقين، تكون الصدمة مفاجئة تماماً: السيارة كانت تعمل بالأمس بسلاسة، ولكن في صباح اليوم عند درجة حرارة -5 مئوية، لا تدور السيارة إطلاقاً – الأضواء باهتة، محرك السلف يئن ببطء شديد، أو تسمع فقط صوت طقطقة متكررة خافتة لمرحل التشغيل (المارش).",
           "يعتقد أغلب الناس أن البرد ببساطة يفرغ شحن البطارية، لكن الحقيقة الفيزيائية والكيميائية أعمق من ذلك بكثير. بطارية السيارة ليست مجرد خزان كهرباء ساكن، بل هي محطة تفاعلات كهروكيميائية حية. عندما تنخفض درجة الحرارة، تتباطأ حركة الأيونات داخل حمض الكبريتيك السائل بشكل دراماتيكي، ويصبح السائل كثيفاً ولزجاً، وترتفع المقاومة الداخلية للبطارية (Innenwiderstand) إلى مستويات قياسية تمنع تدفق التيار بسرعة.",
           "وهذا يعني بالأرقام الملموسة: عند درجة حرارة صفر مئوية، تفقد بطارية السيارة حوالي 20% إلى 30% من طاقتها الفعالة. وفي درجات الصقيع الشديد بين -10° إلى -15° مئوية، ينهار أداء البطارية وتفقد حتى 50% من قدرتها التخزينية! وهنا تحدث الكماشة الفيزيائية القاتلة: في اللحظة ذاتها التي تملك فيها البطارية نصف قوتها فقط، يحتاج المحرك المتجمد إلى ضعفي أو ثلاثة أضعاف طاقة التدوير المعتادة لأن زيت المحرك يصبح لزجاً وثقيلاً كالعسل. وإذا كانت البطارية مستهلكة أو كانت السيارة مركونة لأيام في الصقيع، ينهار الجهد الكهربائي فوراً وتفشل السيارة في الدوران."
         ],
@@ -5589,7 +5589,7 @@ export const blogArticles: BlogArticle[] = [
         "badge": "Expert Guide • Winter Roadside & Battery Care",
         "introHeadline": "A freezing morning in Bochum, turn of the key – and only a dull click: What is truly happening inside your car battery",
         "introParagraphs": [
-          "I am Wassem Al Dalati, founder and owner of Abschleppdienst Direkt. The moment the first freezing nights hit Bochum and the Ruhr area in November and December, our emergency dispatch telephone rings non-stop. For many drivers, the shock comes without warning: The car drove perfectly yesterday, but this morning at -5 °C, the engine won't turn over – lights dim, the starter groans weakly, or there is only a rhythmic clicking of the starter solenoid.",
+          "I am Adam from the Abschleppdienst Direkt dispatch team. The moment the first freezing nights hit Bochum and the Ruhr area in November and December, our emergency dispatch telephone rings non-stop. For many drivers, the shock comes without warning: The car drove perfectly yesterday, but this morning at -5 °C, the engine won't turn over – lights dim, the starter groans weakly, or there is only a rhythmic clicking of the starter solenoid.",
           "Most motorists believe cold weather simply drains a battery. However, as an automotive recovery specialist, I observe the physical and chemical reality every single day. A car battery is a dynamic electrochemical powerhouse. When ambient temperatures plunge below freezing, chemical reactions within the lead-acid or AGM electrolyte slow down drastically. The sulfuric acid becomes thick and viscous, internal electrical resistance skyrockets, and ions migrate between lead plates at a crawl.",
           "In real numbers: At 0 °C, a car battery loses roughly 20% to 30% of its usable cranking power. In extreme cold between -10 °C and -15 °C, capacity plummets by up to 50%! And here lies the dangerous cold-weather trap: Exactly when the battery has only half its strength available, the freezing engine requires two to three times more cranking amps (CCA) because engine oil turns thick like molasses. If the battery was slightly degraded or parked idle in the frost for days, terminal voltage collapses instantly."
         ],

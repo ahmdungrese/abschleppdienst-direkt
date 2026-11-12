@@ -66,19 +66,19 @@
     "subtitle": "Careful transport & recovery of all vehicle types up to 3.5 tonnes – reliable, punctual, and transparent.",
     "viewDetails": "View details & process",
     "detailPage": "Service Page",
-    "s1Title": "Vehicle Transport (Point A to B)",
-    "s1Desc": "Careful single transport of all vehicle types up to 3.5 tonnes across the Ruhr area and nationwide. Specialized for roadworthy or rolling cars, dealer transfers, new cars, and lowered sports cars.",
+    "s1Title": "Vehicle Transfer from A to B (Nationwide)",
+    "s1Desc": "Punctual and gentle dedicated transport for vehicles up to 3.5 tons from point A to B – across North Rhine-Westphalia and nationwide directly to your destination.",
     "s2Title": "Towing & Accident Recovery",
     "s2Desc": "Specialized transport for acute engine damage, gearbox failure, or accident recovery. Gentle loading via electric winch and direct transport to your preferred workshop across NRW.",
-    "s3Title": "Roadside Assistance & Jump Start",
-    "s3Desc": "Immediate jump start for empty batteries (12V & 24V professional boosters with surge protection) and rapid wheel change on city roads and highways.",
-    "s4Title": "NRW-Wide & Nationwide Transfer",
-    "s4Desc": "Reliable long-distance transfers between Münster, Bochum, Dortmund, Cologne, Bonn, or across Germany. 100% dedicated single transport on proprietary flatbed at transparent fixed rates.",
+    "s3Title": "Roadside Assistance & Pro Jump Start (Bochum)",
+    "s3Desc": "Immediate jump start with our 800 € spark-free pro booster and fast wheel replacement directly on site in Bochum and on motorways A40, A43 & A448.",
+    "s4Title": "Freight & Cargo Transport up to 3.5t (Nationwide)",
+    "s4Desc": "Punctual direct transports for urgent freight, pallets, machinery, and cargo up to 3.5 tonnes between the Ruhr area and all federal states without intermediate transshipment.",
     "upTo35t": "Up to 3.5 tons gross weight",
-    "s1Tag": "Scheduled Transfers & Delivery",
+    "s1Tag": "Nationwide & NRW • Up to 3.5 Tons",
     "s2Tag": "Engine Failure, Breakdown & Accident",
-    "s3Tag": "Express on site in 20–40 min",
-    "s4Tag": "Münster to Bonn & Nationwide"
+    "s3Tag": "Local in Bochum & Highways • 20–40 Min.",
+    "s4Tag": "Pallets, Machinery & Freight • Nationwide"
   },
   "Area": {
     "badge": "Stationed in Bochum (44803) • Ready across the Ruhr Region",
@@ -99,7 +99,7 @@
     "zone3Time": "Punctual Fixed Appointments Nationwide",
     "zone3Note": "100% dedicated single-vehicle transport on proprietary plateau – transparent flat rates.",
     "ctaTitle": "Breakdown or accident on highway or country road?",
-    "ctaDesc": "Simply give us the next exit number or share your WhatsApp live location – Wassem will arrive swiftly.",
+    "ctaDesc": "Simply give us the next exit number or share your WhatsApp live location – our driver Adam will arrive swiftly.",
     "btnCall": "Call Now (0155 65500442)",
     "btnWhatsApp": "Share Live Location via WhatsApp"
   },
@@ -136,7 +136,7 @@
     "moreAboutUs": "Learn more about us",
     "point1": "All vehicle types up to 3.5 tons: sedans, station wagons, SUVs, vans & sports cars",
     "point2": "On-site within approx. 20–40 min in the Bochum area & on highways (A40, A43, A448)",
-    "point3": "10 years of road experience: Owner Wassem arrives personally for you",
+    "point3": "10 years of road experience: Our experienced driver Adam arrives personally for you",
     "point4": "Friendly, honest communication with binding phone agreements",
     "point5": "Flat ramp angle: 100% safe loading without scraping low bumpers & spoilers",
     "point6": "Round-the-clock emergency readiness on roads and highways",
@@ -144,12 +144,12 @@
   },
   "About": {
     "welcomeTitle": "Welcome to Our Company",
-    "welcomeP1": "Abschleppdienst Direkt, led directly by owner Wassem Al Dalati in Bochum, is your reliable and owner-managed partner for breakdown recovery, towing, and vehicle transport throughout the Ruhr area and nationwide.",
+    "welcomeP1": "Abschleppdienst Direkt, led by our experienced team in Bochum, is your reliable partner for breakdown recovery, towing, and nationwide vehicle transport.",
     "welcomeP2": "For over 10 years, we have been transporting, securing, and transferring vehicles of all types in Bochum, North Rhine-Westphalia, and across Germany – always with maximum care and personal dedication.",
     "welcomeP3": "Our company expertise lies in gentle towing for engine failure or accidents, scheduled vehicle transfers from point A to B, and professional roadside jump-starts.",
     "welcomeP4": "Our transport vehicle is equipped with a modern flatbed featuring a flat approach angle, a high-capacity electric winch, and certified VDI 2700 load securing systems to carry all vehicle types up to 3.5 tonnes safely.",
     "detailsTitle": "Abschleppdienst Direkt for Every Situation – More About Us",
-    "detailsP1": "Our owner-operated company in Bochum is your premier contact for professional towing services, rapid roadside assistance, and careful vehicle transfers. We stand by you with high competence, 10 years of road experience, and state-of-the-art equipment. You speak directly with owner Wassem Al Dalati.",
+    "detailsP1": "Our dedicated team in Bochum is your premier contact for professional towing services, rapid roadside assistance, and careful vehicle transfers. We stand by you with high competence, 10 years of road experience, and state-of-the-art equipment. You speak directly with our driver Adam and dedicated dispatch team.",
     "detailsP2": "With us, you have a partner working safely, carefully, and above all reliably. Transparency is paramount: we offer fair, fixed rates with no hidden fees and document every step properly."
   }
 }

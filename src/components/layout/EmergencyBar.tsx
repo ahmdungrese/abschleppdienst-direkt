@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from 'next-intl';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, ArrowDown } from 'lucide-react';
 
 export default function EmergencyBar() {
   const t = useTranslations('EmergencyBar');
@@ -20,20 +20,18 @@ export default function EmergencyBar() {
         <div className="flex items-center gap-2 sm:gap-4">
           <a
             href="tel:+4915565500442"
-            className="flex items-center gap-1.5 bg-black/25 hover:bg-black/40 py-1 px-3 rounded-full transition-all border border-white/10"
+            className="flex items-center gap-1.5 bg-black/25 hover:bg-black/40 py-1 px-3 rounded-lg transition-all border border-white/15"
           >
             <Phone size={13} className="text-amber-300" />
             <span dir="ltr" className="tracking-wider font-extrabold">+49 155 65500442</span>
           </a>
           
           <a
-            href="https://wa.me/4915565500442?text=Hallo%20Wassem%2C%20ich%20brauche%20einen%20Abschleppdienst%20oder%20Fahrzeugtransport"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white py-1 px-3 rounded-full transition-all shadow-sm font-extrabold text-xs"
+            href="#kontakt"
+            className="hidden sm:flex items-center gap-1.5 bg-slate-950/60 hover:bg-slate-950 text-white py-1 px-3 rounded-lg transition-all border border-white/15 font-extrabold text-xs"
           >
-            <MessageCircle size={13} />
-            <span>WhatsApp</span>
+            <span>Anfrage</span>
+            <ArrowDown size={12} className="text-amber-400" />
           </a>
         </div>
       </div>

@@ -162,8 +162,8 @@ export default async function BlogDetailPage({
           {/* Article Header */}
           <header className="mb-10">
             <div className="flex flex-wrap items-center gap-3 mb-5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-black uppercase tracking-wider">
-                <Wrench size={13} />
+              <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-400">
+                <Wrench size={14} className="text-amber-400 shrink-0" />
                 <span>{trans.badge}</span>
               </span>
 
@@ -246,7 +246,7 @@ export default async function BlogDetailPage({
                       {idx + 1}. {item.name}
                     </h3>
                     {item.highlight && (
-                      <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20">
+                      <span className="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded border border-amber-500/20">
                         {item.highlight}
                       </span>
                     )}
@@ -265,7 +265,7 @@ export default async function BlogDetailPage({
           <section className="mb-12">
             <div className="mb-8">
               <h2 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-2.5 flex items-center gap-2.5">
-                <CheckCircle2 className="text-emerald-400" size={26} />
+                <CheckCircle2 className="text-amber-400" size={26} />
                 <span>{trans.processTitle}</span>
               </h2>
               <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
@@ -311,13 +311,13 @@ export default async function BlogDetailPage({
                   {trans.expertKnowledgeSubtitle}
                 </p>
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {trans.expertKnowledgeItems.map((item, idx) => (
                     <div
                       key={idx}
-                      className="p-5 rounded-2xl bg-amber-500/5 border-l-4 border-amber-500/70 rtl:border-l-0 rtl:border-r-4 rtl:border-amber-500/70 text-slate-300"
+                      className="pl-5 border-l-2 border-amber-500/70 rtl:pl-0 rtl:pr-5 rtl:border-l-0 rtl:border-r-2 text-slate-300"
                     >
-                      <h3 className="font-bold text-white text-base mb-1.5 text-amber-400">
+                      <h3 className="font-bold text-base mb-1.5 text-amber-400">
                         {item.title}
                       </h3>
                       <p className="text-sm sm:text-base leading-relaxed">
@@ -363,16 +363,14 @@ export default async function BlogDetailPage({
 
           <hr className="border-white/10 my-12" />
 
-          {/* Reassuring Human CTA Card (Clearly Distinct Contact Banner at the end of the article) */}
-          <section className="mb-14 rounded-3xl border border-amber-500/40 bg-gradient-to-br from-slate-900 via-amber-950/20 to-slate-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden text-center sm:text-left">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 blur-[100px] pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8">
+          {/* Reassuring Human CTA Section at the end of the article — Open Editorial Layout */}
+          <section id="artikel-anfrage" className="mb-14 py-8 border-t border-b border-white/10 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-8">
               <div className="max-w-xl">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold mb-3">
+                <span className="inline-flex items-center gap-1.5 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
                   <UserCheck size={14} />
                   <span>
-                    {isAr ? 'بدون وسيط • مباشرة مع السائق' : 'Inhabergeführt • Wassem Al Dalati'}
+                    {isAr ? 'بدون وسيط • مباشرة مع Abschleppdienst Direkt' : 'Direkter Kontakt • Abschleppdienst Direkt'}
                   </span>
                 </span>
                 
@@ -392,49 +390,51 @@ export default async function BlogDetailPage({
               <div className="flex flex-col gap-3 w-full sm:w-auto shrink-0">
                 <a
                   href="tel:+4915565500442"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm transition-all shadow-lg shadow-amber-500/25 active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-red-600 hover:bg-red-500 text-white font-black text-sm transition-all shadow-lg shadow-red-600/25 active:scale-95"
                 >
-                  <Phone size={18} />
+                  <Phone size={18} className="fill-white" />
                   <span>{trans.ctaButtonCall}</span>
                 </a>
 
                 <a
-                  href={`https://wa.me/4915565500442?text=Hallo%20Wassem,%20ich%20habe%20eine%20Anfrage%20zu:%20${encodeURIComponent(trans.title)}`}
+                  href={`https://wa.me/4915565500442?text=Hallo%20Abschleppdienst%20Direkt,%20ich%20habe%20eine%20Anfrage%20zu:%20${encodeURIComponent(trans.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-lg shadow-emerald-600/25 active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white border border-white/15 hover:border-amber-400/40 font-bold text-sm transition-all shadow-lg active:scale-95"
                 >
-                  <MessageCircle size={18} />
+                  <MessageCircle size={18} className="text-amber-400" />
                   <span>{trans.ctaButtonWhatsApp}</span>
                 </a>
               </div>
             </div>
           </section>
 
-          {/* Other Articles Recommendation */}
-          <section className="pt-8 border-t border-white/10">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-6">
+          {/* Other Articles Recommendation — Clean Divided Rows */}
+          <section className="pt-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">
               {isAr ? 'أدلة إرشادية أخرى قد تهمك' : isEn ? 'Other Helpful Guides' : 'Weitere interessante Ratgeber:'}
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="divide-y divide-white/10 border-t border-b border-white/10">
               {otherArticles.map((other) => {
                 const oTrans = other.translations[currentLang];
                 return (
                   <Link
                     key={other.slug}
                     href={`/blog/${other.slug}`}
-                    className="group bg-slate-900/60 border border-white/10 hover:border-amber-400/40 rounded-2xl p-4 transition-all"
+                    className="group py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition-colors hover:bg-white/[0.01]"
                   >
-                    <span className="text-[11px] font-bold text-amber-400 mb-1 block">
-                      {other.categoryLabel[currentLang]}
-                    </span>
-                    <h3 className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors mb-2 leading-snug">
-                      {oTrans.title}
-                    </h3>
-                    <span className="inline-flex items-center gap-1 text-xs text-slate-400 font-semibold group-hover:text-white">
+                    <div>
+                      <span className="text-[11px] font-bold text-amber-400 mb-0.5 block">
+                        {other.categoryLabel[currentLang]}
+                      </span>
+                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-amber-400 transition-colors leading-snug">
+                        {oTrans.title}
+                      </h3>
+                    </div>
+                    <span className="inline-flex items-center gap-1 text-xs text-amber-400 font-semibold shrink-0">
                       <span>{isAr ? 'قراءة المزيد' : 'Mehr erfahren'}</span>
-                      <ArrowRight size={12} className="rtl:rotate-180" />
+                      <ArrowRight size={13} className="rtl:rotate-180" />
                     </span>
                   </Link>
                 );

@@ -26,11 +26,11 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
           <span className="text-amber-400 font-bold">Impressum</span>
         </div>
 
-        <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-white/10 shadow-2xl space-y-6 text-sm text-slate-300">
+        <div className="border-t border-b border-white/10 py-10 space-y-8 text-sm text-slate-300">
           
-          <div className="border-b border-white/10 pb-4">
-            <h1 className="text-2xl sm:text-3xl font-black text-white">Impressum</h1>
-            <p className="text-xs text-amber-400 font-semibold mt-1">Angaben gemäß § 5 DDG (ehem. § 5 TMG)</p>
+          <div className="border-b border-white/10 pb-6">
+            <h1 className="text-3xl sm:text-4xl font-black text-white">Impressum</h1>
+            <p className="text-xs text-amber-400 font-semibold mt-1.5">Angaben gemäß § 5 DDG (ehem. § 5 TMG)</p>
           </div>
 
           <div>
@@ -57,7 +57,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
 
           <div>
             <h2 className="font-bold text-white text-base mb-1">Umsatzsteuer-Hinweis (§ 19 UStG):</h2>
-            <p className="bg-slate-900/80 p-3.5 rounded-xl border border-white/5 text-xs">
+            <p className="text-xs text-slate-300 leading-relaxed pl-3 border-l-2 border-amber-400">
               Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer berechnet und auf Rechnungen nicht gesondert ausgewiesen.
             </p>
           </div>
@@ -70,7 +70,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
 
           <div>
             <h2 className="font-bold text-white text-base mb-1">EU-Streitschlichtung:</h2>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-400 leading-relaxed">
               Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
               <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-amber-400 underline ml-1">https://ec.europa.eu/consumers/odr</a>.<br />
               Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
@@ -80,7 +80,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
           <div className="pt-6 border-t border-white/10">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition-colors"
+              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 px-4 rounded-xl text-xs border border-white/10 transition-colors"
             >
               <ArrowLeft size={14} className="rtl:rotate-180" />
               <span>Zur Startseite zurückkehren</span>

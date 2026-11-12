@@ -140,16 +140,13 @@ export default function CustomerReviews() {
 
   return (
     <section className="py-20 sm:py-24 bg-slate-950 text-white relative border-t border-white/10 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
-
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+      <div className="container mx-auto px-4 max-w-5xl relative z-10">
         
-        {/* Section Header with Google Rating Badge */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        {/* Section Header with Clean Rating Summary (No Nested Boxes) */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-white/10">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-              <ShieldCheck size={14} />
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-3">
+              <ShieldCheck size={16} className="text-amber-400 shrink-0" />
               <span>
                 {isAr ? "تجارب وتقييمات العملاء المعتمدة" : isEn ? "Verified Customer Reviews" : "Verifizierte Kundenerfahrungen"}
               </span>
@@ -167,81 +164,65 @@ export default function CustomerReviews() {
             </p>
           </div>
 
-          {/* Google 5.0 Rating Summary Card */}
-          <div className="flex items-center gap-4 bg-slate-900/90 border border-white/10 p-4 rounded-2xl shrink-0 backdrop-blur-sm shadow-xl">
-            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center font-black text-slate-900 text-xl shadow-inner">
-              G
-            </div>
+          {/* Clean Editorial Google Rating Summary */}
+          <div className="flex items-center gap-3 shrink-0">
+            <div className="text-3xl font-black text-amber-400 font-mono">5.0</div>
             <div>
-              <div className="flex items-center gap-1.5 mb-1">
-                <span className="text-lg font-black text-white">5.0</span>
-                <div className="flex items-center text-amber-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={15} className="fill-amber-400" />
-                  ))}
-                </div>
+              <div className="flex items-center text-amber-400 mb-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={15} className="fill-amber-400" />
+                ))}
               </div>
-              <span className="text-[11px] text-slate-400 block font-medium">
-                {isAr ? "ممتاز 5.0 • تقييمات خرائط جوجل" : isEn ? "Excellent • Google Maps Reviews" : "Hervorragend • Google Rezensionen"}
+              <span className="text-xs text-slate-300 block font-semibold">
+                {isAr ? "تقييمات خرائط جوجل (5.0)" : isEn ? "Google Maps Reviews (5.0)" : "Google Rezensionen (5.0)"}
               </span>
             </div>
           </div>
         </div>
 
-        {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* Clean Editorial Reviews List (Divided Rows, Zero Nested Boxes) */}
+        <div className="divide-y divide-white/10 border-b border-white/10">
           {reviews.map((rev, idx) => (
-            <div
-              key={idx}
-              className="group p-6 rounded-3xl bg-slate-900/60 border border-white/10 hover:border-amber-400/40 transition-all duration-300 flex flex-col justify-between shadow-lg relative"
-            >
-              <div>
-                {/* Header row */}
-                <div className="flex items-start justify-between gap-3 mb-3">
-                  <div>
-                    <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-amber-400 transition-colors">
-                      {rev.name}
-                    </h3>
-                    <div className="flex items-center gap-2 mt-0.5 text-xs text-slate-400">
-                      <span className="flex items-center gap-1 text-slate-300">
-                        <MapPin size={11} className="text-amber-400" />
-                        <span>{rev.location[langKey]}</span>
-                      </span>
-                      <span>•</span>
-                      <span>{rev.date[langKey]}</span>
-                    </div>
-                  </div>
-
-                  {/* 5 Stars */}
-                  <div className="flex items-center text-amber-400 shrink-0">
+            <article key={idx} className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+              
+              {/* Left Column: Customer Info & Rating */}
+              <div className="md:col-span-4 space-y-1.5">
+                <div className="flex items-center gap-2">
+                  <h3 className="text-base font-bold text-white">{rev.name}</h3>
+                  <div className="flex items-center text-amber-400">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} size={13} className="fill-amber-400" />
+                      <Star key={i} size={12} className="fill-amber-400" />
                     ))}
                   </div>
                 </div>
 
-                {/* Highlight Badge */}
-                <div className="inline-block px-2.5 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300 text-[10px] font-bold uppercase tracking-wide mb-3">
-                  {rev.highlight[langKey]}
+                <div className="flex items-center gap-1.5 text-xs text-slate-300">
+                  <MapPin size={12} className="text-amber-400 shrink-0" />
+                  <span>{rev.location[langKey]}</span>
+                  <span className="text-slate-500">•</span>
+                  <span className="text-slate-400">{rev.date[langKey]}</span>
                 </div>
 
-                {/* Review Text */}
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed italic mb-4">
-                  "{rev.text[langKey]}"
-                </p>
+                <div className="text-[11px] font-bold text-amber-400 uppercase tracking-wide pt-1">
+                  {rev.service[langKey]}
+                </div>
               </div>
 
-              {/* Verified Tag */}
-              <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
-                <span className="text-slate-400 font-medium truncate max-w-[240px]">
-                  {rev.service[langKey]}
-                </span>
-                <span className="flex items-center gap-1 text-emerald-400 font-bold shrink-0">
-                  <CheckCircle2 size={13} />
-                  <span>{isAr ? "خدمة ميدانية موثقة" : isEn ? "Verified Operation" : "Verifizierter Einsatz"}</span>
-                </span>
+              {/* Right Column: Review Quote & Verification */}
+              <div className="md:col-span-8 space-y-2.5">
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed italic">
+                  &bdquo;{rev.text[langKey]}&ldquo;
+                </p>
+
+                <div className="flex items-center gap-4 text-[11px] text-slate-400">
+                  <span className="flex items-center gap-1 text-slate-300 font-semibold">
+                    <CheckCircle2 size={13} className="text-amber-400" />
+                    <span>{rev.highlight[langKey]}</span>
+                  </span>
+                </div>
               </div>
-            </div>
+
+            </article>
           ))}
         </div>
 

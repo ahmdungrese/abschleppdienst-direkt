@@ -55,31 +55,31 @@ export default function Services() {
     {
       slug: 'fahrzeugueberfuehrung',
       icon: Truck,
-      title: isAr ? "نقل وشحن السيارات (من النقطة A إلى B)" : isEn ? "Vehicle Transfer (A to B Transport)" : "Fahrzeugüberführung (Autotransport von A nach B)",
-      tag: isAr ? "حتى 3.5 طن • داخل وخارج بوخوم" : isEn ? "Up to 3.5 Tons • Regional & Nationwide" : "Bis 3,5 Tonnen • Regional & Überregional",
+      title: isAr ? "نقل وشحن السيارات من A إلى B (في عموم ألمانيا)" : isEn ? "Vehicle Transfer from A to B (Nationwide)" : "Fahrzeugüberführung von A nach B (Bundesweit)",
+      tag: isAr ? "في عموم ألمانيا وكامل NRW • حتى 3.5 طن" : isEn ? "Nationwide & NRW • Up to 3.5 Tons" : "Bundesweit & NRW • Bis 3,5 Tonnen",
       desc: isAr 
-        ? "نقل فردي متخصص لسيارات الركاب العادية، سيارات المعارض والتجار، السيارات غير المسجلة، والسيارات الرياضية الفارهة والكلاسيكية بأمان تام على سطحة مخصصة."
+        ? "نقل فردي متخصص 100% بدون أي تفريغ أو وسيط لسيارات الركاب، السيارات بدون لوحات، سيارات المعارض والتجار، والسيارات الرياضية والكلاسيكية من أي نقطة A إلى B في عموم ألمانيا مباشرة للعنوان المطلوب."
         : isEn 
-        ? "Safe and scheduled point-to-point transfer for passenger cars, unregistered purchases, dealership fleets, sports cars, and classic cars up to 3.5 tonnes."
-        : "Sicherer und termingerechter Transport von Fahrzeugen – regional oder überregional. Schonender Einzeltransport für Neuwagen, abgemeldete PKW, Oldtimer und Sportwagen auf Spezialplateau bis 3,5 t.",
+        ? "Dedicated direct single-vehicle transport for passenger cars, unregistered purchases, dealership fleets, and sports/classic cars from point A to B anywhere in Germany directly to your door."
+        : "Sicherer und termingerechter Einzeltransport von PKW aller Art von Punkt A nach Punkt B – in ganz Nordrhein-Westfalen und bundesweit. Schonender Transport für Neuwagen, abgemeldete PKW, Oldtimer und Sportwagen auf Spezialplateau bis 3,5 t.",
       hasCalculator: true,
       features: [
-        isAr ? 'رحلات فردية 100% دون نقل سيارات أخرى' : '100% Einzelfahrten ohne Umladen',
+        isAr ? 'رحلات فردية 100% في عموم ألمانيا' : '100% Einzelfahrten bundesweit ohne Umladen',
         isAr ? 'سيارات جديدة وبدون لوحات' : 'Abgemeldete & Neufahrzeuge',
-        isAr ? 'استلام وتسليم مباشر من الباب للباب' : 'Haustürabholung & Zustellung',
+        isAr ? 'استلام وتسليم مباشر من الباب للباب' : 'Haustürabholung & bundesweite Zustellung',
         isAr ? 'تثبيت العجلات بـ 4 نقاط VDI 2700' : '4-Punkt-Radverzurrung nach VDI 2700'
       ],
-      h1: "Fahrzeugüberführung & Autotransport von A nach B im Ruhrgebiet & bundesweit",
+      h1: "Fahrzeugüberführung & Autotransport von A nach B bundesweit & in NRW",
       realPhoto: {
         src: '/images/real/tow-truck-audi-rs3-wide.jpg',
         alt: 'Abschleppdienst Direkt - Transporter mit Plateau und geladenem Audi RS3',
         caption: 'Originale Einsatzaufnahme: Unser Transporter bei der Überführung eines Audi RS3 Sportback zur Kfz-Meisterwerkstatt'
       },
       scenarios: [
-        "Fahrzeugkauf ohne Kennzeichen / abgemeldete Fahrzeuge",
+        "Fahrzeugkauf ohne Kennzeichen / abgemeldete Fahrzeuge bundesweit",
         "Transport zwischen Werkstätten, Autohäusern oder Privatpersonen",
         "Schonender Transport von Oldtimern und Sportwagen",
-        "Überführung rollfähiger Autos bei Wohnortwechsel oder Umzug"
+        "Überführung rollfähiger Autos bei Wohnortwechsel oder Umzug quer durch Deutschland"
       ],
       processSteps: [
         { title: "1. Termingerechte Bereitstellung", desc: "Pünktliche Anfahrt zum vereinbarten Abholort nach Absprache." },
@@ -140,21 +140,21 @@ export default function Services() {
     {
       slug: 'pannenhilfe-starthilfe',
       icon: Zap,
-      title: isAr ? "المساعدة على الطريق والاشتراك الفوري للبطارية" : isEn ? "Roadside Assistance & Pro Jump Start" : "Pannenhilfe & Vor-Ort Starthilfe",
-      tag: isAr ? "جهاز بوستر احترافي بقيمة 800€ (5250A)" : isEn ? "800 € NOCO Boost Max (5250A)" : "800 € NOCO Boost (5.250A)",
+      title: isAr ? "المساعدة على الطريق وشحن البطارية (محلياً في بوخوم)" : isEn ? "Roadside Assistance & Pro Jump Start (Bochum)" : "Pannenhilfe & Vor-Ort Starthilfe (Bochum)",
+      tag: isAr ? "نطاق بوخوم والأوتوبان • وصول خلال 20–40 دقيقة" : isEn ? "Bochum & Highways • On-Site in 20–40 Min." : "Lokal in Bochum & Autobahnen • 20–40 Min.",
       desc: isAr 
-        ? "تشغيل فوري للبطاريات الفارغة بجهاز البوستر NOCO Boost Max GB250+ (5250A) دون أي شرر أو خطر على الحواسيب والدارات الحساسة، وتبديل الإطارات بالموقع."
+        ? "مساعدة فورية ومباشرة في موقع العطل داخل مدينة بوخوم وأحيائها وعلى الطرق السريعة (A40, A43, A448). تشغيل فوري للبطاريات الفارغة بجهاز البوستر NOCO Boost Max (5250A) بقيمة 800€ دون أي خطر على حواسيب السيارة، مع خدمة تبديل الإطارات."
         : isEn 
-        ? "Instant on-site jump start for dead batteries using our 800 € NOCO Boost Max GB250+ (5250A) spark-proof booster, plus spare wheel replacement."
-        : "Sofortige Vor-Ort-Hilfe bei leerer Batterie ohne Risiko für die empfindliche Bordelektronik sowie schneller Radwechsel mit dem 800 € Profi-Booster NOCO Boost Max (5250A).",
-      empathyNote: "Auto springt morgens bei Kälte nicht an oder Licht vergessen? Wir beleben die Batterie in Sekunden wieder, ohne die empfindliche Bordelektronik zu beschädigen.",
+        ? "Rapid local roadside assistance directly on site in Bochum and on motorways (A40, A43, A448). Spark-proof jump start with our 800 € NOCO Boost Max GB250+ (5250A) plus fast spare wheel change."
+        : "Schnelle Soforthilfe direkt vor Ort im Stadtgebiet Bochum und auf den Autobahnen A40, A43 & A448. Professionelle Starthilfe mit dem 800 € Profi-Booster NOCO Boost Max (5250A) ohne Risiko für die Bordelektronik sowie schneller Radwechsel vor Ort.",
+      empathyNote: "Auto springt morgens bei Kälte nicht an oder Licht vergessen? In Bochum und auf den Autobahnen A40/A43 sind wir in ca. 20–40 Minuten bei Ihnen vor Ort und bringen Ihr Fahrzeug sicher wieder in Gang.",
       features: [
+        isAr ? 'وصول سريع خلال 20–40 دقيقة في بوخوم' : 'In 20–40 Min. vor Ort in Bochum & A40/A43',
         isAr ? 'بوستر احترافي NOCO 5250A (قيمة 800€)' : '800 € Profi-Booster (NOCO 5250A)',
-        isAr ? '100% حماية ضد الشرر وارتفاع الجهد' : '100% Funkenfrei & Verpolungsschutz',
-        isAr ? 'وصول خلال 20–40 دقيقة في بوخوم' : 'In 20–40 Min. vor Ort',
-        isAr ? 'تبديل الإطارات في الموقع' : 'Radwechsel bei Reifenpanne'
+        isAr ? '100% حماية ضد الشرر وحماية الحواسيب' : '100% Funkenfrei & Schutz für Steuergeräte',
+        isAr ? 'تبديل الإطارات في موقع التوقف' : 'Radwechsel bei Reifenpanne vor Ort'
       ],
-      h1: "Pannenhilfe & Vor-Ort Starthilfe in Bochum mit NOCO Boost Max",
+      h1: "Pannenhilfe & Vor-Ort Starthilfe in Bochum & Autobahnen mit NOCO Boost Max",
       realPhoto: {
         src: '/images/real/noco-boost-starthilfe.jpg',
         alt: 'NOCO Boost Max GB250+ 5250A Profi-Starthilfegerät in Bochum',
@@ -163,12 +163,12 @@ export default function Services() {
       scenarios: [
         "Winter-Kälteschock: Batterie bricht bei Frost elektrochemisch zusammen",
         "Licht versehentlich angelassen: Batterie über Nacht tiefentladen",
-        "Klickendes Starterrelais beim Startversuch",
-        "Reifenpanne: Montage des Reserverads direkt vor Ort",
+        "Klickendes Starterrelais beim Startversuch im Raum Bochum",
+        "Reifenpanne: Montage des Reserverads direkt vor Ort auf Straßen & Autobahnen",
         "Starthilfe für 12V PKW, SUV, Sportwagen & schwere Diesel-Transporter"
       ],
       processSteps: [
-        { title: "1. Direkte Anfahrt", desc: "Wir kommen in ca. 20–40 Min. zu Ihnen nach Hause, zur Firma oder an den Straßenrand." },
+        { title: "1. Direkte Anfahrt", desc: "Wir kommen in ca. 20–40 Min. zu Ihnen nach Hause, zur Firma oder an den Straßenrand in Bochum." },
         { title: "2. Spannungsdiagnose", desc: "Prüfung von Batteriespannung und Ladesystem mit dem integrierten Digital-Voltmeter." },
         { title: "3. Schonende Überbrückung", desc: "Startvorgang mit dem 800 € NOCO Boost Max GB250+ (funkenfrei, keine Überspannungsspitzen)." },
         { title: "4. Transport-Option parat", desc: "Sollte die Batterie oder Lichtmaschine defekt sein, steht unser Plateau-Transporter bereit." }
@@ -185,21 +185,21 @@ export default function Services() {
     {
       slug: 'bundesweite-ueberfuehrung',
       icon: Map,
-      title: isAr ? "رحلات النقل الطويلة ونقل البضائع في عموم ألمانيا" : isEn ? "Nationwide Car Transfer & Freight Transport" : "Bundesweite Überführung & Warentransport",
-      tag: isAr ? "بضائع وسيارات حتى 3.5 طن" : isEn ? "Freight & Vehicles up to 3.5t" : "Güter & KFZ bis 3,5 t",
+      title: isAr ? "نقل البضائع والمعدات والآليات حتى 3.5 طن (في عموم ألمانيا)" : isEn ? "Freight & Cargo Transport up to 3.5t (Nationwide)" : "Warentransport & Fracht-Express bis 3,5 t (Bundesweit)",
+      tag: isAr ? "بضائع، آليات ومعدات • في عموم ألمانيا" : isEn ? "Pallets, Machinery & Freight • Nationwide" : "Paletten, Maschinen & Fracht • Bundesweit",
       desc: isAr 
-        ? "تنفيذ رحلات النقل المباشرة للسيارات والبضائع والآليات حتى 3.5 طن بين مدن حوض الرور ومختلف مدن ألمانيا (مونستر، بون، كولن، برلين، ميونخ) بأسعار كيلومترات شفافة."
+        ? "تنفيذ رحلات نقل مباشر للبضائع والطرود الثقيلة، الباليتات، الآليات والمعدات حتى 3.5 طن من النقطة A إلى B في عموم ألمانيا على سطحة مخصصة بدون تفريغ وسيط أو تأخير."
         : isEn 
-        ? "Dedicated direct long-distance transfers for vehicles and diverse freight up to 3.5 tonnes between the Ruhr area and all German federal states."
-        : "Professionelle Durchführung von Transportaufträgen für Fahrzeuge und unterschiedlichste Güter bis 3,5 t quer durch ganz Deutschland zu transparenten Konditionen.",
+        ? "Dedicated direct transport for urgent freight, pallets, machines, and diverse cargo up to 3.5 tonnes between the Ruhr area and all German federal states."
+        : "Professionelle Durchführung von Express-Transportaufträgen für eilige Fracht, Palettenware, Baustellen- und Maschinenfracht bis 3,5 t quer durch ganz Deutschland zu transparenten Festpreisen.",
       hasCalculator: true,
       features: [
         isAr ? 'نقل بضائع ومعدات حتى 3.5 طن' : 'Warentransport & Fracht bis 3,5 t',
-        isAr ? 'مواعيد دقيقة بدون تفريغ وسيط' : 'Pünktliche Direktfahrten',
+        isAr ? 'مواعيد دقيقة بدون تفريغ وسيط' : 'Pünktliche Direktfahrten bundesweit',
         isAr ? 'تأمين الحمولة معتمد VDI 2700' : 'Ladungssicherung nach VDI 2700',
         isAr ? 'أسعار تفضيلية للمسافات فوق 200 كم' : 'Attraktive Fernstreckensätze'
       ],
-      h1: "Bundesweite Fahrzeugüberführung & Warentransport bis 3,5 t",
+      h1: "Bundesweiter Warentransport & Express-Fracht bis 3,5 t",
       realPhoto: {
         src: '/images/real/tow-truck-bmw-side.jpg',
         alt: 'Bundesweite Fahrzeugüberführung auf eigenem Spezial-Plateau',
@@ -316,8 +316,8 @@ export default function Services() {
         
         {/* Section Header - Calm, Prestigious & Editorial */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-            <ShieldCheck size={14} />
+          <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-3">
+            <ShieldCheck size={16} className="text-amber-400 shrink-0" />
             <span>{isAr ? "دليل خدماتنا الشامل • حتى 3.5 طن" : isEn ? "Full Service Scope • Up to 3.5 Tonnes" : "Leistungsspektrum • Bis 3,5 Tonnen"}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
@@ -328,7 +328,7 @@ export default function Services() {
               ? "نقدم حزمة خدمات متكاملة تغطي كافة احتياجات السيارات حتى وزن 3.5 طن: من سحب الحوادث الطارئة على الأوتوبان، إلى النقل المجدول بين المدن، واشتراك البطاريات بأحدث التجهيزات الألمانية."
               : isEn
               ? "Comprehensive automotive transport solutions up to 3.5 tonnes: from 24h highway recovery to scheduled nationwide transfers and electronics-safe jump starts."
-              : "Vom schnellen Pannen-Notruf auf A40 und A43 über termingerechte Überführungen bis hin zur Hochleistungs-Starthilfe – alle Dienstleistungen persönlich und inhabergeführt durch Wassem Al Dalati."}
+              : "Vom schnellen Pannen-Notruf auf A40 und A43 über termingerechte Überführungen bis hin zur Hochleistungs-Starthilfe – alle Dienstleistungen persönlich und verlässlich durch unser eingespieltes Einsatzteam rund um Fahrer Adam."}
           </p>
         </div>
 
@@ -389,20 +389,17 @@ export default function Services() {
                       <button
                         type="button"
                         onClick={() => setSelectedService(service)}
-                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold text-white bg-white/10 hover:bg-amber-500 hover:text-slate-950 px-4 py-2.5 rounded-xl border border-white/15 hover:border-amber-400 transition-all cursor-pointer"
+                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold text-slate-950 bg-amber-500 hover:bg-amber-400 px-4 py-2.5 rounded-xl transition-all cursor-pointer shadow-md shadow-amber-500/15"
                       >
                         <span>{t('viewDetails')}</span>
                         <ArrowRight size={15} className="rtl:rotate-180" />
                       </button>
 
                       <a
-                        href={`https://wa.me/4915565500442?text=Hallo%20Abschleppdienst%20Direkt%2C%20ich%20interessiere%20mich%20f%C3%BCr%3A%20${encodeURIComponent(service.title)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300 px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors"
+                        href="#kontakt"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-200 hover:text-amber-400 px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:border-amber-400/40 transition-colors"
                       >
-                        <MessageCircle size={14} />
-                        <span>{isAr ? "طلب عبر واتساب" : isEn ? "WhatsApp Inquiry" : "WhatsApp"}</span>
+                        <span>{isAr ? "طلب الخدمة ↓" : isEn ? "Request Service ↓" : "Anfragen ↓"}</span>
                       </a>
 
                       <Link
@@ -427,8 +424,8 @@ export default function Services() {
             {isAr
               ? "هل تحتاج إلى خدمة غير مذكورة أعلاه أو لديك حالة خاصة؟ تواصل معنا هاتفياً مباشرة لنقدم لك الحل الأمسب."
               : isEn
-              ? "Need a specialized transport not listed here? Call Wassem directly for a customized solution."
-              : "Haben Sie eine spezielle Transportanfrage oder einen Problemfall? Rufen Sie Inhaber Wassem Al Dalati direkt an."}
+              ? "Need a specialized transport not listed here? Call our driver Adam directly for a customized solution."
+              : "Haben Sie eine spezielle Transportanfrage oder einen Problemfall? Rufen Sie unser Team oder Fahrer Adam direkt an."}
           </p>
           <a
             href="tel:+4915565500442"
@@ -545,7 +542,7 @@ export default function Services() {
                 <ul className="space-y-1 text-xs text-slate-300">
                   {selectedService.equipment.map((eq, idx) => (
                     <li key={idx} className="flex items-center gap-2">
-                      <Check size={13} className="text-emerald-400 flex-shrink-0" />
+                      <Check size={13} className="text-amber-400 flex-shrink-0" />
                       <span>{eq}</span>
                     </li>
                   ))}
@@ -560,7 +557,7 @@ export default function Services() {
 
               {/* Calculator for transfers */}
               {selectedService.hasCalculator && (
-                <div className="p-4 rounded-xl bg-slate-950 border border-white/10 space-y-3">
+                <div className="pt-4 border-t border-white/10 space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-white">Richtpreiskalkulation:</span>
                     <span className="text-xs text-slate-400">50 € Basis + ca. 1,50 €/km</span>
@@ -583,18 +580,14 @@ export default function Services() {
                   <div className="pt-2 flex items-center justify-between">
                     <div>
                       <span className="text-[11px] text-slate-400 block">Kalkulierter Richtpreis (§ 19 UStG):</span>
-                      <span className="text-xl font-bold text-white">ca. {Math.max(50, Math.round(50 + (calcKm * 1.50)))} €</span>
+                      <span className="text-xl font-bold text-amber-400">ca. {Math.max(50, Math.round(50 + (calcKm * 1.50)))} €</span>
                     </div>
                     <a
-                      href={`https://wa.me/4915565500442?text=${encodeURIComponent(
-                        `Hallo Abschleppdienst Direkt, ich plane einen Transport:\n- Strecke: ca. ${calcKm} km\n- Kalkulierter Richtpreis: ca. ${Math.max(50, Math.round(50 + (calcKm * 1.50)))} €`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors"
+                      href="#kontakt"
+                      onClick={() => setSelectedService(null)}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition-colors"
                     >
-                      <MessageCircle size={14} />
-                      <span>Termin anfragen</span>
+                      <span>Termin anfragen ↓</span>
                     </a>
                   </div>
                 </div>
@@ -611,13 +604,11 @@ export default function Services() {
                 </a>
 
                 <a
-                  href={`https://wa.me/4915565500442?text=Hallo%20Abschleppdienst%20Direkt%2C%20ich%20interessiere%20mich%20f%C3%BCr%3A%20${encodeURIComponent(selectedService.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#kontakt"
+                  onClick={() => setSelectedService(null)}
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 px-4 rounded-xl text-xs sm:text-sm border border-white/10 transition-colors"
                 >
-                  <MessageCircle size={15} />
-                  <span>WhatsApp Nachricht</span>
+                  <span>Zur Preisanfrage ↓</span>
                 </a>
 
                 <Link

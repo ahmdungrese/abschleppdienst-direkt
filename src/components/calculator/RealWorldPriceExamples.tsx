@@ -150,8 +150,8 @@ export default function RealWorldPriceExamples({ locale = 'de' }: Props) {
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
-          <ShieldCheck size={14} />
+        <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-3">
+          <ShieldCheck size={16} className="text-amber-400 shrink-0" />
           <span>{isAr ? 'شفافية الأسعار المطلقة' : isEn ? '100% Price Transparency' : 'Echte Kostentransparenz'}</span>
         </div>
         <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
@@ -196,21 +196,21 @@ export default function RealWorldPriceExamples({ locale = 'de' }: Props) {
 
       {/* Tab 1: Clean Editorial Price Schedule Table (No Boxes, Clean Typography) */}
       {activeTab === 'examples' && (
-        <div className="overflow-x-auto rounded-2xl border border-white/10 bg-slate-900/60 shadow-xl">
+        <div className="overflow-x-auto border-t border-b border-white/10">
           <table className="w-full text-left text-xs sm:text-sm">
             <thead>
-              <tr className="border-b border-white/10 text-slate-400 text-xs uppercase tracking-wider bg-slate-950/80">
-                <th className="py-3.5 px-4 font-bold">{isAr ? 'الخدمة والمسار' : isEn ? 'Service & Route' : 'Einsatz & Strecke'}</th>
+              <tr className="border-b border-white/10 text-slate-400 text-xs uppercase tracking-wider">
+                <th className="py-3.5 pr-4 font-bold">{isAr ? 'الخدمة والمسار' : isEn ? 'Service & Route' : 'Einsatz & Strecke'}</th>
                 <th className="py-3.5 px-4 font-bold hidden md:table-cell">{isAr ? 'الوصول والمسافة' : isEn ? 'ETA & Distance' : 'Eintreffzeit & Distanz'}</th>
                 <th className="py-3.5 px-4 font-bold text-amber-400">{isAr ? 'السعر الثابت' : isEn ? 'Fixed Price' : 'Verbindlicher Festpreis'}</th>
                 <th className="py-3.5 px-4 font-bold hidden lg:table-cell">{isAr ? 'استرداد التأمين' : isEn ? 'Insurance Reimbursement' : 'Schutzbrief / Erstattung'}</th>
-                <th className="py-3.5 px-4 font-bold text-right">{isAr ? 'طلب فوري' : isEn ? 'Action' : 'Anfrage'}</th>
+                <th className="py-3.5 pl-4 font-bold text-right">{isAr ? 'طلب فوري' : isEn ? 'Action' : 'Anfrage'}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5 text-slate-300">
+            <tbody className="divide-y divide-white/10 text-slate-300">
               {examples.map((item) => (
                 <tr key={item.id} className="hover:bg-white/[0.02] transition-colors">
-                  <td className="py-4 px-4 align-top">
+                  <td className="py-5 pr-4 align-top">
                     <div className="font-bold text-white text-sm">
                       {item.title}
                     </div>
@@ -223,12 +223,12 @@ export default function RealWorldPriceExamples({ locale = 'de' }: Props) {
                     </div>
                   </td>
 
-                  <td className="py-4 px-4 align-top hidden md:table-cell whitespace-nowrap">
+                  <td className="py-5 px-4 align-top hidden md:table-cell whitespace-nowrap">
                     <div className="font-semibold text-slate-200">{item.time}</div>
                     <div className="text-xs text-slate-400 font-mono mt-0.5">{item.distance}</div>
                   </td>
 
-                  <td className="py-4 px-4 align-top whitespace-nowrap">
+                  <td className="py-5 px-4 align-top whitespace-nowrap">
                     <div className="text-lg font-black text-amber-400 font-mono">
                       {item.price}
                     </div>
@@ -237,24 +237,19 @@ export default function RealWorldPriceExamples({ locale = 'de' }: Props) {
                     </div>
                   </td>
 
-                  <td className="py-4 px-4 align-top hidden lg:table-cell">
-                    <span className="inline-flex items-center gap-1.5 text-xs text-emerald-300 font-medium">
-                      <CheckCircle2 size={14} className="text-emerald-400 flex-shrink-0" />
+                  <td className="py-5 px-4 align-top hidden lg:table-cell">
+                    <span className="inline-flex items-center gap-1.5 text-xs text-slate-300 font-medium">
+                      <CheckCircle2 size={14} className="text-amber-400 flex-shrink-0" />
                       <span>{item.coveredBy}</span>
                     </span>
                   </td>
 
-                  <td className="py-4 px-4 align-top text-right whitespace-nowrap">
+                  <td className="py-5 pl-4 align-top text-right whitespace-nowrap">
                     <a
-                      href={`https://wa.me/4915565500442?text=${encodeURIComponent(
-                        `Hallo Abschleppdienst Direkt, ich interessiere mich für eine Fahrt ähnlich wie Beispiel ${item.id} (${item.route}).`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2 px-3 rounded-xl transition-all"
+                      href="#kalkulator"
+                      className="inline-flex items-center gap-1.5 text-amber-400 hover:text-amber-300 text-xs font-bold transition-colors"
                     >
-                      <MessageCircle size={14} />
-                      <span className="hidden sm:inline">{isAr ? 'طلب' : isEn ? 'Inquire' : 'Anfragen'}</span>
+                      <span>{isAr ? 'احسب مسارك ↑' : isEn ? 'Calculate ↑' : 'Kalkulieren ↑'}</span>
                     </a>
                   </td>
                 </tr>
@@ -264,9 +259,9 @@ export default function RealWorldPriceExamples({ locale = 'de' }: Props) {
         </div>
       )}
 
-      {/* Tab 2: Comparison vs. Shady Middlemen */}
+      {/* Tab 2: Comparison vs. Shady Middlemen (Open Editorial Table, Zero Boxes) */}
       {activeTab === 'comparison' && (
-        <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
+        <div className="border-t border-b border-white/10 py-6">
           <div className="mb-6">
             <h3 className="text-lg sm:text-2xl font-black text-white">
               {isAr 
@@ -288,83 +283,103 @@ export default function RealWorldPriceExamples({ locale = 'de' }: Props) {
             <table className="w-full text-left text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-white/10 text-slate-400 text-xs uppercase tracking-wider">
-                  <th className="py-3 px-3">{isAr ? 'المعيار' : isEn ? 'Criteria' : 'Kriterium'}</th>
-                  <th className="py-3 px-4 text-emerald-400 bg-emerald-500/10 rounded-t-xl font-bold">
+                  <th className="py-3 pr-4">{isAr ? 'المعيار' : isEn ? 'Criteria' : 'Kriterium'}</th>
+                  <th className="py-3 px-4 text-amber-400 font-bold">
                     Abschleppdienst Direkt
                   </th>
-                  <th className="py-3 px-4 text-rose-400 bg-rose-500/10 rounded-t-xl font-bold">
-                    {isAr ? 'الوسطاء المشبوهين' : isEn ? 'Shady Middlemen' : 'Typische Abzocker'}
+                  <th className="py-3 pl-4 text-slate-400 font-bold">
+                    {isAr ? 'الوسطاء المشبوهين' : isEn ? 'Shady Middlemen' : 'Typische Vermittler'}
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5 text-slate-300">
+              <tbody className="divide-y divide-white/10 text-slate-300">
                 <tr>
-                  <td className="py-3.5 px-3 font-semibold text-white">
+                  <td className="py-3.5 pr-4 font-semibold text-white">
                     {isAr ? 'السعر المتفق عليه' : isEn ? 'Agreed Price' : 'Preisvereinbarung'}
                   </td>
-                  <td className="py-3.5 px-4 bg-emerald-500/5 text-emerald-300 font-bold flex items-center gap-1.5">
-                    <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0" />
-                    <span>{isAr ? 'سعر ثابت ملزم قبل التحرك' : isEn ? 'Binding flat price upfront' : 'Verbindlicher Festpreis vor Abfahrt'}</span>
+                  <td className="py-3.5 px-4 text-white font-bold">
+                    <span className="inline-flex items-center gap-1.5">
+                      <CheckCircle2 size={16} className="text-amber-400 flex-shrink-0" />
+                      <span>{isAr ? 'سعر ثابت ملزم قبل التحرك' : isEn ? 'Binding flat price upfront' : 'Verbindlicher Festpreis vor Abfahrt'}</span>
+                    </span>
                   </td>
-                  <td className="py-3.5 px-4 bg-rose-500/5 text-rose-300 flex items-center gap-1.5">
-                    <XCircle size={16} className="text-rose-400 flex-shrink-0" />
-                    <span>{isAr ? 'طعم بـ 19 يورو ثم فاتورة 800 يورو!' : isEn ? '€19 bait, then €800 bill!' : 'Lockangebot ab 19 €, vor Ort 600–900 €'}</span>
+                  <td className="py-3.5 pl-4 text-slate-400">
+                    <span className="inline-flex items-center gap-1.5">
+                      <XCircle size={16} className="text-slate-500 flex-shrink-0" />
+                      <span>{isAr ? 'طعم بـ 19 يورو ثم فاتورة 800 يورو!' : isEn ? '€19 bait, then €800 bill!' : 'Lockangebot ab 19 €, vor Ort 600–900 €'}</span>
+                    </span>
                   </td>
                 </tr>
 
                 <tr>
-                  <td className="py-3.5 px-3 font-semibold text-white">
+                  <td className="py-3.5 pr-4 font-semibold text-white">
                     {isAr ? 'شاحنة ومعدات مملوكة' : isEn ? 'Fleet Ownership' : 'Eigener Fuhrpark'}
                   </td>
-                  <td className="py-3.5 px-4 bg-emerald-500/5 text-emerald-300 font-bold flex items-center gap-1.5">
-                    <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0" />
-                    <span>{isAr ? 'شاحنة مرخصة ومجهزة في بوخوم' : isEn ? 'Own specialized truck in Bochum' : 'Eigener Plateau-Transporter vor Ort'}</span>
+                  <td className="py-3.5 px-4 text-white font-bold">
+                    <span className="inline-flex items-center gap-1.5">
+                      <CheckCircle2 size={16} className="text-amber-400 flex-shrink-0" />
+                      <span>{isAr ? 'شاحنة مرخصة ومجهزة في بوخوم' : isEn ? 'Own specialized truck in Bochum' : 'Eigener Plateau-Transporter vor Ort'}</span>
+                    </span>
                   </td>
-                  <td className="py-3.5 px-4 bg-rose-500/5 text-rose-300 flex items-center gap-1.5">
-                    <XCircle size={16} className="text-rose-400 flex-shrink-0" />
-                    <span>{isAr ? 'مجرد كول سنتر وسيط بدون سيارات' : isEn ? 'Virtual call-center broker' : 'Reine Vermittlungsagentur ohne Fuhrpark'}</span>
+                  <td className="py-3.5 pl-4 text-slate-400">
+                    <span className="inline-flex items-center gap-1.5">
+                      <XCircle size={16} className="text-slate-500 flex-shrink-0" />
+                      <span>{isAr ? 'مجرد كول سنتر وسيط بدون سيارات' : isEn ? 'Virtual call-center broker' : 'Reine Vermittlungsagentur ohne Fuhrpark'}</span>
+                    </span>
                   </td>
                 </tr>
 
                 <tr>
-                  <td className="py-3.5 px-3 font-semibold text-white">
+                  <td className="py-3.5 pr-4 font-semibold text-white">
                     {isAr ? 'رسوم خفية (ليل / عطل)' : isEn ? 'Hidden Surcharges' : 'Zuschläge (Nacht/Wetter)'}
                   </td>
-                  <td className="py-3.5 px-4 bg-emerald-500/5 text-emerald-300 font-bold flex items-center gap-1.5">
-                    <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0" />
-                    <span>{isAr ? 'لا توجد أي رسوم خفية' : isEn ? 'Zero hidden fees' : 'Keine versteckten Gebühren'}</span>
+                  <td className="py-3.5 px-4 text-white font-bold">
+                    <span className="inline-flex items-center gap-1.5">
+                      <CheckCircle2 size={16} className="text-amber-400 flex-shrink-0" />
+                      <span>{isAr ? 'لا توجد أي رسوم خفية' : isEn ? 'Zero hidden fees' : 'Keine versteckten Gebühren'}</span>
+                    </span>
                   </td>
-                  <td className="py-3.5 px-4 bg-rose-500/5 text-rose-300 flex items-center gap-1.5">
-                    <XCircle size={16} className="text-rose-400 flex-shrink-0" />
-                    <span>{isAr ? 'رسوم شتاء، رسوم ونش، رسوم وقت' : isEn ? 'Steep night & weather markups' : 'Horrende Winden-, Schlechtwetter-Gebühren'}</span>
+                  <td className="py-3.5 pl-4 text-slate-400">
+                    <span className="inline-flex items-center gap-1.5">
+                      <XCircle size={16} className="text-slate-500 flex-shrink-0" />
+                      <span>{isAr ? 'رسوم شتاء، رسوم ونش، رسوم وقت' : isEn ? 'Steep night & weather markups' : 'Horrende Winden-, Schlechtwetter-Gebühren'}</span>
+                    </span>
                   </td>
                 </tr>
 
                 <tr>
-                  <td className="py-3.5 px-3 font-semibold text-white">
+                  <td className="py-3.5 pr-4 font-semibold text-white">
                     {isAr ? 'فواتير معتمدة للتأمين' : isEn ? 'Insurance Invoices' : 'Versicherungsrechnung'}
                   </td>
-                  <td className="py-3.5 px-4 bg-emerald-500/5 text-emerald-300 font-bold flex items-center gap-1.5">
-                    <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0" />
-                    <span>{isAr ? 'فاتورة § 14 UStG معتمدة رسمياً' : isEn ? 'Verified § 14 UStG invoice' : 'Ordnungsgemäße Rechnung nach § 14 UStG'}</span>
+                  <td className="py-3.5 px-4 text-white font-bold">
+                    <span className="inline-flex items-center gap-1.5">
+                      <CheckCircle2 size={16} className="text-amber-400 flex-shrink-0" />
+                      <span>{isAr ? 'فاتورة § 14 UStG معتمدة رسمياً' : isEn ? 'Verified § 14 UStG invoice' : 'Ordnungsgemäße Rechnung nach § 14 UStG'}</span>
+                    </span>
                   </td>
-                  <td className="py-3.5 px-4 bg-rose-500/5 text-rose-300 flex items-center gap-1.5">
-                    <XCircle size={16} className="text-rose-400 flex-shrink-0" />
-                    <span>{isAr ? 'إيصالات يدوية يرفضها التأمين' : isEn ? 'Handwritten slips rejected by insurers' : 'Ungültige Quittungen, Erstattung verweigert'}</span>
+                  <td className="py-3.5 pl-4 text-slate-400">
+                    <span className="inline-flex items-center gap-1.5">
+                      <XCircle size={16} className="text-slate-500 flex-shrink-0" />
+                      <span>{isAr ? 'إيصالات يدوية يرفضها التأمين' : isEn ? 'Handwritten slips rejected by insurers' : 'Ungültige Quittungen, Erstattung verweigert'}</span>
+                    </span>
                   </td>
                 </tr>
 
                 <tr>
-                  <td className="py-3.5 px-3 font-semibold text-white">
+                  <td className="py-3.5 pr-4 font-semibold text-white">
                     {isAr ? 'المسؤولية والضمان' : isEn ? 'Transport Insurance' : 'Transportversicherung'}
                   </td>
-                  <td className="py-3.5 px-4 bg-emerald-500/5 text-emerald-300 font-bold flex items-center gap-1.5">
-                    <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0" />
-                    <span>{isAr ? 'تأمين نقل كامل وحماية VDI 2700' : isEn ? 'Full cargo liability & VDI 2700' : 'Gewerbliche Frachtführerversicherung'}</span>
+                  <td className="py-3.5 px-4 text-white font-bold">
+                    <span className="inline-flex items-center gap-1.5">
+                      <CheckCircle2 size={16} className="text-amber-400 flex-shrink-0" />
+                      <span>{isAr ? 'تأمين نقل كامل وحماية VDI 2700' : isEn ? 'Full cargo liability & VDI 2700' : 'Gewerbliche Frachtführerversicherung'}</span>
+                    </span>
                   </td>
-                  <td className="py-3.5 px-4 bg-rose-500/5 text-rose-300 flex items-center gap-1.5">
-                    <XCircle size={16} className="text-rose-400 flex-shrink-0" />
-                    <span>{isAr ? 'لا يوجد تأمين؛ الخدوش على مسؤوليتك' : isEn ? 'Uninsured damage risks' : 'Haftungsausschluss bei Kratzern/Schäden'}</span>
+                  <td className="py-3.5 pl-4 text-slate-400">
+                    <span className="inline-flex items-center gap-1.5">
+                      <XCircle size={16} className="text-slate-500 flex-shrink-0" />
+                      <span>{isAr ? 'لا يوجد تأمين؛ الخدوش على مسؤوليتك' : isEn ? 'Uninsured damage risks' : 'Haftungsausschluss bei Kratzern/Schäden'}</span>
+                    </span>
                   </td>
                 </tr>
               </tbody>
@@ -373,8 +388,8 @@ export default function RealWorldPriceExamples({ locale = 'de' }: Props) {
         </div>
       )}
 
-      {/* Direct Call Banner */}
-      <div className="mt-8 p-6 rounded-3xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+      {/* Direct Call Strip — Open Editorial Layout */}
+      <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <h4 className="font-black text-white text-base sm:text-lg">
             {isAr ? 'هل تريد معرفة السعر الدقيق لحالتك الآن؟' : isEn ? 'Need an Exact Quote for Your Situation?' : 'Sie möchten den genauen Preis für Ihre Fahrt erfahren?'}
@@ -390,10 +405,10 @@ export default function RealWorldPriceExamples({ locale = 'de' }: Props) {
         <div className="flex items-center gap-3 w-full sm:w-auto">
           <a
             href="tel:+4915565500442"
-            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs py-3 px-5 rounded-xl shadow-lg shadow-amber-500/20 transition-all active:scale-95"
+            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-500 text-white font-black text-xs py-3 px-5 rounded-xl shadow-lg shadow-red-600/25 transition-all active:scale-95"
           >
-            <Phone size={15} />
-            <span>0155 65500442</span>
+            <Phone size={15} className="fill-white" />
+            <span>24h Notruf: 0155 65500442</span>
           </a>
         </div>
       </div>

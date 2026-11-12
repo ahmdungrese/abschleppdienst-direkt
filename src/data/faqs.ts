@@ -116,17 +116,17 @@ export const faqsData: FAQItemData[] = [
     category: 'notfall',
     de: {
       question: "Ich bin unsicher, ob ich bei einer Warnleuchte oder ungewöhnlichen Geräuschen noch weiterfahren darf – helfen Sie mir telefonisch?",
-      answer: "Ja, rufen Sie uns einfach direkt unter +49 155 65500442 an. Inhaber Wassem Al Dalati gibt Ihnen eine ehrliche und 100 % kostenlose Ersteinschätzung am Telefon oder per WhatsApp (z. B. anhand eines Fotos der Warnleuchte oder eines Videos vom Geräusch). Wenn ein gefahrloses Weiterrollen zur Werkstatt möglich ist, sagen wir Ihnen das transparent, um Ihnen unnötige Kosten zu ersparen.",
+      answer: "Ja, rufen Sie uns einfach direkt unter +49 155 65500442 an. Unser erfahrener Fahrer Adam gibt Ihnen eine ehrliche und 100 % kostenlose Ersteinschätzung am Telefon oder per WhatsApp (z. B. anhand eines Fotos der Warnleuchte oder eines Videos vom Geräusch). Wenn ein gefahrloses Weiterrollen zur Werkstatt möglich ist, sagen wir Ihnen das transparent, um Ihnen unnötige Kosten zu ersparen.",
       highlight: "100 % Kostenlose Erstberatung"
     },
     ar: {
       question: "لست متأكداً إن كان يمكنني متابعة القيادة عند ظهور لمبة تحذير أو صوت غريب – هل تقدمون استشارة هاتفية؟",
-      answer: "نعم، اتصل بنا مباشرة على الرقم +49 155 65500442. يقدم لك الخبير وسيم الدالاتي تقييماً أولياً صادقاً ومجانياً 100% عبر الهاتف أو عبر إرسال صورة للمبة التحذير أو مقطع فيديو للصوت عبر واتساب. إذا كان من الآمن التدحرج بسيارتك للورشة، سنخبرك بكل أمانة لتوفير تكلفة السحب عليك.",
+      answer: "نعم، اتصل بنا مباشرة على الرقم +49 155 65500442. يقدم لك سائقنا الخبير آدم وفريق العمل تقييماً أولياً صادقاً ومجانياً 100% عبر الهاتف أو عبر إرسال صورة للمبة التحذير أو مقطع فيديو للصوت عبر واتساب. إذا كان من الآمن التدحرج بسيارتك للورشة، سنخبرك بكل أمانة لتوفير تكلفة السحب عليك.",
       highlight: "استشارة هاتفية مجانية 100%"
     },
     en: {
       question: "I'm unsure if I can keep driving with a warning light or strange noise – can you advise me over the phone?",
-      answer: "Yes, simply call us directly at +49 155 65500442. Owner Wassem Al Dalati provides an honest and 100% free initial assessment over the phone or via WhatsApp (e.g. from a photo of the warning lamp or a short video of the noise). If driving safely to a nearby garage is possible, we will tell you openly to save you unnecessary towing costs.",
+      answer: "Yes, simply call us directly at +49 155 65500442. Our experienced driver Adam and dedicated team provide an honest and 100% free initial assessment over the phone or via WhatsApp (e.g. from a photo of the warning lamp or a short video of the noise). If driving safely to a nearby garage is possible, we will tell you openly to save you unnecessary towing costs.",
       highlight: "100% Free Consultation"
     }
   },

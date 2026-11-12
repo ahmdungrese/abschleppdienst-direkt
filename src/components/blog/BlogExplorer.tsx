@@ -80,18 +80,18 @@ export default function BlogExplorer({ articles, locale }: BlogExplorerProps) {
 
   const categoryIcons: Record<string, React.ReactNode> = {
     pkw: <Car className="text-amber-400" size={16} />,
-    suv: <ShieldCheck className="text-emerald-400" size={16} />,
-    transporter: <Truck className="text-sky-400" size={16} />,
-    ueberfuehrung: <Sparkles className="text-purple-400" size={16} />,
+    suv: <ShieldCheck className="text-amber-400" size={16} />,
+    transporter: <Truck className="text-amber-400" size={16} />,
+    ueberfuehrung: <Sparkles className="text-amber-400" size={16} />,
     logistik: <Sparkles className="text-amber-400" size={16} />,
     'elektro-automatik': <Zap className="text-amber-400" size={16} />,
     'autobahn-notfall': <AlertTriangle className="text-amber-400" size={16} />,
-    'versicherung-recht': <FileText className="text-emerald-400" size={16} />,
+    'versicherung-recht': <FileText className="text-amber-400" size={16} />,
     'falsch-getankt': <Fuel className="text-amber-400" size={16} />,
     'ladungssicherung': <ShieldCheck className="text-amber-400" size={16} />,
     'starthilfe-winter': <BatteryCharging className="text-amber-400" size={16} />,
-    'pannenhilfe-motorschaden': <Wrench className="text-red-400" size={16} />,
-    'kostenlose-beratung': <MessageCircle className="text-emerald-400" size={16} />,
+    'pannenhilfe-motorschaden': <Wrench className="text-amber-400" size={16} />,
+    'kostenlose-beratung': <MessageCircle className="text-amber-400" size={16} />,
     sportwagen: <Flame className="text-amber-400" size={16} />,
   };
 
@@ -166,8 +166,8 @@ export default function BlogExplorer({ articles, locale }: BlogExplorerProps) {
   return (
     <div className="space-y-12">
       
-      {/* Search Bar & Smart Interactive Filter Chips */}
-      <div className="bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-5">
+      {/* Search Bar & Smart Interactive Filter Chips — Open Editorial Toolbar */}
+      <div className="border-b border-white/10 pb-6 space-y-5">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           
           {/* Search Input */}
@@ -184,7 +184,7 @@ export default function BlogExplorer({ articles, locale }: BlogExplorerProps) {
                   ? 'Search topics (engine, battery, transport, winter...)'
                   : 'Thema suchen (Motorschaden, Winter, Batterie, Gurte, Transport...)'
               }
-              className="w-full bg-slate-950/80 border border-slate-800 text-white placeholder-slate-500 text-sm rounded-2xl pl-11 pr-10 rtl:pl-10 rtl:pr-11 py-3 focus:outline-none focus:border-amber-400/80 transition-colors"
+              className="w-full bg-slate-900/90 border border-white/15 text-white placeholder-slate-500 text-sm rounded-2xl pl-11 pr-10 rtl:pl-10 rtl:pr-11 py-3 focus:outline-none focus:border-amber-400/80 transition-colors"
             />
             {searchQuery && (
               <button
@@ -199,7 +199,7 @@ export default function BlogExplorer({ articles, locale }: BlogExplorerProps) {
 
           {/* Quick Counter */}
           <div className="text-xs text-slate-400 flex items-center gap-2 self-start md:self-center">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-amber-400" />
             <span>
               {isAr
                 ? `عرض ${filteredArticles.length} من أصل ${articles.length} دليلاً عملياً`
@@ -232,8 +232,8 @@ export default function BlogExplorer({ articles, locale }: BlogExplorerProps) {
                 onClick={() => handleTabClick(tab.id as any)}
                 className={`whitespace-nowrap px-4 py-2.5 rounded-2xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer select-none active:scale-95 ${
                   isActive
-                    ? 'bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/25 ring-2 ring-amber-400/50'
-                    : 'bg-slate-950/60 hover:bg-slate-800/80 text-slate-300 border border-white/5 hover:border-white/10'
+                    ? 'bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/25'
+                    : 'bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-white/10'
                 }`}
               >
                 <span className="shrink-0">{tab.icon}</span>
@@ -425,63 +425,44 @@ export default function BlogExplorer({ articles, locale }: BlogExplorerProps) {
         </section>
       )}
 
-      {/* 🌟 3. PERSONAL ADVISORY BRIDGE BANNER (Wassem Al Dalati Live Help) */}
-      <section aria-label="Direct Phone Advice" className="relative rounded-3xl overflow-hidden border border-emerald-500/30 bg-gradient-to-r from-slate-950 via-slate-900 to-emerald-950/40 p-6 sm:p-8 shadow-2xl">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 blur-[100px] pointer-events-none" />
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
+      {/* 🌟 3. PERSONAL ADVISORY BRIDGE STRIP (Open Editorial Layout, Zero Boxes) */}
+      <section aria-label="Direct Phone Advice" className="border-t border-b border-white/10 py-8">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           
-          <div className="flex items-center gap-5">
-            <div className="relative shrink-0">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-emerald-400/50 shadow-lg">
-                <img
-                  src="/images/real/tow-truck-audi-clean-user.jpg"
-                  alt="Wassem Al Dalati - Abschleppdienst Direkt"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-slate-950 flex items-center justify-center">
-                <span className="w-2 h-2 rounded-full bg-white animate-ping" />
-              </div>
+          <div>
+            <div className="inline-flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2">
+              <ShieldCheck size={14} />
+              <span>{isAr ? 'استشارة هاتفية مجانية 100%' : isEn ? '100% Free Phone Advice' : '100% Kostenlose Beratung vor Ort'}</span>
             </div>
-
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold mb-2">
-                <ShieldCheck size={14} />
-                <span>{isAr ? 'استشارة هاتفية مجانية 100%' : isEn ? '100% Free Phone Advice' : '100% Kostenlose Beratung vor Ort'}</span>
-              </div>
-              <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
-                {isAr
-                  ? 'متردد قبل السفر أو تواجه عطلاً مفاجئاً؟ تحدث مع وسيم مباشرة'
-                  : isEn
-                  ? 'Unsure before driving or facing a breakdown? Talk directly to Wassem'
-                  : 'Unsicher vor der Fahrt oder plötzliche Panne? Sprechen Sie direkt mit Wassem'}
-              </h4>
-              <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
-                {isAr
-                  ? 'أرسل فيديو أو صوت العطل عبر واتساب أو اتصل بي مباشرة: سأعطيك تقييماً ميكانيكياً صادقاً وسريعاً دون أي تكلفة.'
-                  : isEn
-                  ? 'Send a short video or audio of the sound via WhatsApp or call directly: Get an honest assessment without any obligation.'
-                  : 'Schicken Sie ein Video des Geräusches per WhatsApp oder rufen Sie an: Ehrliche Ersteinschätzung aus 10 Jahren Praxis – völlig gratis.'}
-              </p>
-            </div>
+            <h4 className="text-lg sm:text-xl font-bold text-white leading-snug">
+              {isAr
+                ? 'متردد قبل السفر أو تواجه عطلاً مفاجئاً؟ تحدث مع فريقنا مباشرة'
+                : isEn
+                ? 'Unsure before driving or facing a breakdown? Talk directly to our team'
+                : 'Unsicher vor der Fahrt oder plötzliche Panne? Sprechen Sie direkt mit uns'}
+            </h4>
+            <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
+              {isAr
+                ? 'نقدم لك تقييماً ميكانيكياً صادقاً وسريعاً من واقع 10 سنوات خبرة دون أي تكلفة.'
+                : isEn
+                ? 'Get an honest initial mechanical assessment from 10 years of field experience without obligation.'
+                : 'Ehrliche Ersteinschätzung aus 10 Jahren Praxis – direkt vom Fachbetrieb ohne Callcenter.'}
+            </p>
           </div>
 
           <div className="flex items-center gap-3 w-full lg:w-auto shrink-0">
             <a
               href="tel:+4915565500442"
-              className="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition-all shadow-md active:scale-95"
+              className="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-black text-xs transition-all shadow-md shadow-red-600/20 active:scale-95"
             >
-              <Phone size={16} />
-              <span>{isAr ? 'اتصال: 0155 65500442' : '0155 65500442'}</span>
+              <Phone size={15} className="fill-white" />
+              <span>{isAr ? 'طوارئ: 0155 65500442' : '24h Notruf: 0155 65500442'}</span>
             </a>
             <a
-              href="https://wa.me/4915565500442?text=Hallo%20Wassem,%20ich%20habe%20eine%20Frage%20zu%20einem%20Ger%C3%A4usch%20oder%20einer%20Panne."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all shadow-md active:scale-95"
+              href="#beratung-anfrage"
+              className="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/15 text-amber-400 font-bold text-xs transition-all active:scale-95"
             >
-              <MessageCircle size={16} />
-              <span>{isAr ? 'واتساب مباشر' : 'WhatsApp'}</span>
+              <span>{isAr ? 'طلب استشارة أو نقل ↓' : 'Anfrage am Seitenende ↓'}</span>
             </a>
           </div>
 
@@ -494,7 +475,7 @@ export default function BlogExplorer({ articles, locale }: BlogExplorerProps) {
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2">
               <span>{isAr ? 'جميع الأدلة والتقارير الفنية' : isEn ? 'Technical Guides & Insights' : 'Weitere Praxis-Ratgeber & Fachberichte'}</span>
-              <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-slate-300">
+              <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-white/10 text-slate-300">
                 {remainingArticles.length}
               </span>
             </h3>
@@ -509,7 +490,7 @@ export default function BlogExplorer({ articles, locale }: BlogExplorerProps) {
                 <Link
                   key={article.slug}
                   href={`/blog/${article.slug}`}
-                  className="group relative rounded-3xl overflow-hidden border border-white/10 bg-slate-900/60 hover:bg-slate-900 hover:border-amber-400/50 transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-2xl hover:-translate-y-1"
+                  className="group relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900/60 hover:bg-slate-900 hover:border-amber-400/50 transition-all duration-300 flex flex-col justify-between shadow-lg"
                 >
                   <div>
                     {/* Visual Card Image with 16:10 aspect ratio */}
@@ -551,8 +532,8 @@ export default function BlogExplorer({ articles, locale }: BlogExplorerProps) {
                     </div>
                   </div>
 
-                  {/* Card Bottom Meta */}
-                  <div className="px-5 py-3.5 border-t border-white/5 bg-slate-950/40 flex items-center justify-between text-xs">
+                  {/* Card Bottom Meta — Clean Divider Without Nested Box Background */}
+                  <div className="px-5 py-3.5 border-t border-white/10 flex items-center justify-between text-xs">
                     <span className="text-[11px] text-slate-400 font-medium">
                       {article.author}
                     </span>

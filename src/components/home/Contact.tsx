@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Phone, MessageCircle, Send, Clock, CheckCircle2, MapPin, Truck, AlertTriangle, ShieldCheck, Calendar, ArrowRight, CreditCard, Banknote, Wallet, Crosshair, Loader2 } from 'lucide-react';
+import { Phone, MessageCircle, Send, Clock, CheckCircle2, Truck, AlertTriangle, CreditCard, Crosshair, Loader2 } from 'lucide-react';
 
 export default function Contact() {
   const t = useTranslations('Contact');
@@ -24,7 +24,6 @@ export default function Contact() {
   const [highwayExit, setHighwayExit] = useState('');
   const [destinationWorkshop, setDestinationWorkshop] = useState('');
   const [emergencyCondition, setEmergencyCondition] = useState('Motorschaden / Fahrzeug springt nicht an');
-  const [vehicleType, setVehicleType] = useState('PKW / Limousine / Kombi');
 
   // Starthilfe Problem
   const [breakdownType, setBreakdownType] = useState('Batterie leer / Starthilfe (12V / 24V)');
@@ -106,7 +105,6 @@ export default function Contact() {
       formattedMessage += `⚖️ Gewicht / Maße: ${freightWeight}\n`;
       formattedMessage += `📅 Wunschtermin: ${appointment}\n`;
     } else {
-      // Fahrzeugüberführung
       formattedMessage += `🛣️ Strecke: Von [${routeFrom || 'Bochum'}] ➔ Nach [${routeTo || 'Zielort'}]\n`;
       formattedMessage += `🚗 Fahrzeug: ${vehicleModel || 'PKW'}\n`;
       formattedMessage += `⚙️ Zustand: ${vehicleCondition}\n`;
@@ -133,12 +131,13 @@ export default function Contact() {
 
   return (
     <section id="kontakt" className="py-20 sm:py-28 bg-slate-950 text-white relative border-t border-white/10">
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+      <div className="container mx-auto px-4 max-w-5xl relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
-            {t('badge')}
+        <div className="max-w-3xl mb-14">
+          <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-4">
+            <span className="w-5 h-px bg-amber-400/80"></span>
+            <span>{t('badge')}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             {t('title')}
@@ -148,67 +147,61 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
-          {/* Left Column: Direct Phone & WhatsApp Contact (4 Cols) */}
-          <div className="lg:col-span-4 space-y-4">
+          {/* Left Column: Direct Phone & Calm WhatsApp Option (4 Cols, Single-Layer Buttons) */}
+          <div className="lg:col-span-4 space-y-6">
             
-            {/* Direct 24h Emergency Notruf Card (Red reserved for Notruf) */}
-            <a
-              href="tel:+4915565500442"
-              className="block p-6 rounded-3xl bg-gradient-to-br from-red-600 to-red-700 text-white shadow-xl shadow-red-600/30 transition-all hover:scale-[1.02] active:scale-95 group"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-white text-red-600 flex items-center justify-center font-bold flex-shrink-0 shadow-md">
-                  <Phone size={24} />
-                </div>
+            <div className="space-y-3">
+              {/* Direct 24h Emergency Notruf Button (Red exclusively for Notruf) */}
+              <a
+                href="tel:+4915565500442"
+                className="flex items-center gap-4 p-5 rounded-2xl bg-red-600 hover:bg-red-500 text-white shadow-xl shadow-red-600/25 transition-all active:scale-95"
+              >
+                <Phone size={24} className="fill-white shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-extrabold tracking-wider text-red-200">
+                  <div className="text-[10px] uppercase font-extrabold tracking-wider text-red-100">
                     24h Notruf &amp; Soforthilfe
                   </div>
-                  <div className="text-lg sm:text-xl font-black text-white mt-0.5">
+                  <div className="text-lg sm:text-xl font-black text-white">
                     0155 65500442
                   </div>
-                  <div className="text-xs text-red-100 font-medium mt-0.5">
+                  <div className="text-xs text-red-100 font-medium">
                     Hier tippen zum Sofort-Anruf
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
 
-            {/* Direct WhatsApp Chat Card */}
-            <a
-              href="https://wa.me/4915565500442?text=Hallo%20Abschleppdienst%20Direkt%2C%20ich%20habe%20eine%20Preisanfrage%20zu%20einem%20Fahrzeugtransport"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block p-6 rounded-3xl bg-gradient-to-br from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white shadow-xl shadow-emerald-700/20 transition-all hover:scale-[1.02] active:scale-95 group"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-white text-emerald-600 flex items-center justify-center font-bold flex-shrink-0 shadow-md">
-                  <MessageCircle size={24} />
-                </div>
+              {/* Calm Dark WhatsApp Button (Zero Bright Green, No Inner Box) */}
+              <a
+                href="https://wa.me/4915565500442?text=Hallo%20Abschleppdienst%20Direkt%2C%20ich%20habe%20eine%20Preisanfrage%20zu%20einem%20Fahrzeugtransport"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-5 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-white/15 hover:border-amber-400/50 text-white transition-all active:scale-95"
+              >
+                <MessageCircle size={24} className="text-amber-400 shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-extrabold tracking-wider text-emerald-100">
-                    Schnelle Antwort
+                  <div className="text-[10px] uppercase font-extrabold tracking-wider text-slate-400">
+                    Schriftliche Anfrage
                   </div>
-                  <div className="text-lg sm:text-xl font-black text-white mt-0.5">
-                    WhatsApp Chat
+                  <div className="text-base sm:text-lg font-black text-white">
+                    Nachricht via WhatsApp
                   </div>
-                  <div className="text-xs text-emerald-100 font-medium mt-0.5">
+                  <div className="text-xs text-slate-400 font-medium">
                     Standort oder Fotos direkt senden
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
 
-            {/* Direct Informational Text - Calm, Editorial, No Boxes, No Fake Buttons */}
+            {/* Direct Informational Text - Calm Editorial Typography */}
             <div className="pt-6 space-y-6 text-slate-300 border-t border-white/10">
               
               {/* Availability */}
               <div className="space-y-1">
                 <div className="flex items-center gap-2 text-white font-bold text-sm">
                   <Clock size={16} className="text-amber-400 flex-shrink-0" />
-                  <span>Rufbereitschaft 24h für Notfälle – Auch an Wochenenden erreichbar</span>
+                  <span>Rufbereitschaft 24h für Notfälle</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed pl-6">
                   Als inhabergeführter Dienstleister aus Bochum garantieren wir Ihnen verbindliche telefonische Absprachen ohne versteckte Gebühren.
@@ -221,25 +214,18 @@ export default function Contact() {
                   <CreditCard size={16} className="text-amber-400 flex-shrink-0" />
                   <span>Zahlungsmöglichkeiten vor Ort</span>
                 </div>
-                <p className="text-xs text-slate-400 leading-relaxed pl-6">
-                  Kein Bargeld zur Hand? Bei uns zahlen Sie flexibel und sicher direkt am Einsatzort:
-                </p>
                 <ul className="pl-6 pt-1 space-y-1.5 text-xs text-slate-300 font-medium">
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                    <span>Kartenzahlung vor Ort (EC-Karte, Kreditkarte &amp; Apple Pay)</span>
+                    <span>Kartenzahlung (EC-Karte, Kreditkarte &amp; Apple Pay)</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
                     <span>Barzahlung</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-                    <span>PayPal</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                    <span>Banküberweisung</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                    <span>PayPal &amp; Banküberweisung</span>
                   </li>
                 </ul>
               </div>
@@ -248,8 +234,8 @@ export default function Contact() {
 
           </div>
 
-          {/* Right Column: Dynamic Tailored Inquiry Form (8 Cols) */}
-          <div className="lg:col-span-8 p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-white/10 shadow-2xl relative">
+          {/* Right Column: Dynamic Tailored Inquiry Form (8 Cols, Zero Nested Boxes Inside Form) */}
+          <div className="lg:col-span-8 pt-6 lg:pt-0 lg:pl-10 border-t lg:border-t-0 lg:border-l border-white/10">
             
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-white/10">
               <div>
@@ -257,44 +243,45 @@ export default function Contact() {
                   Unverbindliche Preisanfrage
                 </h3>
                 <p className="text-xs text-slate-400 mt-1">
-                  Geben Sie Ihre Eckdaten ein – Wassem nennt Ihnen vorab den verbindlichen Festpreis.
+                  Geben Sie Ihre Eckdaten ein – unser Team nennt Ihnen vorab den verbindlichen Festpreis.
                 </p>
               </div>
-              <span className="text-[10px] uppercase font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full self-start sm:self-auto">
-                Kostenlos &amp; unverbindlich
-              </span>
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-amber-400 self-start sm:self-auto">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                <span>Kostenlos &amp; unverbindlich</span>
+              </div>
             </div>
 
             {submitted ? (
-              <div className="p-8 sm:p-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/20">
-                  <CheckCircle2 size={36} />
+              <div className="py-8 space-y-4">
+                <div className="flex items-center gap-3 text-amber-400">
+                  <CheckCircle2 size={28} />
+                  <h4 className="text-xl font-black text-white">
+                    Anfrage erfolgreich vorbereitet!
+                  </h4>
                 </div>
-                <h4 className="text-xl font-black text-white">
-                  Anfrage erfolgreich übermittelt!
-                </h4>
-                <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-                  Ihre Angaben wurden an Abschleppdienst Direkt übermittelt. Sie erhalten umgehend eine verbindliche Rückmeldung mit Ihrem Festpreis.
+                <p className="text-xs sm:text-sm text-slate-300 max-w-md leading-relaxed">
+                  Ihre Angaben wurden übertragen. Sie erhalten umgehend eine verbindliche Rückmeldung mit Ihrem Festpreis.
                 </p>
-                <div className="pt-2 flex flex-wrap justify-center gap-3">
+                <div className="pt-2 flex flex-wrap gap-3">
                   <a
                     href="tel:+4915565500442"
-                    className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs px-4 py-2.5 rounded-xl transition-all"
+                    className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-black text-xs px-5 py-3 rounded-xl transition-all"
                   >
                     <Phone size={14} />
-                    <span>Jetzt direkt anrufen: 0155 65500442</span>
+                    <span>24h Notruf: 0155 65500442</span>
                   </a>
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs px-4 py-2.5 rounded-xl transition-all"
+                    className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 border border-white/10 text-slate-200 text-xs px-5 py-3 rounded-xl transition-all"
                   >
                     Neue Anfrage stellen
                   </button>
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 
                 {/* 1. Name & Telefon */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -308,7 +295,7 @@ export default function Contact() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Vor- und Nachname"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-sm text-white focus:outline-none focus:border-amber-400"
                     />
                   </div>
 
@@ -322,7 +309,7 @@ export default function Contact() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="015X XXXXXXXX"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-sm text-white focus:outline-none focus:border-amber-400"
                     />
                   </div>
                 </div>
@@ -336,10 +323,10 @@ export default function Contact() {
                     value={service}
                     onChange={(e) => setService(e.target.value)}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-sm text-white font-medium focus:outline-none focus:ring-2 focus:ring-amber-400"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-sm text-white font-medium focus:outline-none focus:border-amber-400"
                   >
                     <option value="" className="bg-slate-900 text-slate-400">
-                      -- Bitte zuerst gewünschte Leistung auswählen --
+                      -- Bitte gewünschte Leistung auswählen --
                     </option>
                     <option value="PKW Abschleppdienst (Panne & Unfall)" className="bg-slate-900 text-white">
                       PKW Abschleppdienst (Schnelle Bergung bei Panne oder Unfall)
@@ -351,10 +338,10 @@ export default function Contact() {
                       Abschleppdienst für Busse &amp; Transporter (bis 7 Meter Länge)
                     </option>
                     <option value="Fahrzeugüberführung (von A nach B)" className="bg-slate-900 text-white">
-                      Fahrzeugüberführung (Autotransport von A nach B – regional &amp; überregional)
+                      Fahrzeugüberführung von A nach B (bundesweit &amp; ganz Deutschland)
                     </option>
                     <option value="Pannenhilfe & Starthilfe vor Ort" className="bg-slate-900 text-white">
-                      Pannenhilfe &amp; Vor-Ort Starthilfe (800€ NOCO Boost 5250A)
+                      Pannenhilfe &amp; Vor-Ort Starthilfe (lokal in Bochum &amp; Autobahnen • 800€ NOCO Boost)
                     </option>
                     <option value="Warentransport & Logistik" className="bg-slate-900 text-white">
                       Warentransport &amp; Logistik (Transportaufträge für Güter aller Art bis 3,5 t)
@@ -362,21 +349,16 @@ export default function Contact() {
                   </select>
                 </div>
 
-                {/* Helper prompt when no service is selected */}
+                {/* Helper prompt when no service is selected (Open Typography, No Box) */}
                 {!service && (
-                  <div className="p-5 rounded-2xl bg-white/[0.03] border border-dashed border-white/10 text-center space-y-1.5 animate-fadeIn">
-                    <div className="text-xs font-bold text-amber-400">
-                      Schritt 2: Spezifische Angaben
-                    </div>
-                    <p className="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
-                      Wählen Sie oben Ihre gewünschte Leistung aus – anschließend werden automatisch die passenden Felder (z. B. Autobahn &amp; Unfallort oder Abhol- und Zielort) für Ihre Preisanfrage eingeblendet.
-                    </p>
-                  </div>
+                  <p className="text-xs text-slate-400 pt-1">
+                    Wählen Sie oben Ihre gewünschte Leistung aus, um die passenden Strecken- oder Fahrzeugfelder einzublenden.
+                  </p>
                 )}
 
-                {/* 3A. DYNAMIC FIELDS FOR EMERGENCY / ABSCHLEPPEN */}
+                {/* 3A. DYNAMIC FIELDS FOR EMERGENCY / ABSCHLEPPEN (Clean Divider, No Inner Box) */}
                 {isEmergency && (
-                  <div className="p-4 sm:p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 space-y-4">
+                  <div className="pt-5 border-t border-white/10 space-y-4">
                     <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-amber-400">
                       <AlertTriangle size={16} />
                       <span>Notfall-Standort &amp; Autobahn in NRW:</span>
@@ -389,7 +371,7 @@ export default function Contact() {
                       <select
                         value={autobahn}
                         onChange={(e) => setAutobahn(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-amber-500/30 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-sm text-white focus:outline-none focus:border-amber-400"
                       >
                         {nrwAutobahnen.map((ab, idx) => (
                           <option key={idx} value={ab} className="bg-slate-900 text-white">
@@ -399,11 +381,11 @@ export default function Contact() {
                       </select>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <div className="flex items-center justify-between mb-1">
                           <label className="block text-xs font-bold text-slate-200">
-                            Nächste Ausfahrt / Kilometerstein / Kreuz
+                            Nächste Ausfahrt / Straße
                           </label>
                           <button
                             type="button"
@@ -416,7 +398,7 @@ export default function Contact() {
                             ) : (
                               <Crosshair size={10} />
                             )}
-                            <span>Standort ermitteln</span>
+                            <span>GPS ermitteln</span>
                           </button>
                         </div>
                         <input
@@ -424,7 +406,7 @@ export default function Contact() {
                           value={highwayExit}
                           onChange={(e) => setHighwayExit(e.target.value)}
                           placeholder="Z. B. Ausfahrt Bochum-Stadion / Wattenscheid"
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         />
                       </div>
 
@@ -436,13 +418,13 @@ export default function Contact() {
                           type="text"
                           value={destinationWorkshop}
                           onChange={(e) => setDestinationWorkshop(e.target.value)}
-                          placeholder="Z. B. Vertragswerkstatt, ADAC oder Haustür"
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          placeholder="Z. B. Vertragswerkstatt oder Haustür"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         />
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-bold text-slate-200 mb-1">
                           Zustand des Fahrzeugs *
@@ -450,7 +432,7 @@ export default function Contact() {
                         <select
                           value={emergencyCondition}
                           onChange={(e) => setEmergencyCondition(e.target.value)}
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         >
                           <option value="Motorschaden / Fahrzeug springt nicht an">Motorschaden / Springt nicht an</option>
                           <option value="Unfallschaden (Karosserie defekt / Teile lose)">Unfallschaden (Teile lose)</option>
@@ -469,22 +451,22 @@ export default function Contact() {
                           value={vehicleModel}
                           onChange={(e) => setVehicleModel(e.target.value)}
                           placeholder="Z. B. VW Golf, BMW 3er, Audi A4..."
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         />
                       </div>
                     </div>
                   </div>
                 )}
 
-                {/* 3B. DYNAMIC FIELDS FOR FAHRZEUGÜBERFÜHRUNG (VON A NACH B) */}
+                {/* 3B. DYNAMIC FIELDS FOR FAHRZEUGÜBERFÜHRUNG (Clean Divider, No Inner Box) */}
                 {isTransfer && (
-                  <div className="p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-white/10 space-y-4">
+                  <div className="pt-5 border-t border-white/10 space-y-4">
                     <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-amber-400">
                       <Truck size={16} />
                       <span>Fahrzeugdaten &amp; Strecke (Von ➔ Nach):</span>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-bold text-slate-300 mb-1">
                           Abholort (PLZ / Stadt A) *
@@ -495,7 +477,7 @@ export default function Contact() {
                           value={routeFrom}
                           onChange={(e) => setRouteFrom(e.target.value)}
                           placeholder="Z. B. 44803 Bochum oder Dortmund"
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         />
                       </div>
 
@@ -509,12 +491,12 @@ export default function Contact() {
                           value={routeTo}
                           onChange={(e) => setRouteTo(e.target.value)}
                           placeholder="Z. B. 48143 Münster oder 50667 Köln"
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         />
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div>
                         <label className="block text-xs font-bold text-slate-300 mb-1">
                           Fahrzeugmodell &amp; Marke *
@@ -524,8 +506,8 @@ export default function Contact() {
                           required
                           value={vehicleModel}
                           onChange={(e) => setVehicleModel(e.target.value)}
-                          placeholder="Z. B. Audi RS3, BMW Z3, Oldtimer..."
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          placeholder="Z. B. Audi RS3, BMW Z3..."
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         />
                       </div>
 
@@ -536,7 +518,7 @@ export default function Contact() {
                         <select
                           value={vehicleCondition}
                           onChange={(e) => setVehicleCondition(e.target.value)}
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         >
                           <option value="Fahrbereit (angemeldet / abgemeldet)">Fahrbereit (z.B. Neukauf)</option>
                           <option value="Roll- und lenkfähig (rollfähig)">Roll- &amp; lenkfähig</option>
@@ -553,7 +535,7 @@ export default function Contact() {
                         <select
                           value={appointment}
                           onChange={(e) => setAppointment(e.target.value)}
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         >
                           <option value="Schnellstmöglich">Schnellstmöglich (Express)</option>
                           <option value="In den nächsten 1–3 Tagen">In den nächsten 1–3 Tagen</option>
@@ -565,15 +547,15 @@ export default function Contact() {
                   </div>
                 )}
 
-                {/* 3C. DYNAMIC FIELDS FOR STARTHILFE */}
+                {/* 3C. DYNAMIC FIELDS FOR STARTHILFE (Clean Divider, No Inner Box) */}
                 {isJumpstart && (
-                  <div className="p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-white/10 space-y-4">
+                  <div className="pt-5 border-t border-white/10 space-y-4">
                     <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-amber-400">
                       <Clock size={16} />
                       <span>Standort für Vor-Ort Pannenhilfe:</span>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <div className="flex items-center justify-between mb-1">
                           <label className="block text-xs font-bold text-slate-300">
@@ -590,7 +572,7 @@ export default function Contact() {
                             ) : (
                               <Crosshair size={10} />
                             )}
-                            <span>Standort ermitteln</span>
+                            <span>GPS ermitteln</span>
                           </button>
                         </div>
                         <input
@@ -599,7 +581,7 @@ export default function Contact() {
                           value={localAddress}
                           onChange={(e) => setLocalAddress(e.target.value)}
                           placeholder="Straße, Hausnummer, Stadtteil"
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         />
                       </div>
 
@@ -610,7 +592,7 @@ export default function Contact() {
                         <select
                           value={breakdownType}
                           onChange={(e) => setBreakdownType(e.target.value)}
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         >
                           <option value="Batterie leer / Starthilfe (12V / 24V)">Batterie leer / Starthilfe</option>
                           <option value="Reifenpanne / Radwechsel vor Ort">Reifenpanne / Radwechsel</option>
@@ -622,15 +604,15 @@ export default function Contact() {
                   </div>
                 )}
 
-                {/* 3D. DYNAMIC FIELDS FOR WARENTRANSPORT & LOGISTIK */}
+                {/* 3D. DYNAMIC FIELDS FOR WARENTRANSPORT & LOGISTIK (Clean Divider, No Inner Box) */}
                 {isFreight && (
-                  <div className="p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-white/10 space-y-4">
+                  <div className="pt-5 border-t border-white/10 space-y-4">
                     <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-amber-400">
                       <Truck size={16} />
                       <span>Frachtdetails &amp; Transportstrecke (bis 3,5 t):</span>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-bold text-slate-300 mb-1">
                           Abholort (Startadresse / Stadt) *
@@ -641,7 +623,7 @@ export default function Contact() {
                           value={routeFrom}
                           onChange={(e) => setRouteFrom(e.target.value)}
                           placeholder="Z. B. Bochum, Essen, Dortmund..."
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         />
                       </div>
 
@@ -655,12 +637,12 @@ export default function Contact() {
                           value={routeTo}
                           onChange={(e) => setRouteTo(e.target.value)}
                           placeholder="Z. B. Münster, Köln, Frankfurt..."
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         />
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div>
                         <label className="block text-xs font-bold text-slate-300 mb-1">
                           Art der Fracht / Güter *
@@ -668,7 +650,7 @@ export default function Contact() {
                         <select
                           value={freightType}
                           onChange={(e) => setFreightType(e.target.value)}
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         >
                           <option value="Palettenware / Stückgut">Palettenware / Stückgut</option>
                           <option value="Maschinen & Geräte">Maschinen &amp; Geräte</option>
@@ -685,7 +667,7 @@ export default function Contact() {
                         <select
                           value={freightWeight}
                           onChange={(e) => setFreightWeight(e.target.value)}
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         >
                           <option value="Bis 500 kg">Bis 500 kg</option>
                           <option value="Bis 1.500 kg">Bis 1.500 kg</option>
@@ -701,7 +683,7 @@ export default function Contact() {
                         <select
                           value={appointment}
                           onChange={(e) => setAppointment(e.target.value)}
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
                         >
                           <option value="Schnellstmöglich (Express)">Schnellstmöglich (Express)</option>
                           <option value="In den nächsten 1–3 Tagen">In den nächsten 1–3 Tagen</option>
@@ -712,32 +694,32 @@ export default function Contact() {
                   </div>
                 )}
 
-                {/* 4. Notes & Submit Button - only shown when a service is selected */}
+                {/* 4. Notes & Submit Button */}
                 {service && (
-                  <div className="space-y-5 animate-fadeIn">
+                  <div className="space-y-4 pt-2">
                     <div>
                       <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-                        Zusätzliche Hinweise / Besonderheiten (Optional)
+                        Zusätzliche Hinweise (Optional)
                       </label>
                       <textarea
                         rows={2}
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
                         placeholder="Besondere Zufahrt, blockierte Feststellbremse, Schlüssel vorhanden..."
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-white/10 text-xs text-white focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder-slate-500"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400 placeholder-slate-500"
                       ></textarea>
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black py-4 px-6 rounded-xl shadow-xl shadow-amber-500/20 transition-all text-sm active:scale-95 cursor-pointer"
+                      className="w-full inline-flex items-center justify-center gap-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-4 px-6 rounded-xl shadow-lg shadow-amber-500/20 transition-all text-sm active:scale-95 cursor-pointer"
                     >
                       <Send size={16} />
-                      <span>Unverbindliche Preisanfrage an Abschleppdienst Direkt senden</span>
+                      <span>Unverbindliche Preisanfrage absenden</span>
                     </button>
 
-                    <p className="text-[11px] text-center text-slate-400">
-                      Ihre Anfrage öffnet direkt den vorbereiteten WhatsApp-Chat mit allen Angaben. Verbindliche Rückmeldung in wenigen Minuten.
+                    <p className="text-[11px] text-slate-400">
+                      Ihre Anfrage wird direkt an unser Einsatzteam übertragen. Verbindliche Rückmeldung in wenigen Minuten.
                     </p>
                   </div>
                 )}

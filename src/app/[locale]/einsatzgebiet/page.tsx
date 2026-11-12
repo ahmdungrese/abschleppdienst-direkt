@@ -150,8 +150,8 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
 
           {/* Page Hero Header */}
           <header className="mb-14">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
-              <MapPin size={13} className="text-amber-400" />
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-4">
+              <MapPin size={15} className="text-amber-400 shrink-0" />
               <span>
                 {isAr 
                   ? "المقر المركزي: بوخوم (44803) • تصنيف مناطق الوصول" 
@@ -171,7 +171,7 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
               </p>
             </div>
 
-            {/* Quick Contact Bar */}
+            {/* Quick Contact Bar - Emergency Red + Smooth Scroll to Bottom Inquiry */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:+4915565500442"
@@ -182,13 +182,10 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
               </a>
 
               <a
-                href="https://wa.me/4915565500442?text=Hallo%20Abschleppdienst%20Direkt%2C%20ich%20habe%20eine%20Standortanfrage%20f%C3%BCr%20einen%20Transport"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-md text-sm transition-all"
+                href="#anfrage-unten"
+                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3.5 px-6 rounded-xl shadow-md text-sm transition-all"
               >
-                <MessageCircle size={18} />
-                <span>{isAr ? "إرسال الموقع المباشر عبر واتساب" : "Live-Standort via WhatsApp senden"}</span>
+                <span>{isAr ? "طلب الخدمة وإرسال الموقع ↓" : "Standort & Preisanfrage ↓"}</span>
               </a>
             </div>
           </header>
@@ -199,32 +196,32 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
           <section className="mb-14">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <div className="flex items-center gap-3">
-                <span className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-lg">
+                <span className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-400 flex items-center justify-center font-bold text-lg">
                   1
                 </span>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-white">
                     {isAr ? "النطاق السريع (Zone 1): بوخوم + المدن الملاصقة" : "Zone 1 • Express-Nahbereich: Bochum & Nachbarstädte"}
                   </h2>
-                  <span className="text-xs text-emerald-400 font-semibold">
+                  <span className="text-xs text-amber-400 font-semibold">
                     {isAr ? "الوصول خلال: 15 إلى 30 دقيقة (أقصاها 40 دقيقة)" : "Garantierte Express-Eintreffzeit: Ø 15–30 Minuten (max. 40 Min.)"}
                   </span>
                 </div>
               </div>
-              <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
+              <span className="text-xs font-bold uppercase tracking-[0.15em] text-amber-400">
                 {isAr ? "وصول فوري فائق السرعة" : "Express-Priorität"}
               </span>
             </div>
 
-            {/* Comprehensive Semantic Text */}
-            <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            {/* Comprehensive Semantic Text (Clean Editorial Layout, No Boxes Inside Boxes) */}
+            <div className="space-y-5 text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
               <p>
                 {isAr
                   ? "في نطاقنا المباشر الذي يضم مدينة بوخوم بالكامل (كافة الأحياء الـ 10) والمدن الملاصقة مباشرة (دورتموند، إسن، هيرنه، وفيتن)، نضمن أسرع زمن استجابة على الإطلاق. في هذا النطاق نوفر تغطية كاملة لكافة خدماتنا: سحب الطوارئ 24 ساعة، المساعدة على الطريق (شحن البطارية، تبديل الإطارات)، سحب السيارات الكهربائية والهجينة، وسحب الأعطال الميكانيكية بعد الحوادث."
                   : "In unserem unmittelbaren Einzugsgebiet – der gesamten Stadt Bochum mit allen 10 Stadtbezirken sowie den direkt angrenzenden Großstädten Dortmund, Essen, Herne und Witten – gewährleisten wir die kürzesten Anfahrtswege im Ruhrgebiet. Hier steht Ihnen unser vollständiges Leistungsspektrum uneingeschränkt zur Verfügung: 24h Pkw- und SUV-Abschleppdienst, Pannenhilfe (Starthilfe, Radwechsel), E-Auto-Bergung sowie Fahrzeugüberführungen."}
               </p>
 
-              <div className="p-4 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+              <div className="border-l-2 border-white/20 pl-4 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-4 space-y-1">
                 <h3 className="font-bold text-white text-sm flex items-center gap-2">
                   <Home size={16} className="text-amber-400" />
                   <span>{isAr ? "إلى أين ننقل سيارتك؟ نقل لوجهتك المختارة 100%" : "Wohin wird Ihr Fahrzeug gebracht? Freie Zielwahl:"}</span>
@@ -237,7 +234,7 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
               </div>
 
               {/* Exclusive Workshop Advisory Highlight */}
-              <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/25 space-y-2">
+              <div className="border-l-2 border-amber-400 pl-4 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-4 space-y-1">
                 <h3 className="font-bold text-amber-400 text-sm flex items-center gap-2">
                   <Wrench size={16} />
                   <span>
@@ -254,33 +251,34 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
               </div>
             </div>
 
-            {/* Bochum Districts & Express Cities List */}
-            <div className="mb-6">
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-3 text-slate-300">
+            {/* Bochum Districts (Clean Typography Grid with Dividers, Zero Small Boxes) */}
+            <div className="mb-8 pt-6 border-t border-white/10">
+              <h3 className="text-xs font-bold uppercase tracking-wider mb-4 text-amber-400">
                 {isAr ? "أحياء بوخوم الـ 10 (نطاق مركزي خالص):" : "Bochum Stadtgebiet & alle 10 Stadtbezirke:"}
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-xs">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-3 text-xs">
                 {bochumDistricts.map((d) => (
-                  <div key={d.name} className="p-2.5 rounded-lg bg-slate-900/60 border border-white/5">
+                  <div key={d.name} className="pb-2 border-b border-white/5">
                     <strong className="text-white block font-semibold">{d.name}</strong>
-                    <span className="text-[10px] text-slate-400 font-mono">{d.zip}</span>
+                    <span className="text-[11px] text-slate-400 font-mono">{d.zip}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div>
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-3 text-slate-300">
+            {/* Express Neighbors (Clean Divided Rows, Zero Small Boxes) */}
+            <div className="pt-4">
+              <h3 className="text-xs font-bold uppercase tracking-wider mb-3 text-amber-400">
                 {isAr ? "المدن الملاصقة المباشرة (وصول سريع 15–25 دقيقة):" : "Direkte Nachbarstädte im Express-Radius (15–25 Min.):"}
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 text-xs">
+              <div className="divide-y divide-white/10 border-t border-b border-white/10 text-xs sm:text-sm">
                 {expressNeighbors.map((city) => (
-                  <div key={city.name} className="p-3 rounded-xl bg-slate-900/80 border border-white/5 flex flex-col justify-between">
+                  <div key={city.name} className="py-3 flex items-center justify-between gap-4">
                     <div>
-                      <strong className="text-white text-sm block">{city.name}</strong>
-                      <span className="text-[11px] text-slate-400">{city.route}</span>
+                      <strong className="text-white font-bold">{city.name}</strong>
+                      <span className="text-slate-400 ml-2 text-xs">— {city.route}</span>
                     </div>
-                    <span className="text-amber-400 font-bold mt-2 text-[11px]">{city.time}</span>
+                    <span className="text-amber-400 font-bold shrink-0 text-xs">{city.time}</span>
                   </div>
                 ))}
               </div>
@@ -293,19 +291,19 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
           <section className="mb-14">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <div className="flex items-center gap-3">
-                <span className="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold text-lg">
+                <span className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-amber-400 flex items-center justify-center font-bold text-lg">
                   2
                 </span>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-white">
                     {isAr ? "النطاق الأوسع (Zone 2): باقي مدن ومحيط حوض الرور" : "Zone 2 • Erweiterter Radius: Mittleres & Nördliches Ruhrgebiet"}
                   </h2>
-                  <span className="text-xs text-sky-400 font-semibold">
+                  <span className="text-xs text-slate-300 font-semibold">
                     {isAr ? "الوصول خلال: 40 إلى 60 دقيقة" : "Eintreffzeit: ca. 40–60 Minuten"}
                   </span>
                 </div>
               </div>
-              <span className="text-xs font-bold text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-full">
+              <span className="text-xs font-bold uppercase tracking-[0.15em] text-slate-300">
                 {isAr ? "تغطية كاملة" : "Vollabdeckung"}
               </span>
             </div>
@@ -316,14 +314,14 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
                 : "Für Einsätze im erweiterten Radius (z. B. Recklinghausen, Gelsenkirchen, Gladbeck, Bottrop, Hattingen, Castrop-Rauxel, Mülheim oder Hagen) rücken wir verlässlich binnen 40 bis 60 Minuten aus. Das Fahrzeug wird wahlweise zur nächstgelegenen Wunschwerkstatt transportiert oder direkt vor Ihre Haustür überstellt. Auch hier gilt: Fester Kilometer- oder Pauschalpreis ohne verdeckte Kosten."}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 text-xs">
+            <div className="divide-y divide-white/10 border-t border-b border-white/10 text-xs sm:text-sm">
               {extendedRuhrCities.map((city) => (
-                <div key={city.name} className="p-3 rounded-xl bg-slate-900/60 border border-white/5 flex items-center justify-between">
+                <div key={city.name} className="py-3 flex items-center justify-between gap-4">
                   <div>
-                    <strong className="text-white text-sm block">{city.name}</strong>
-                    <span className="text-[11px] text-slate-400">{city.route}</span>
+                    <strong className="text-white font-bold">{city.name}</strong>
+                    <span className="text-slate-400 ml-2 text-xs">— {city.route}</span>
                   </div>
-                  <span className="text-xs font-bold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">
+                  <span className="text-xs font-bold text-slate-200 shrink-0">
                     {city.time}
                   </span>
                 </div>
@@ -337,7 +335,7 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
           <section className="mb-14">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <div className="flex items-center gap-3">
-                <span className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+                <span className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-400 flex items-center justify-center font-bold text-lg">
                   3
                 </span>
                 <div>
@@ -354,7 +352,7 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
                   </span>
                 </div>
               </div>
-              <span className="text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full">
+              <span className="text-xs font-bold uppercase tracking-[0.15em] text-amber-400">
                 {isAr ? "عتاد خاص 5 طن" : "5t Funkseilwinde"}
               </span>
             </div>
@@ -366,7 +364,7 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
                   : "Die südlichen Höhenzüge von Nordrhein-Westfalen entlang der A45 Sauerlandlinie (Hagen ↔ Lüdenscheid ↔ Olpe) zeichnen sich durch anspruchsvolle Topografien mit Steigungen von bis zu 12 %, enge Kurvenradien und plötzliche Wintereinbrüche aus. Bleibt ein Fahrzeug auf einer Hangstrecke liegen, reicht herkömmliches Standard-Gerät oft nicht aus."}
               </p>
               
-              <div className="p-5 rounded-2xl bg-amber-500/5 border-l-4 border-amber-500 rtl:border-l-0 rtl:border-r-4 rtl:border-amber-500 space-y-2">
+              <div className="border-l-2 border-amber-400 pl-4 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-4 space-y-1">
                 <strong className="text-amber-400 block font-bold text-sm sm:text-base">
                   {isAr ? "مبدأ Abschleppdienst Direkt: لا نترك أحداً عالقاً في أصعب الظروف!" : "Abschleppdienst Direkt lässt Sie nicht im Stich:"}
                 </strong>
@@ -385,12 +383,12 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
           <section className="mb-14">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <div className="flex items-center gap-3">
-                <span className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-lg">
+                <span className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-amber-400 flex items-center justify-center font-bold text-lg">
                   4
                 </span>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-                    <Truck size={20} className="text-purple-400" />
+                    <Truck size={20} className="text-amber-400" />
                     <span>
                       {isAr ? "النقل الفردي الطويل ومسارات السفر في عموم ألمانيا" : "Zone 4 • NRW-weit & Bundesweite Langstrecken-Überführung"}
                     </span>
@@ -411,9 +409,9 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
 
           <hr className="border-white/10 my-10" />
 
-          {/* INTERNAL SILO HUBS: LEISTUNGEN & RATGEBER FÜR DAS EINSATZGEBIET */}
-          <section className="mb-14 rounded-3xl border border-slate-700/60 bg-gradient-to-br from-slate-900/90 via-slate-800/40 to-slate-900/90 p-6 sm:p-8 shadow-xl">
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 border-b border-white/10 pb-4">
+          {/* INTERNAL SILO HUBS: OPEN EDITORIAL LIST (No Card-Inside-Card) */}
+          <section className="mb-14">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <div>
                 <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-1">
                   {isAr ? "خدماتنا المتخصصة لكل منطقة" : isEn ? "Specialized Services for the Region" : "Spezifische Leistungen nach Einsatzgebiet"}
@@ -426,119 +424,138 @@ export default async function EinsatzgebietPage({ params }: { params: Promise<{ 
                 href="/leistungen"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors"
               >
-                <span>{isAr ? "جميع الخدمات العشر" : "Alle 10 Leistungen"}</span>
+                <span>{isAr ? "جميع الخدمات" : "Alle Leistungen"}</span>
                 <ArrowRight size={14} className="rtl:rotate-180" />
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 border-t border-b border-white/10 py-6">
               <Link
                 href="/leistungen/abschleppdienst-pkw"
-                className="group p-3.5 rounded-xl bg-slate-950/70 border border-white/5 hover:border-amber-400/40 transition-all"
+                className="group space-y-1.5"
               >
-                <div className="flex items-center gap-2 mb-1.5">
-                  <Wrench size={14} className="text-amber-400" />
-                  <strong className="text-xs sm:text-sm text-white group-hover:text-amber-400 transition-colors">
+                <div className="flex items-center gap-2">
+                  <Wrench size={15} className="text-amber-400" />
+                  <strong className="text-sm text-white group-hover:text-amber-400 transition-colors">
                     {isAr ? "سحب سيارات الركاب (PKW)" : "PKW Abschleppdienst"}
                   </strong>
                 </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-400 leading-relaxed">
                   {isAr ? "وصول سريع خلال 20–40 دقيقة في بوخوم ومحيطها." : "20–40 Min. Express vor Ort in Bochum & Revier."}
                 </p>
               </Link>
 
               <Link
                 href="/starthilfe-bochum"
-                className="group p-3.5 rounded-xl bg-slate-950/70 border border-white/5 hover:border-amber-400/40 transition-all"
+                className="group space-y-1.5"
               >
-                <div className="flex items-center gap-2 mb-1.5">
-                  <Clock size={14} className="text-emerald-400" />
-                  <strong className="text-xs sm:text-sm text-white group-hover:text-amber-400 transition-colors">
+                <div className="flex items-center gap-2">
+                  <Clock size={15} className="text-amber-400" />
+                  <strong className="text-sm text-white group-hover:text-amber-400 transition-colors">
                     {isAr ? "خدمة المساعدة في التشغيل 24h" : "Vor-Ort Starthilfe 24h"}
                   </strong>
                 </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-400 leading-relaxed">
                   {isAr ? "مع جهاز NOCO Boost الاحترافي بدون تأخير." : "Mit 5250A Profi-Booster bei leerer Batterie."}
                 </p>
               </Link>
 
               <Link
                 href="/leistungen/fahrzeugueberfuehrung"
-                className="group p-3.5 rounded-xl bg-slate-950/70 border border-white/5 hover:border-amber-400/40 transition-all"
+                className="group space-y-1.5"
               >
-                <div className="flex items-center gap-2 mb-1.5">
-                  <Route size={14} className="text-sky-400" />
-                  <strong className="text-xs sm:text-sm text-white group-hover:text-amber-400 transition-colors">
+                <div className="flex items-center gap-2">
+                  <Route size={15} className="text-amber-400" />
+                  <strong className="text-sm text-white group-hover:text-amber-400 transition-colors">
                     {isAr ? "نقل من A إلى B" : "Überführung von A nach B"}
                   </strong>
                 </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-400 leading-relaxed">
                   {isAr ? "نقل سيارات فردي وموثوق بدون وسيط." : "Sicherer Einzeltransport auf eigenem Plateau."}
                 </p>
               </Link>
 
               <Link
                 href="/leistungen/elektroauto-automatik-abschleppen"
-                className="group p-3.5 rounded-xl bg-slate-950/70 border border-white/5 hover:border-amber-400/40 transition-all"
+                className="group space-y-1.5"
               >
-                <div className="flex items-center gap-2 mb-1.5">
-                  <ShieldCheck size={14} className="text-purple-400" />
-                  <strong className="text-xs sm:text-sm text-white group-hover:text-amber-400 transition-colors">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck size={15} className="text-amber-400" />
+                  <strong className="text-sm text-white group-hover:text-amber-400 transition-colors">
                     {isAr ? "سيارات كهربائية وأوتوماتيك" : "E-Auto & Automatik"}
                   </strong>
                 </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-400 leading-relaxed">
                   {isAr ? "سحب آمن 100% يحمي القير والبطارية." : "100% akkuschonende Plateau-Verladung."}
                 </p>
               </Link>
             </div>
           </section>
 
-          <hr className="border-white/10 my-10" />
-
-          {/* AUTOBAHN CONNECTION OVERVIEW */}
+          {/* AUTOBAHN CONNECTION OVERVIEW (Clean Divided Rows, Zero Small Boxes) */}
           <section className="mb-14">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-2 flex items-center gap-2">
-              <Route size={22} className="text-sky-400" />
+              <Route size={22} className="text-amber-400" />
               <span>{isAr ? "شبكة الطرق السريعة المباشرة من بوخوم" : "Direkte Autobahnanbindung ab Standort Bochum"}</span>
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 mb-6">
-              {isAr ? "إذا تعطلت على الأوتوبان، يكفي أن تذكر لنا رقم المخرج القريب أو ترسل موقعك المباشر:" : "Panne auf der Autobahn? Nennen Sie uns einfach die nächste Ausfahrt oder senden Sie den Live-Standort via WhatsApp:"}
+              {isAr ? "إذا تعطلت على الأوتوبان، يكفي أن تذكر لنا رقم المخرج القريب:" : "Panne auf der Autobahn? Nennen Sie uns einfach die nächste Ausfahrt oder Anschlussstelle:"}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 divide-y divide-white/10 border-t border-b border-white/10">
               {autobahns.map((ab) => (
-                <div key={ab.code} className="p-3 rounded-xl bg-slate-900/60 border border-white/5 flex items-start gap-3">
-                  <span className="bg-[#003399] text-white text-xs font-black px-2 py-0.5 rounded tracking-wide border border-white/30 flex-shrink-0 mt-0.5">
+                <div key={ab.code} className="py-3.5 flex items-start gap-3">
+                  <span className="bg-[#003399] text-white text-xs font-black px-2.5 py-0.5 rounded tracking-wide border border-blue-300/30 flex-shrink-0 mt-0.5">
                     {ab.code}
                   </span>
                   <div>
                     <strong className="text-white text-xs sm:text-sm block">{ab.name}</strong>
-                    <span className="text-[11px] text-slate-400 leading-relaxed block mt-0.5">{ab.desc}</span>
+                    <span className="text-xs text-slate-400 leading-relaxed block mt-0.5">{ab.desc}</span>
                   </div>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Bottom Call to Action */}
-          <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:text-white hover:border-amber-400 transition-colors text-xs sm:text-sm font-bold shadow-sm"
-            >
-              <ArrowLeft size={16} className="rtl:rotate-180 text-amber-400" />
-              <span>{isAr ? "العودة للرئيسية" : "Zurück zur Startseite"}</span>
-            </Link>
+          {/* Bottom Destination Inquiry & Contact Section */}
+          <section id="anfrage-unten" className="mt-14 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="space-y-1 text-center sm:text-left">
+              <h2 className="text-xl sm:text-2xl font-black text-white">
+                {isAr ? "هل تحتاج إلى المساعدة في موقعك الآن؟" : "Soforthilfe oder Streckenkalkulation gewünscht?"}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-300">
+                {isAr ? "اتصل بالطوارئ مباشرة أو أرسل موقعك لطلب السحب أو حساب التكلفة." : "Rufen Sie direkt an, senden Sie Ihren Standort oder kalkulieren Sie den Festpreis im Rechner."}
+              </p>
+            </div>
 
-            <Link
-              href="/rechner"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black py-4 px-8 rounded-xl shadow-xl shadow-amber-500/20 transition-all text-xs sm:text-sm"
-            >
-              <span>{isAr ? "حساب تكلفة مسارك التقديرية" : "Transparente Preiskalkulation für Ihre Strecke"}</span>
-              <ArrowRight size={16} className="rtl:rotate-180" />
-            </Link>
-          </div>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="tel:+4915565500442"
+                className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-black py-3.5 px-6 rounded-xl shadow-lg shadow-red-600/25 transition-all text-xs sm:text-sm"
+              >
+                <Phone size={16} className="fill-white" />
+                <span>24h Notruf: 0155 65500442</span>
+              </a>
+
+              <a
+                href="https://wa.me/4915565500442?text=Hallo%20Abschleppdienst%20Direkt%2C%20ich%20habe%20eine%20Standortanfrage%20f%C3%BCr%20einen%20Transport"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white border border-white/15 hover:border-amber-400/40 font-bold py-3.5 px-5 rounded-xl transition-all text-xs sm:text-sm"
+              >
+                <MessageCircle size={16} className="text-amber-400" />
+                <span>{isAr ? "إرسال الموقع عبر واتساب" : "Standort per WhatsApp"}</span>
+              </a>
+
+              <Link
+                href="/rechner"
+                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3.5 px-6 rounded-xl transition-all text-xs sm:text-sm"
+              >
+                <span>{isAr ? "حاسبة التكلفة" : "Zum Kostenrechner"}</span>
+                <ArrowRight size={15} className="rtl:rotate-180" />
+              </Link>
+            </div>
+          </section>
 
         </div>
       </main>

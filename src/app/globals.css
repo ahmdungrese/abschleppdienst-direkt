@@ -4,18 +4,20 @@
   --color-brand-gold: #F59E0B;
   --color-brand-gold-light: #FBBF24;
   --color-brand-gold-dark: #D97706;
-  --color-brand-obsidian: #0B0F19;
-  --color-brand-surface: #111827;
-  --color-brand-card: #1F2937;
-  --color-brand-border: #374151;
-  --color-brand-muted: #9CA3AF;
-  --color-brand-red: #EF4444;
-  --color-brand-green: #10B981;
+  --color-brand-obsidian: #060E1E;
+  --color-brand-surface: #0A1628;
+  --color-brand-card: #0F1E36;
+  --color-brand-border: #1E293B;
+  --color-brand-muted: #94A3B8;
+  --color-brand-red: #DC2626;
+  --color-slate-950: #060E1E;
+  --color-slate-900: #0B172A;
+  --color-slate-800: #13233F;
 }
 
 :root {
-  --background: #0B0F19;
-  --foreground: #F9FAFB;
+  --background: #060E1E;
+  --foreground: #F8FAFC;
 }
 
 html {
@@ -31,17 +33,17 @@ body {
 
 /* Glassmorphism utility */
 .glass-panel {
-  background: rgba(17, 24, 39, 0.75);
+  background: rgba(11, 23, 42, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-card {
-  background: rgba(31, 41, 55, 0.65);
+  background: rgba(15, 30, 54, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-card:hover {

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: `${BRAND.name} | 24h Abschleppdienst, Pannenhilfe & Überführung`,
     template: `%s | ${BRAND.name}`
   },
-  description: `${BRAND.name} (${BRAND.slogan}): Ihr inhabergeführter 24h Abschleppdienst, Pannenhilfe & Fahrzeugüberführung in Bochum, im Ruhrgebiet & ganz NRW. Schneller Direkttransport von A nach B, Motorschadenservice und Vor-Ort Starthilfe auf A40, A43 & A448.`,
+  description: `${BRAND.name} (${BRAND.slogan}): Ihr inhabergeführter 24h Abschleppdienst & Pannenhilfe in Bochum sowie bundesweite Fahrzeugüberführung von A nach B in ganz Deutschland. Motorschadenservice, Vor-Ort Starthilfe auf A40, A43 & A448 und 100% Einzelfahrten bis 3,5t.`,
   keywords: [
     "Abschleppdienst Direkt",
     "Abschleppdienst Bochum",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     url: BRAND.url,
     siteName: BRAND.name,
     title: `${BRAND.name} | 24h Abschleppdienst, Pannenhilfe & Überführung`,
-    description: 'Schnell. Einfach. Fair. Inhabergeführte Pannenhilfe, Fahrzeugüberführung von A nach B und sichere Bergung in Bochum, im Ruhrgebiet & ganz NRW.',
+    description: 'Schnell. Einfach. Fair. Inhabergeführte 24h Pannenhilfe & Abschleppdienst in Bochum sowie zuverlässige Fahrzeugüberführung von A nach B bundesweit in ganz Deutschland.',
     images: [
       {
         url: '/og-image.png',
@@ -112,7 +112,7 @@ export default async function RootLayout({
       suppressHydrationWarning
       className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col font-sans bg-gray-50 text-slate-900">
+      <body className="min-h-full flex flex-col font-sans bg-slate-950 text-white">
         <NextIntlClientProvider messages={messages}>
           <Header />
           {children}

@@ -131,7 +131,7 @@ export default function PriceCalculator() {
   };
 
   return (
-    <div id="kalkulator" className="my-10 bg-slate-900/40 rounded-3xl border border-white/10 p-6 sm:p-10 shadow-2xl backdrop-blur-sm">
+    <div id="kalkulator" className="my-10 border-t border-b border-white/10 py-8 sm:py-12">
       
       {/* Top Bar Header */}
       <div className="border-b border-white/10 pb-6 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -157,8 +157,8 @@ export default function PriceCalculator() {
         </div>
 
         <div className="text-left sm:text-right shrink-0">
-          <span className="inline-flex items-center gap-1 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full">
-            <ShieldCheck size={14} />
+          <span className="inline-flex items-center gap-1.5 text-xs text-amber-400 font-semibold">
+            <ShieldCheck size={15} />
             <span>{isAr ? 'أسعار حقيقية دون وسيط' : isEn ? 'Direct Owner Rates' : 'Inhabergeführt ohne Vermittler'}</span>
           </span>
         </div>
@@ -185,7 +185,7 @@ export default function PriceCalculator() {
                   setIsManualKm(false);
                 }}
                 placeholder={isAr ? 'مثال: 44803 Bochum أو Dortmund' : isEn ? 'e.g. 44803 Bochum or Dortmund' : 'z. B. 44803 Bochum oder Essen'}
-                className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/15 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm font-semibold text-white placeholder-slate-500 transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-white/15 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm font-semibold text-white placeholder-slate-500 transition-colors"
               />
             </div>
 
@@ -202,7 +202,7 @@ export default function PriceCalculator() {
                   setIsManualKm(false);
                 }}
                 placeholder={isAr ? 'مثال: 45127 Essen أو Düsseldorf أو Münster' : isEn ? 'e.g. 45127 Essen or Münster' : 'z. B. 45127 Essen, Düsseldorf oder Münster'}
-                className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/15 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm font-semibold text-white placeholder-slate-500 transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-white/15 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm font-semibold text-white placeholder-slate-500 transition-colors"
               />
             </div>
           </div>
@@ -210,11 +210,11 @@ export default function PriceCalculator() {
           {/* Automatic Distance Detection Notice */}
           <div className="mt-3 text-xs">
             {routeInfo ? (
-              <div className="flex flex-wrap items-center justify-between gap-2 text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2 rounded-xl">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-slate-200 pt-2">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={15} className="text-emerald-400 shrink-0" />
+                  <CheckCircle2 size={15} className="text-amber-400 shrink-0" />
                   <span>
-                    <strong>{isAr ? 'المسافة المحسوبة تلقائياً:' : isEn ? 'Auto-Calculated Distance:' : 'Automatisch berechnete Strecke:'}</strong>{' '}
+                    <strong className="text-white">{isAr ? 'المسافة المحسوبة تلقائياً:' : isEn ? 'Auto-Calculated Distance:' : 'Automatisch berechnete Strecke:'}</strong>{' '}
                     ca. {routeInfo.distanceKm} km ({routeInfo.fromName} ➔ {routeInfo.toName})
                   </span>
                 </div>
@@ -251,7 +251,7 @@ export default function PriceCalculator() {
               <span className="text-xs text-slate-400">
                 {isManualKm ? (isAr ? '(تعديل يدوي)' : isEn ? '(Manual fine-tuning)' : '(Manuell angepasst)') : (isAr ? '(محسوب تلقائياً)' : isEn ? '(Auto-calculated)' : '(Automatisch)')}
               </span>
-              <span className="text-base font-black text-amber-400 font-mono bg-amber-500/10 px-3 py-0.5 rounded-lg border border-amber-500/20">
+              <span className="text-base font-black text-amber-400 font-mono">
                 {distanceKm} km
               </span>
             </div>
@@ -277,7 +277,7 @@ export default function PriceCalculator() {
                 className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                   distanceKm === km
                     ? 'bg-amber-500 text-slate-950 font-bold'
-                    : 'bg-white/5 text-slate-300 hover:bg-white/10 border border-white/5'
+                    : 'bg-white/5 text-slate-300 hover:bg-white/10'
                 }`}
               >
                 {km} km
@@ -286,12 +286,12 @@ export default function PriceCalculator() {
           </div>
         </div>
 
-        {/* Step 3: Vehicle Type & Weight */}
+        {/* Step 3: Vehicle Type & Weight — Clean Divided Editorial Rows */}
         <div>
           <h3 className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-3">
             {isAr ? '3. نوع ووزن السيارة' : isEn ? '3. Vehicle Category & Weight' : '3. Fahrzeugtyp & Gewichtsklasse'}
           </h3>
-          <div className="space-y-2">
+          <div className="divide-y divide-white/10 border-t border-b border-white/10">
             {(Object.keys(vehicleSurcharges) as VehicleType[]).map((typeKey) => {
               const item = vehicleSurcharges[typeKey];
               const isSelected = vehicleType === typeKey;
@@ -299,10 +299,10 @@ export default function PriceCalculator() {
                 <label
                   key={typeKey}
                   onClick={() => setVehicleType(typeKey)}
-                  className={`flex items-start justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
+                  className={`flex items-start justify-between py-3.5 px-2 cursor-pointer transition-colors ${
                     isSelected 
-                      ? 'border-amber-400/80 bg-amber-500/10 text-white' 
-                      : 'border-white/10 hover:border-white/20 bg-slate-950/40 text-slate-300'
+                      ? 'text-white bg-amber-500/[0.04]' 
+                      : 'text-slate-300 hover:bg-white/[0.02]'
                   }`}
                 >
                   <div className="flex items-start gap-3">
@@ -311,14 +311,14 @@ export default function PriceCalculator() {
                       name="vehicleType"
                       checked={isSelected}
                       onChange={() => setVehicleType(typeKey)}
-                      className="mt-1 text-amber-500 focus:ring-amber-400"
+                      className="mt-1 text-amber-500 focus:ring-amber-400 accent-amber-500"
                     />
                     <div>
                       <div className="text-sm font-bold text-white flex items-center gap-2">
-                        <span>{item.label}</span>
+                        <span className={isSelected ? 'text-amber-400' : 'text-white'}>{item.label}</span>
                         {item.fee > 0 && (
-                          <span className="text-[11px] font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                            +{item.fee} €
+                          <span className="text-[11px] font-semibold text-amber-400 font-mono">
+                            (+{item.fee} €)
                           </span>
                         )}
                       </div>
@@ -331,12 +331,12 @@ export default function PriceCalculator() {
           </div>
         </div>
 
-        {/* Step 4: Condition & Damage Severity */}
+        {/* Step 4: Condition & Damage Severity — Clean Divided Editorial Rows */}
         <div>
           <h3 className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-3">
             {isAr ? '4. حالة السيارة وسهولة التحميل' : isEn ? '4. Vehicle Condition & Loading Accessibility' : '4. Zustand & Verladbarkeit des Fahrzeugs'}
           </h3>
-          <div className="space-y-2">
+          <div className="divide-y divide-white/10 border-t border-b border-white/10">
             {(Object.keys(conditionSurcharges) as VehicleCondition[]).map((condKey) => {
               const item = conditionSurcharges[condKey];
               const isSelected = condition === condKey;
@@ -344,10 +344,10 @@ export default function PriceCalculator() {
                 <label
                   key={condKey}
                   onClick={() => setCondition(condKey)}
-                  className={`flex items-start justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
+                  className={`flex items-start justify-between py-3.5 px-2 cursor-pointer transition-colors ${
                     isSelected 
-                      ? 'border-amber-400/80 bg-amber-500/10 text-white' 
-                      : 'border-white/10 hover:border-white/20 bg-slate-950/40 text-slate-300'
+                      ? 'text-white bg-amber-500/[0.04]' 
+                      : 'text-slate-300 hover:bg-white/[0.02]'
                   }`}
                 >
                   <div className="flex items-start gap-3">
@@ -356,19 +356,19 @@ export default function PriceCalculator() {
                       name="condition"
                       checked={isSelected}
                       onChange={() => setCondition(condKey)}
-                      className="mt-1 text-amber-500 focus:ring-amber-400"
+                      className="mt-1 text-amber-500 focus:ring-amber-400 accent-amber-500"
                     />
                     <div>
                       <div className="text-sm font-bold text-white flex items-center gap-2">
-                        <span>{item.label}</span>
+                        <span className={isSelected ? 'text-amber-400' : 'text-white'}>{item.label}</span>
                         {item.fee > 0 && (
-                          <span className="text-[11px] font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                            +{item.fee} €
+                          <span className="text-[11px] font-semibold text-amber-400 font-mono">
+                            (+{item.fee} €)
                           </span>
                         )}
                         {item.fee === 0 && (
-                          <span className="text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                            {isAr ? 'بدون تكلفة إضافية' : isEn ? 'Standard' : 'Basis (Kein Aufpreis)'}
+                          <span className="text-[11px] font-medium text-slate-400">
+                            ({isAr ? 'بدون تكلفة إضافية' : isEn ? 'Standard' : 'Kein Aufpreis'})
                           </span>
                         )}
                       </div>
@@ -382,61 +382,61 @@ export default function PriceCalculator() {
         </div>
 
         {/* Step 5: Official Itemized Calculation Breakdown (Invoice Draft Style, No Box Clutter) */}
-        <div className="border-t border-white/10 pt-6">
-          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">
+        <div className="pt-2">
+          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
             {isAr ? 'تفصيل السعر التقديري (مبدأ الشفافية المطلقة)' : isEn ? 'Itemized Cost Breakdown (100% Transparent)' : 'Transparente Preiszusammensetzung'}
           </h3>
 
-          <div className="overflow-hidden rounded-xl border border-white/10 text-xs sm:text-sm">
+          <div className="border-t border-b border-white/10 text-xs sm:text-sm">
             <table className="w-full text-left">
-              <tbody className="divide-y divide-white/5 text-slate-300">
-                <tr className="hover:bg-white/[0.02]">
-                  <td className="py-2.5 px-4 font-medium">
+              <tbody className="divide-y divide-white/10 text-slate-300">
+                <tr>
+                  <td className="py-3 pr-4 font-medium">
                     {isAr ? 'الأجرة الأساسية (تجهيز الشاحنة والتحميل المهني VDI 2700)' : isEn ? 'Base pauschale (Vehicle prep & safe strapping VDI 2700)' : 'Grundpauschale (Bereitstellung, Anfahrt & 4-Punkt-Verladung VDI 2700)'}
                   </td>
-                  <td className="py-2.5 px-4 text-right font-mono text-white font-semibold whitespace-nowrap">
+                  <td className="py-3 pl-4 text-right font-mono text-white font-semibold whitespace-nowrap">
                     50,00 €
                   </td>
                 </tr>
 
-                <tr className="hover:bg-white/[0.02]">
-                  <td className="py-2.5 px-4 font-medium">
+                <tr>
+                  <td className="py-3 pr-4 font-medium">
                     {isAr 
                       ? `مسار النقل المباشر (${distanceKm} كم × 1,50 €/كم)` 
                       : isEn 
                       ? `Actual transport distance (${distanceKm} km × 1.50 €/km)` 
                       : `Fahrtstrecke (${distanceKm} km × 1,50 €/km)`}
                   </td>
-                  <td className="py-2.5 px-4 text-right font-mono text-white font-semibold whitespace-nowrap">
+                  <td className="py-3 pl-4 text-right font-mono text-white font-semibold whitespace-nowrap">
                     {kmCost.toFixed(2).replace('.', ',')} €
                   </td>
                 </tr>
 
                 {vehicleExtra > 0 && (
-                  <tr className="hover:bg-white/[0.02] text-amber-300/90">
-                    <td className="py-2.5 px-4 font-medium">
+                  <tr className="text-amber-300/90">
+                    <td className="py-3 pr-4 font-medium">
                       {isAr ? `إضافة فئة الوزن (${vehicleSurcharges[vehicleType].label})` : isEn ? `Weight surcharge (${vehicleSurcharges[vehicleType].label})` : `Gewichtszuschlag (${vehicleSurcharges[vehicleType].label})`}
                     </td>
-                    <td className="py-2.5 px-4 text-right font-mono font-semibold whitespace-nowrap">
+                    <td className="py-3 pl-4 text-right font-mono font-semibold whitespace-nowrap">
                       +{vehicleExtra},00 €
                     </td>
                   </tr>
                 )}
 
                 {conditionExtra > 0 && (
-                  <tr className="hover:bg-white/[0.02] text-amber-300/90">
-                    <td className="py-2.5 px-4 font-medium">
+                  <tr className="text-amber-300/90">
+                    <td className="py-3 pr-4 font-medium">
                       {isAr ? `إضافة صعوبة التحميل (${conditionSurcharges[condition].label})` : isEn ? `Loading difficulty (${conditionSurcharges[condition].label})` : `Erschwerniszuschlag (${conditionSurcharges[condition].label})`}
                     </td>
-                    <td className="py-2.5 px-4 text-right font-mono font-semibold whitespace-nowrap">
+                    <td className="py-3 pl-4 text-right font-mono font-semibold whitespace-nowrap">
                       +{conditionExtra},00 €
                     </td>
                   </tr>
                 )}
 
                 {/* Grand Total Row */}
-                <tr className="bg-amber-500/10 font-bold text-white text-sm sm:text-base border-t border-amber-500/30">
-                  <td className="py-3 px-4">
+                <tr className="font-bold text-white text-sm sm:text-base border-t border-amber-500/30">
+                  <td className="py-4 pr-4">
                     <span className="block text-white font-black">
                       {isAr ? 'السعر التقديري المتوقع (Richtpreis)' : isEn ? 'Estimated Guide Price (Total)' : 'Kalkulierter Richtpreis (Gesamt)'}
                     </span>
@@ -448,7 +448,7 @@ export default function PriceCalculator() {
                         : 'Gemäß § 19 UStG wird keine MwSt berechnet • Reeller Festpreis nach telefonischer Bestätigung'}
                     </span>
                   </td>
-                  <td className="py-3 px-4 text-right font-mono text-xl sm:text-2xl font-black text-amber-400 whitespace-nowrap">
+                  <td className="py-4 pl-4 text-right font-mono text-xl sm:text-2xl font-black text-amber-400 whitespace-nowrap">
                     ca. {calculatedTotal} €
                   </td>
                 </tr>
@@ -456,8 +456,8 @@ export default function PriceCalculator() {
             </table>
           </div>
 
-          {/* Dynamic ETA & Distance Real-time Indicator (Pure Informational, No Calculation Interference) */}
-          <div className="mt-4 p-3.5 rounded-xl bg-slate-950/70 border border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
+          {/* Dynamic ETA & Distance Real-time Indicator */}
+          <div className="mt-4 py-2 flex flex-wrap items-center justify-between gap-3 text-xs">
             <div className="flex items-center gap-2 text-slate-300">
               <Clock size={16} className="text-amber-400 shrink-0" />
               <span>
@@ -484,29 +484,29 @@ export default function PriceCalculator() {
             </div>
 
             <div className="flex items-center gap-1.5 text-slate-400 font-mono text-[11px] shrink-0">
-              <Gauge size={14} className="text-sky-400" />
+              <Gauge size={14} className="text-amber-400" />
               <span>{distanceKm} km</span>
             </div>
           </div>
 
           {/* Action CTAs */}
           <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+            <a
+              href="tel:+4915565500442"
+              className="inline-flex items-center justify-center gap-2.5 bg-red-600 hover:bg-red-500 text-white font-black py-3.5 px-6 rounded-xl shadow-lg shadow-red-600/25 transition-all active:scale-98 text-sm"
+            >
+              <Phone size={18} className="fill-white" />
+              <span>{isAr ? 'اتصال مباشر: 0155 65500442' : isEn ? 'Call directly: 0155 65500442' : '24h Notruf: 0155 65500442'}</span>
+            </a>
+
             <button
               type="button"
               onClick={handleWhatsAppInquiry}
-              className="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-extrabold py-3.5 px-6 rounded-xl shadow-lg shadow-emerald-600/20 transition-all active:scale-98 text-sm cursor-pointer"
+              className="inline-flex items-center justify-center gap-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-6 rounded-xl border border-white/15 hover:border-amber-400/40 transition-all active:scale-98 text-xs sm:text-sm cursor-pointer"
             >
-              <MessageCircle size={18} />
+              <MessageCircle size={18} className="text-amber-400" />
               <span>{isAr ? 'إرسال تفاصيل الحسبة عبر الواتساب' : isEn ? 'Request this quote via WhatsApp' : 'Kalkulierten Transport per WhatsApp anfragen'}</span>
             </button>
-
-            <a
-              href="tel:+4915565500442"
-              className="inline-flex items-center justify-center gap-2 text-slate-300 hover:text-white text-xs sm:text-sm font-bold py-2 px-4 rounded-xl border border-white/10 hover:border-white/20 transition-colors"
-            >
-              <Phone size={16} className="text-amber-400" />
-              <span>{isAr ? 'أو الاتصال المباشر: 0155 65500442' : isEn ? 'Or call directly: 0155 65500442' : 'Direkt anrufen: 0155 65500442'}</span>
-            </a>
           </div>
 
           <p className="text-[11px] text-slate-400 mt-4 leading-relaxed text-center sm:text-left">

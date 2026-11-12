@@ -4,7 +4,7 @@ import { useState, useMemo, useRef } from 'react';
 import { useLocale } from 'next-intl';
 import { 
   ChevronDown, HelpCircle, AlertTriangle, Search, X, 
-  Phone, MessageCircle, ShieldCheck, Sparkles 
+  Phone, ShieldCheck, Sparkles 
 } from 'lucide-react';
 import { faqsData, faqCategories, FAQCategory } from '@/data/faqs';
 
@@ -70,9 +70,8 @@ export default function FAQ() {
       noResults: "Keine passende Frage gefunden.",
       resetSearch: "Alle Fragen anzeigen",
       ctaTitle: "Ihre persönliche Frage war nicht dabei?",
-      ctaText: "Rufen Sie uns direkt an! Inhaber Wassem Al Dalati gibt Ihnen sofort eine ehrliche und 100 % kostenlose Ersteinschätzung.",
-      ctaCall: "Jetzt Notruf anrufen: 0155 65500442",
-      ctaWhatsApp: "WhatsApp-Anfrage",
+      ctaText: "Rufen Sie uns direkt an! Unser erfahrener Fahrer Adam gibt Ihnen sofort eine ehrliche und 100 % kostenlose Ersteinschätzung.",
+      ctaCall: "24h Notruf: 0155 65500442",
       showingCount: "Fragen angezeigt"
     },
     ar: {
@@ -83,9 +82,8 @@ export default function FAQ() {
       noResults: "لم يتم العثور على سؤال يطابق بحثك.",
       resetSearch: "عرض كافة الأسئلة",
       ctaTitle: "هل لديك سؤال خاص لم تجده هنا؟",
-      ctaText: "اتصل بنا مباشرة! يقدم لك الخبير وسيم الدالاتي استشارة هاتفية فورية، أمينة ومجانية 100%.",
+      ctaText: "اتصل بنا مباشرة! يقدم لك سائقنا الخبير آدم وفريقنا استشارة هاتفية فورية، أمينة ومجانية 100%.",
       ctaCall: "اتصل بالطوارئ: 0155 65500442",
-      ctaWhatsApp: "مراسلة عبر واتساب",
       showingCount: "سؤال معروض"
     },
     en: {
@@ -96,9 +94,8 @@ export default function FAQ() {
       noResults: "No matching questions found.",
       resetSearch: "Show all questions",
       ctaTitle: "Haven't found your specific question?",
-      ctaText: "Call us directly! Owner Wassem Al Dalati provides an honest, 100% free initial evaluation over the phone.",
+      ctaText: "Call us directly! Our experienced driver Adam provides an honest, 100% free initial evaluation over the phone.",
       ctaCall: "Call Emergency Dispatch: 0155 65500442",
-      ctaWhatsApp: "WhatsApp Inquiry",
       showingCount: "questions shown"
     }
   }[currentLang];
@@ -124,7 +121,7 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Google FAQPage Schema Markup (Strictly follows schema.org & Google Search Central Guidelines)
+  // Google FAQPage Schema Markup
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -140,20 +137,16 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="py-20 sm:py-28 bg-slate-950 text-white border-b border-white/10 relative overflow-hidden" dir={isAr ? "rtl" : "ltr"}>
-      
-      {/* Background Decorative Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="container mx-auto px-4 max-w-4xl relative z-10">
+      <div className="container mx-auto px-4 max-w-5xl relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles size={13} className="text-amber-400" />
+        <div className="max-w-3xl mb-10 sm:mb-12">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-3">
+            <Sparkles size={15} className="text-amber-400 shrink-0" />
             <span>{ui.badge}</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight">
             {ui.title}
           </h2>
           <p className="mt-3 text-slate-300 text-xs sm:text-base leading-relaxed">
@@ -161,8 +154,8 @@ export default function FAQ() {
           </p>
         </div>
 
-        {/* Search Bar */}
-        <div className="relative mb-6">
+        {/* Search & Filter Controls - Open Editorial Layout (Zero Outer Box) */}
+        <div className="mb-8 space-y-4">
           <div className="relative flex items-center">
             <Search className={`absolute ${isAr ? 'right-4' : 'left-4'} text-slate-400 pointer-events-none`} size={18} />
             <input
@@ -173,7 +166,7 @@ export default function FAQ() {
                 setOpenIndex(0);
               }}
               placeholder={ui.searchPlaceholder}
-              className={`w-full py-3.5 ${isAr ? 'pr-11 pl-10' : 'pl-11 pr-10'} bg-slate-900/90 border border-white/10 rounded-2xl text-white text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/50 transition-all shadow-inner`}
+              className={`w-full py-3.5 ${isAr ? 'pr-11 pl-10' : 'pl-11 pr-10'} bg-slate-900/90 border border-white/10 rounded-xl text-white text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:border-amber-400 transition-all`}
             />
             {searchQuery && (
               <button
@@ -186,17 +179,15 @@ export default function FAQ() {
               </button>
             )}
           </div>
-        </div>
 
-        {/* Category Filter Tabs (Touch & Drag friendly, No Scrollbar) */}
-        <div className="relative mb-8">
+          {/* Category Filter Tabs */}
           <div
             ref={tabsContainerRef}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
-            className="flex items-center gap-2 overflow-x-auto sm:flex-wrap sm:justify-center py-2 px-1 no-scrollbar touch-scroll-container cursor-grab active:cursor-grabbing select-none scroll-smooth"
+            className="flex items-center gap-2 overflow-x-auto sm:flex-wrap py-1 no-scrollbar touch-scroll-container cursor-grab active:cursor-grabbing select-none"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -209,10 +200,10 @@ export default function FAQ() {
                   key={cat.id}
                   type="button"
                   onClick={() => handleTabClick(cat.id)}
-                  className={`whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer border select-none ${
+                  className={`whitespace-nowrap px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer select-none ${
                     isActive 
-                      ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-lg shadow-amber-500/20 font-bold scale-[1.02]' 
-                      : 'bg-slate-900/80 text-slate-300 border-white/10 hover:border-white/20 hover:text-white'
+                      ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20' 
+                      : 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10'
                   }`}
                 >
                   {cat[currentLang]}
@@ -222,8 +213,8 @@ export default function FAQ() {
           </div>
         </div>
 
-        {/* Questions Counter & Quick Status */}
-        <div className="flex items-center justify-between text-xs text-slate-400 mb-4 px-1">
+        {/* Questions Counter */}
+        <div className="flex items-center justify-between text-xs text-slate-400 mb-3">
           <span>
             {filteredFaqs.length} {ui.showingCount}
           </span>
@@ -241,69 +232,49 @@ export default function FAQ() {
           )}
         </div>
 
-        {/* Accordion List */}
+        {/* Clean Editorial Divided Accordion List (No Separate Box per Question, No Nested Boxes) */}
         {filteredFaqs.length > 0 ? (
-          <div className="space-y-3.5">
+          <div className="border-t border-b border-white/10 divide-y divide-white/10">
             {filteredFaqs.map((faq, index) => {
               const isOpen = openIndex === index;
               const content = faq[currentLang];
 
               return (
-                <div
-                  key={faq.id}
-                  className={`rounded-2xl border transition-all overflow-hidden ${
-                    isOpen 
-                      ? 'border-amber-500/60 bg-slate-900/95 shadow-xl shadow-amber-500/5' 
-                      : 'border-white/10 bg-slate-900/40 hover:border-white/20 hover:bg-slate-900/70'
-                  }`}
-                >
+                <div key={faq.id} className="py-5 sm:py-6 transition-colors hover:bg-white/[0.01]">
                   <button
                     type="button"
                     onClick={() => toggleFAQ(index)}
-                    className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer transition-colors"
+                    className="w-full text-left flex items-start justify-between gap-4 cursor-pointer"
                   >
                     <div className="flex items-start gap-3 flex-grow">
                       {faq.isWarning ? (
-                        <div className="p-1 rounded-md bg-amber-500/10 border border-amber-500/30 flex-shrink-0 mt-0.5">
-                          <AlertTriangle size={18} className="text-amber-400" />
-                        </div>
+                        <AlertTriangle size={18} className="text-amber-400 shrink-0 mt-1" />
                       ) : (
-                        <div className="p-1 rounded-md bg-white/5 border border-white/10 flex-shrink-0 mt-0.5">
-                          <HelpCircle size={18} className="text-slate-400" />
-                        </div>
+                        <HelpCircle size={18} className="text-amber-400/80 shrink-0 mt-1" />
                       )}
                       <div className="space-y-1">
-                        <span className="font-bold text-sm sm:text-base text-white block leading-snug">
+                        <span className={`font-bold text-sm sm:text-base block leading-snug transition-colors ${isOpen ? 'text-amber-400' : 'text-white'}`}>
                           {content.question}
                         </span>
-                        {content.highlight && !isOpen && (
-                          <span className="inline-block text-[11px] font-semibold text-amber-400/90 bg-amber-500/10 px-2 py-0.5 rounded">
+                        {content.highlight && (
+                          <span className="inline-block text-[11px] font-bold text-amber-400/90 uppercase tracking-wider">
                             {content.highlight}
                           </span>
                         )}
                       </div>
                     </div>
 
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all flex-shrink-0 ${
-                      isOpen 
-                        ? 'rotate-180 bg-amber-500 text-slate-950 font-bold shadow-md' 
-                        : 'bg-white/5 text-slate-400 hover:text-white'
-                    }`}>
-                      <ChevronDown size={18} />
-                    </div>
+                    <ChevronDown
+                      size={18}
+                      className={`shrink-0 mt-1 transition-transform duration-200 ${
+                        isOpen ? 'rotate-180 text-amber-400' : 'text-slate-400'
+                      }`}
+                    />
                   </button>
 
                   {isOpen && (
-                    <div className="px-4 pb-5 sm:px-6 pt-2 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/5 bg-slate-950/40">
-                      {content.highlight && (
-                        <div className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-md mb-3">
-                          <ShieldCheck size={13} />
-                          <span>{content.highlight}</span>
-                        </div>
-                      )}
-                      <p className="text-slate-200 leading-relaxed font-normal">
-                        {content.answer}
-                      </p>
+                    <div className="mt-3 pl-7 rtl:pl-0 rtl:pr-7 text-slate-300 text-xs sm:text-sm leading-relaxed">
+                      <p>{content.answer}</p>
                     </div>
                   )}
                 </div>
@@ -311,8 +282,8 @@ export default function FAQ() {
             })}
           </div>
         ) : (
-          <div className="text-center py-12 px-4 rounded-2xl border border-white/10 bg-slate-900/30">
-            <HelpCircle size={36} className="text-slate-500 mx-auto mb-3" />
+          <div className="py-12 border-t border-b border-white/10 text-center">
+            <HelpCircle size={32} className="text-slate-500 mx-auto mb-2" />
             <p className="text-slate-300 text-sm font-semibold">{ui.noResults}</p>
             <button
               type="button"
@@ -320,19 +291,18 @@ export default function FAQ() {
                 setSearchQuery('');
                 setActiveCategory('all');
               }}
-              className="mt-3 text-xs font-bold text-amber-400 hover:underline cursor-pointer"
+              className="mt-2 text-xs font-bold text-amber-400 hover:underline cursor-pointer"
             >
               {ui.resetSearch}
             </button>
           </div>
         )}
 
-        {/* Free Consultation CTA Banner */}
-        <div className="mt-14 rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-slate-900 to-amber-500/5 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
-          <div className="space-y-1.5 text-center sm:text-left">
-            <h3 className="text-base sm:text-lg font-bold text-white flex items-center justify-center sm:justify-start gap-2">
-              <Sparkles size={18} className="text-amber-400 flex-shrink-0" />
-              <span>{ui.ctaTitle}</span>
+        {/* Editorial Bottom Callout (Open Layout, No Box Clutter) */}
+        <div className="mt-10 pt-4 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="space-y-1 text-center sm:text-left">
+            <h3 className="text-base sm:text-lg font-black text-white">
+              {ui.ctaTitle}
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
               {ui.ctaText}
@@ -342,19 +312,16 @@ export default function FAQ() {
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto flex-shrink-0">
             <a
               href="tel:+4915565500442"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm shadow-lg shadow-amber-500/20 transition-all cursor-pointer text-center"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-black text-xs sm:text-sm shadow-lg shadow-red-600/25 transition-all cursor-pointer text-center"
             >
-              <Phone size={16} />
+              <Phone size={16} className="fill-white" />
               <span>{ui.ctaCall}</span>
             </a>
             <a
-              href="https://wa.me/4915565500442"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs sm:text-sm border border-white/10 transition-all cursor-pointer text-center"
+              href="#kontakt"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm transition-all cursor-pointer text-center"
             >
-              <MessageCircle size={16} className="text-emerald-400" />
-              <span>{ui.ctaWhatsApp}</span>
+              <span>{isAr ? "طلب الخدمة الآن ↓" : "Zur Preisanfrage ↓"}</span>
             </a>
           </div>
         </div>

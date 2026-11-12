@@ -52,7 +52,7 @@ export const BRAND = {
     logoFull: '/branding/abschleppdienst_direkt_logo_full.png',
     ogImage: '/og-image.png',
     vcard: '/abschleppdienst-direkt-kontakt.vcf',
-    vcardDownloadName: 'Abschleppdienst-Direkt-Wassem-Al-Dalati.vcf',
+    vcardDownloadName: 'Abschleppdienst-Direkt-Kontakt.vcf',
     businessCardFront: '/branding/visitenkarte_vorderseite.png',
     businessCardBack: '/branding/visitenkarte_rueckseite.png',
     businessCardDuo: '/images/branding/visitenkarte-duo.png',

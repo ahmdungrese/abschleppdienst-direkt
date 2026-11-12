@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import SpotlightCard from '@/components/ui/SpotlightCard';
 import { Camera, ShieldCheck, X, ZoomIn, Truck, Building2 } from 'lucide-react';
 
 interface PhotoItem {
@@ -158,7 +157,7 @@ export default function Gallery() {
           </button>
         </div>
 
-        {/* Gallery Grid of ALL 7 PHOTOS */}
+        {/* Gallery Grid of ALL PHOTOS (Single-Layer Clean Cards, No Box-Inside-Box) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredPhotos.map((item) => (
             <div
@@ -167,54 +166,52 @@ export default function Gallery() {
                 setSelectedPhoto(item);
                 setActiveModalImage(item.image);
               }}
-              className="cursor-pointer group"
+              className="cursor-pointer group rounded-2xl overflow-hidden bg-slate-950/70 border border-white/10 hover:border-amber-400/50 transition-all duration-300 flex flex-col justify-between shadow-lg"
             >
-              <SpotlightCard className="overflow-hidden flex flex-col justify-between p-3 h-full">
-                {/* Photo Thumbnail */}
-                <div className="h-52 w-full rounded-2xl overflow-hidden relative bg-slate-950 mb-3.5 border border-white/10">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    loading="lazy"
-                    width="400"
-                    height="250"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                  
-                  {/* Category Pill */}
-                  <span className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-md text-amber-400 border border-amber-500/30 text-[10px] font-black px-2.5 py-1 rounded-full shadow-md">
-                    {item.tag}
-                  </span>
+              {/* Photo Thumbnail Flush at Top */}
+              <div className="h-52 w-full overflow-hidden relative bg-slate-950">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  width="400"
+                  height="250"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+                
+                {/* Category Tag - Crisp Editorial Tag */}
+                <span className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-md text-amber-400 border-l-2 border-amber-400 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 shadow-md">
+                  {item.tag}
+                </span>
 
-                  {/* Zoom hint */}
-                  <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                    <div className="w-10 h-10 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold shadow-lg">
-                      <ZoomIn size={18} />
-                    </div>
-                  </div>
-
-                  <span className="absolute bottom-3 right-3 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md flex items-center gap-1 shadow">
-                    <ShieldCheck size={12} />
-                    <span>{item.badge}</span>
-                  </span>
-                </div>
-
-                <div className="p-2 flex-grow flex flex-col justify-between space-y-3">
-                  <div>
-                    <h4 className="font-bold text-sm text-white group-hover:text-amber-300 transition-colors leading-snug">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400 font-medium">
-                    <span className="text-amber-400 font-bold">Abschleppdienst Direkt</span>
-                    <span>Bochum &amp; NRW</span>
+                {/* Zoom hint */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                  <div className="w-10 h-10 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold shadow-lg">
+                    <ZoomIn size={18} />
                   </div>
                 </div>
-              </SpotlightCard>
+
+                <span className="absolute bottom-3 right-3 bg-slate-950/85 backdrop-blur-md text-slate-200 border border-white/15 text-[10px] font-bold px-2.5 py-0.5 rounded-md flex items-center gap-1 shadow">
+                  <ShieldCheck size={12} className="text-amber-400" />
+                  <span>{item.badge}</span>
+                </span>
+              </div>
+
+              <div className="p-4 flex-grow flex flex-col justify-between space-y-3">
+                <div>
+                  <h4 className="font-bold text-sm text-white group-hover:text-amber-400 transition-colors leading-snug">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400 font-medium">
+                  <span className="text-amber-400 font-bold">Abschleppdienst Direkt</span>
+                  <span>Bochum &amp; NRW</span>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -254,7 +251,7 @@ export default function Gallery() {
 
             <div className="p-6 bg-slate-900 border-t border-white/10">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-[10px] uppercase font-black text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/30">
+                <span className="text-[10px] uppercase font-bold tracking-[0.18em] text-amber-400 border-l-2 border-amber-400 pl-2">
                   {selectedPhoto.tag}
                 </span>
 

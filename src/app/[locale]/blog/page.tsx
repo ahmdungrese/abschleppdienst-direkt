@@ -71,8 +71,8 @@ export default async function BlogOverviewPage({
 
           {/* Page Header with Trust Stats */}
           <header className="mb-12 text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-amber-400 text-xs font-black uppercase tracking-wider mb-5">
-              <Wrench size={14} />
+            <div className="flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-5">
+              <Wrench size={15} className="text-amber-400 shrink-0" />
               <span>
                 {isAr
                   ? 'خبرة حقيقية من قلب الميدان • Abschleppdienst Direkt'
@@ -115,18 +115,20 @@ export default async function BlogOverviewPage({
                 : 'Aus über 10 Jahren Praxis im Ruhrgebiet: Transparente Einblicke in unsere Ausrüstung an Bord, den genauen Bergungsablauf und wie wir Ihr Fahrzeug oder Ihre Fracht vollkommen stressfrei, sicher und flexibel ans Ziel bringen.'}
             </p>
 
-            {/* Quick Badges Strip */}
-            <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-300">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 border border-white/10">
-                <BookOpen size={13} className="text-amber-400" />
+            {/* Quick Metadata Strip — Open Inline Typography */}
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-slate-300 pt-2">
+              <span className="inline-flex items-center gap-1.5">
+                <BookOpen size={14} className="text-amber-400" />
                 <span>{isAr ? `${blogArticles.length} دليلاً مفصلاً` : `${blogArticles.length} Fachratgeber`}</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 border border-white/10">
-                <Clock size={13} className="text-emerald-400" />
+              <span className="text-white/20 hidden sm:inline">•</span>
+              <span className="inline-flex items-center gap-1.5">
+                <Clock size={14} className="text-amber-400" />
                 <span>{isAr ? '20-35 دقيقة استجابة' : '20-35 Min. Vor Ort'}</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 border border-white/10">
-                <ShieldCheck size={13} className="text-sky-400" />
+              <span className="text-white/20 hidden sm:inline">•</span>
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck size={14} className="text-amber-400" />
                 <span>{isAr ? 'استشارة هاتفية مجانية 100%' : '100% Kostenlose Beratung'}</span>
               </span>
             </div>
@@ -137,18 +139,16 @@ export default async function BlogOverviewPage({
             <BlogExplorer articles={blogArticles} locale={locale} />
           </div>
 
-          {/* Reassuring Human CTA Section */}
-          <div className="relative rounded-3xl overflow-hidden border border-amber-500/30 bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/40 p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 blur-[90px] pointer-events-none" />
-            
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold mb-4">
+          {/* Reassuring Human CTA Section at End of Page — Open Editorial Layout */}
+          <div id="beratung-anfrage" className="border-t border-white/10 pt-12 text-center max-w-4xl mx-auto">
+            <span className="inline-flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
               <ShieldCheck size={14} />
               <span>
                 {isAr
-                  ? 'خدمة مباشرة مع Wassem Al Dalati شخصياً'
+                  ? 'خدمة مباشرة مع Abschleppdienst Direkt'
                   : isEn
-                  ? 'Direct Service with Wassem Al Dalati'
-                  : 'Direkter Draht zu Wassem Al Dalati'}
+                  ? 'Direct Service with Abschleppdienst Direkt'
+                  : 'Direkter Draht zu Abschleppdienst Direkt'}
               </span>
             </span>
 
@@ -171,19 +171,19 @@ export default async function BlogOverviewPage({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="tel:+4915565500442"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm transition-all shadow-lg shadow-amber-500/25 active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-red-600 hover:bg-red-500 text-white font-black text-sm transition-all shadow-lg shadow-red-600/25 active:scale-95"
               >
-                <Phone size={18} />
-                <span>{isAr ? 'اتصال مباشر: 0155 65500442' : 'Direkt anrufen: 0155 65500442'}</span>
+                <Phone size={18} className="fill-white" />
+                <span>{isAr ? 'اتصال طوارئ: 0155 65500442' : '24h Notruf: 0155 65500442'}</span>
               </a>
 
               <a
-                href="https://wa.me/4915565500442?text=Hallo%20Wassem,%20ich%20habe%20eine%20Anfrage%20f%C3%BCr%20einen%20Fahrzeugtransport."
+                href="https://wa.me/4915565500442?text=Hallo%20Abschleppdienst%20Direkt,%20ich%20habe%20eine%20Anfrage%20f%C3%BCr%20einen%20Fahrzeugtransport."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-lg shadow-emerald-600/25 active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white border border-white/15 hover:border-amber-400/40 font-bold text-sm transition-all shadow-lg active:scale-95"
               >
-                <MessageCircle size={18} />
+                <MessageCircle size={18} className="text-amber-400" />
                 <span>{isAr ? 'مراسلتنا عبر واتساب' : 'Per WhatsApp schreiben'}</span>
               </a>
             </div>

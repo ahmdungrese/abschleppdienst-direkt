@@ -26,8 +26,8 @@ export default function Footer() {
             <p className="text-xs text-slate-400 leading-relaxed">
               {t('desc')}
             </p>
-            <div className="mt-4 flex items-center gap-2 text-xs text-amber-400 font-bold">
-              <ShieldCheck size={16} className="text-emerald-400" />
+            <div className="mt-4 flex items-center gap-2 text-xs text-slate-200 font-bold">
+              <ShieldCheck size={16} className="text-amber-400" />
               <span>Fachgerechte 4-Punkt-Sicherung nach VDI 2700</span>
             </div>
           </div>

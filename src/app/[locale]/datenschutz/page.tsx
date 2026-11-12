@@ -26,11 +26,11 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
           <span className="text-amber-400 font-bold">Datenschutz</span>
         </div>
 
-        <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-white/10 shadow-2xl space-y-6 text-sm text-slate-300">
+        <div className="border-t border-b border-white/10 py-10 space-y-8 text-sm text-slate-300">
           
-          <div className="border-b border-white/10 pb-4">
-            <h1 className="text-2xl sm:text-3xl font-black text-white">Datenschutzerklärung</h1>
-            <p className="text-xs text-amber-400 font-semibold mt-1">Stand: DSGVO-konform 2026</p>
+          <div className="border-b border-white/10 pb-6">
+            <h1 className="text-3xl sm:text-4xl font-black text-white">Datenschutzerklärung</h1>
+            <p className="text-xs text-amber-400 font-semibold mt-1.5">Stand: DSGVO-konform 2026</p>
           </div>
 
           <div>
@@ -72,7 +72,7 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
           <div className="pt-6 border-t border-white/10">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition-colors"
+              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 px-4 rounded-xl text-xs border border-white/10 transition-colors"
             >
               <ArrowLeft size={14} className="rtl:rotate-180" />
               <span>Zur Startseite zurückkehren</span>

@@ -39,7 +39,7 @@ export default function ServiceInquirySection({ slug, title, pricingHint }: Prop
   const calculatedTransferPrice = Math.max(50, Math.round(50 + (calcKm * 1.50)));
 
   return (
-    <section className="pt-8 border-t border-white/10 space-y-6">
+    <section id="anfrage" className="pt-8 border-t border-white/10 space-y-6">
       
       {/* ======================================================== */}
       {/* CASE 1: FAHRZEUGÜBERFÜHRUNG (INTERACTIVE KM SLIDER)       */}
@@ -93,23 +93,23 @@ export default function ServiceInquirySection({ slug, title, pricingHint }: Prop
 
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <a
+                href="tel:+4915565500442"
+                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3.5 px-6 rounded-xl text-xs sm:text-sm shadow-md transition-all active:scale-95"
+              >
+                <Phone size={15} />
+                <span>0155 65500442 anrufen</span>
+              </a>
+
+              <a
                 href={`https://wa.me/4915565500442?text=${encodeURIComponent(
                   `Hallo Abschleppdienst Direkt, ich interessiere mich für eine Fahrzeugüberführung:\n- Strecke: ca. ${calcKm} km\n- Kalkulierter Richtpreis: ca. ${calculatedTransferPrice} €\nBitte um Terminbestätigung.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl text-xs sm:text-sm shadow-md transition-all active:scale-95"
+                className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-5 rounded-xl border border-white/15 hover:border-amber-400/40 text-xs sm:text-sm transition-all"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={16} className="text-amber-400" />
                 <span>Termin per WhatsApp anfragen</span>
-              </a>
-
-              <a
-                href="tel:+4915565500442"
-                className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-5 rounded-xl border border-white/10 text-xs sm:text-sm transition-all"
-              >
-                <Phone size={15} className="text-amber-400" />
-                <span>0155 65500442 anrufen</span>
               </a>
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function ServiceInquirySection({ slug, title, pricingHint }: Prop
               <div className="text-2xl sm:text-3xl font-black text-white font-mono mt-0.5">
                 ab 50 € Festpreis
               </div>
-              <div className="text-[11px] text-emerald-400 font-semibold">100% funkenfrei &amp; sicher für Steuergeräte (NOCO 5250A)</div>
+              <div className="text-[11px] text-amber-400 font-semibold">100% funkenfrei &amp; sicher für Steuergeräte (NOCO 5250A)</div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
@@ -188,9 +188,9 @@ export default function ServiceInquirySection({ slug, title, pricingHint }: Prop
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-5 rounded-xl text-xs sm:text-sm transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-5 rounded-xl border border-white/15 hover:border-amber-400/40 text-xs sm:text-sm transition-all"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={16} className="text-amber-400" />
                 <span>Per WhatsApp anfordern</span>
               </a>
             </div>
@@ -298,9 +298,9 @@ export default function ServiceInquirySection({ slug, title, pricingHint }: Prop
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-5 rounded-xl text-xs sm:text-sm transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-5 rounded-xl border border-white/15 hover:border-amber-400/40 text-xs sm:text-sm transition-all"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={16} className="text-amber-400" />
                 <span>Per WhatsApp senden</span>
               </a>
             </div>
@@ -394,23 +394,23 @@ export default function ServiceInquirySection({ slug, title, pricingHint }: Prop
 
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <a
+                href="tel:+4915565500442"
+                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3.5 px-6 rounded-xl text-xs sm:text-sm shadow-md transition-all active:scale-95"
+              >
+                <Phone size={15} />
+                <span>Telefonisch abklären</span>
+              </a>
+
+              <a
                 href={`https://wa.me/4915565500442?text=${encodeURIComponent(
                   `Hallo Abschleppdienst Direkt, ich plane einen Ferntransport:\n- Von: ${routeFrom} ➔ Nach: ${routeTo}\n- Ladung: ${vehicleCategory} (${driveType})\nBitte um ein verbindliches Festpreisangebot.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl text-xs sm:text-sm shadow-md transition-all active:scale-95"
+                className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-5 rounded-xl border border-white/15 hover:border-amber-400/40 text-xs sm:text-sm transition-all"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={16} className="text-amber-400" />
                 <span>Angebot per WhatsApp anfragen</span>
-              </a>
-
-              <a
-                href="tel:+4915565500442"
-                className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-5 rounded-xl border border-white/10 text-xs sm:text-sm transition-all"
-              >
-                <Phone size={15} className="text-amber-400" />
-                <span>Telefonisch abklären</span>
               </a>
             </div>
           </div>

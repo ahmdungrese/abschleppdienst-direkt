@@ -47,8 +47,9 @@ export default async function CalculatorPage({ params }: { params: Promise<{ loc
 
           {/* Dedicated Semantic H1 Header */}
           <div className="mb-10 text-center sm:text-left">
-            <div className="inline-block px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-              {isAr ? "تسعير عادل بدون وسيط" : isEn ? "100% Transparent Guide Price" : "Kostentransparenz & Richtpreis"}
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-3 justify-center sm:justify-start">
+              <span className="w-4 h-px bg-amber-400/80"></span>
+              <span>{isAr ? "تسعير عادل بدون وسيط" : isEn ? "100% Transparent Guide Price" : "Kostentransparenz & Richtpreis"}</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
               {isAr 
@@ -98,7 +99,7 @@ export default async function CalculatorPage({ params }: { params: Promise<{ loc
 
               <ul className="space-y-3 pt-1">
                 <li className="flex items-start gap-2.5">
-                  <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 size={16} className="text-amber-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white">
                       {isAr ? "إذا كانت السيارة سليمة وتتدحرج بحرية:" : isEn ? "For undamaged, rolling vehicles:" : "Verlässlichster Richtpreis für intakte Fahrzeuge:"}
@@ -112,7 +113,7 @@ export default async function CalculatorPage({ params }: { params: Promise<{ loc
                 </li>
 
                 <li className="flex items-start gap-2.5">
-                  <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 size={16} className="text-amber-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white">
                       {isAr ? "تأثير وزن السيارة وحجمها:" : isEn ? "Vehicle Weight & Curb Mass:" : "Einfluss von Fahrzeuggewicht & Fahrzeugtyp:"}
@@ -126,7 +127,7 @@ export default async function CalculatorPage({ params }: { params: Promise<{ loc
                 </li>
 
                 <li className="flex items-start gap-2.5">
-                  <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 size={16} className="text-amber-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white">
                       {isAr ? "حالة الأعطال والأضرار (عجلات مقفلة أو حوادث):" : isEn ? "Damage & Locked Wheels:" : "Fahrzeugzustand & Erschwernis:"}
@@ -140,7 +141,7 @@ export default async function CalculatorPage({ params }: { params: Promise<{ loc
                 </li>
 
                 <li className="flex items-start gap-2.5">
-                  <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 size={16} className="text-amber-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white">
                       {isAr ? "ضمان السعر الثابت هاتفياً:" : isEn ? "Guaranteed Price by Phone:" : "Verbindliche telefonische Festpreis-Garantie:"}

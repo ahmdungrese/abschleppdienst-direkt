@@ -20,17 +20,17 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
     {
       slug: 'fahrzeugueberfuehrung',
       icon: Truck,
-      title: "Fahrzeugüberführung (Autotransport von A nach B)",
-      tag: "Bis 3,5 Tonnen • Regional & Überregional",
+      title: "Fahrzeugüberführung von A nach B (Bundesweit)",
+      tag: "Bundesweit & NRW • Bis 3,5 Tonnen",
       image: "/images/real/tow-truck-audi-rs3-wide.jpg",
-      summary: "Sicherer und termingerechter Transport von Fahrzeugen – regional oder überregional. Schonender Einzeltransport von fahrbereiten, nicht zugelassenen PKW, Neufahrzeugen oder Oldtimern im Ruhrgebiet und bundesweit.",
+      summary: "Sicherer und termingerechter Einzeltransport von PKW aller Art von Punkt A nach Punkt B – in ganz Nordrhein-Westfalen und bundesweit. Schonender Transport von fahrbereiten, nicht zugelassenen PKW, Neufahrzeugen oder Oldtimern direkt zur Wunschadresse.",
       scenarios: [
-        "Fahrzeugkauf ohne Kennzeichen / abgemeldete Neufahrzeuge",
+        "Fahrzeugkauf ohne Kennzeichen / abgemeldete Neufahrzeuge bundesweit",
         "Transport zwischen Werkstätten, Autohäusern oder Privatpersonen",
         "Schonender Transport von Oldtimern und Sportwagen",
-        "Überführung rollfähiger Autos bei Wohnortwechsel oder Umzug"
+        "Überführung rollfähiger Autos bei Wohnortwechsel oder Umzug quer durch Deutschland"
       ],
-      highlights: "100% Einzelfahrt auf Plateau • Haustürabholung & Zustellung • Keine Beiladung"
+      highlights: "100% Einzelfahrt auf Plateau • Haustürabholung & Zustellung bundesweit • Keine Beiladung"
     },
     {
       slug: 'abschleppdienst-werkstatt',
@@ -50,32 +50,32 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
     {
       slug: 'pannenhilfe-starthilfe',
       icon: Zap,
-      title: "Pannenhilfe & Vor-Ort Starthilfe",
-      tag: "800 € NOCO Boost Max (5250A)",
+      title: "Pannenhilfe & Vor-Ort Starthilfe (Bochum)",
+      tag: "Lokal in Bochum & Autobahnen • 20–40 Min.",
       image: "/images/real/noco-boost-starthilfe.jpg",
-      summary: "Sofortige Vor-Ort-Hilfe bei leerer Batterie ohne Risiko für die Bordelektronik sowie schneller Radwechsel mit dem 800 € Profi-Booster NOCO Boost Max (5250A).",
+      summary: "Schnelle Soforthilfe direkt vor Ort im Stadtgebiet Bochum und auf A40/A43/A448 bei leerer Batterie ohne Risiko für die Bordelektronik sowie schneller Radwechsel mit dem 800 € Profi-Booster NOCO Boost Max (5250A).",
       scenarios: [
         "Winter-Kälteschock: Batterie bricht bei Frost elektrochemisch zusammen",
         "Licht versehentlich angelassen: Batterie über Nacht tiefentladen",
-        "Klickendes Starterrelais beim Startversuch",
-        "Reifenpanne: Montage des Reserverads direkt vor Ort"
+        "Klickendes Starterrelais beim Startversuch im Raum Bochum",
+        "Reifenpanne: Montage des Reserverads direkt vor Ort auf Straßen & Autobahnen"
       ],
-      highlights: "800 € NOCO Boost Max • 100% Funkenfrei & Verpolungsschutz • In 20–40 Min. vor Ort"
+      highlights: "800 € NOCO Boost Max • 100% Funkenfrei & Verpolungsschutz • In 20–40 Min. vor Ort in Bochum"
     },
     {
       slug: 'bundesweite-ueberfuehrung',
       icon: Map,
-      title: "Bundesweite Überführung & Warentransport",
-      tag: "Güter & KFZ bis 3,5 t",
+      title: "Warentransport & Fracht-Express bis 3,5 t (Bundesweit)",
+      tag: "Paletten, Maschinen & Fracht • Bundesweit",
       image: "/images/real/tow-truck-bmw-side.jpg",
-      summary: "Professionelle Durchführung von Transportaufträgen für unterschiedlichste Güter und Fahrzeuge bis 3,5 t quer durch ganz Deutschland zu transparenten Konditionen.",
+      summary: "Professionelle Durchführung von Express-Transportaufträgen für eilige Fracht, Baustellen- und Maschinenfracht sowie Güter bis 3,5 t quer durch ganz Deutschland zu transparenten Konditionen.",
       scenarios: [
-        "Warentransport & Logistik: Durchführung von Transportaufträgen für unterschiedlichste Güter, Maschinen & Paletten bis 3,5 t",
-        "Fahrzeugkauf in Münster, Bielefeld, Köln, Düsseldorf, Frankfurt oder Berlin",
-        "Rückholung defekter oder verunfallter Fahrzeuge aus dem Urlaub",
-        "Termintransporte ohne Zwischenlagerung von Punkt A nach Punkt B"
+        "Warentransport & Logistik: Durchführung von Transportaufträgen für eilige Fracht, Maschinen & Paletten bis 3,5 t",
+        "Direktfahrten zwischen Münster, Bielefeld, Köln, Düsseldorf, Frankfurt oder Berlin",
+        "Sondertransporte ohne Zwischenlagerung von Punkt A nach Punkt B",
+        "Termintransporte ohne Risiko von Transportschäden im Verteilerzentrum"
       ],
-      highlights: "Feste Kilometerpreise • VDI-2700-Ladungssicherung • Pünktliche Direktfahrten"
+      highlights: "Feste Kilometerpreise • VDI-2700-Ladungssicherung • Pünktliche Direktfahrten bundesweit"
     },
     {
       slug: 'elektroauto-automatik-abschleppen',
@@ -132,8 +132,9 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
         {/* Header */}
         <div className="mb-14 text-center sm:text-left border-b border-white/10 pb-10">
-          <div className="inline-block px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
-            Unser Leistungsspektrum
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-4 justify-center sm:justify-start">
+            <span className="w-5 h-px bg-amber-400/80"></span>
+            <span>Unser Leistungsspektrum</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
             Professionelle Autotransport- & Abschleppdienste
@@ -143,86 +144,115 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
           </p>
         </div>
 
-        {/* Detailed Service Cards */}
-        <div className="space-y-8">
+        {/* Editorial Service Catalog (Clean Divided Rows, Zero Nested Box Clutter) */}
+        <div className="border-t border-b border-white/10 divide-y divide-white/10">
           {services.map((srv, idx) => {
             const Icon = srv.icon;
             return (
-              <div
+              <article
                 key={idx}
-                className="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-amber-500/40 transition-all flex flex-col md:flex-row justify-between gap-6"
+                className="py-10 sm:py-12 transition-colors hover:bg-white/[0.015] flex flex-col md:flex-row justify-between gap-8 items-start"
               >
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
-                      <Icon size={24} />
+                <div className="flex-1 space-y-3">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-400 flex items-center justify-center font-bold shrink-0">
+                      <Icon size={20} />
                     </div>
-                    <span className="text-xs font-bold uppercase px-3 py-1 rounded-full bg-white/5 border border-white/10 text-amber-300">
-                      {srv.tag}
-                    </span>
+                    <div>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-amber-400 block">
+                        {srv.tag}
+                      </span>
+                      <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                        {srv.title}
+                      </h2>
+                    </div>
                   </div>
 
-                  <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                    {srv.title}
-                  </h2>
-                  <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                  <p className="text-sm text-slate-300 leading-relaxed">
                     {srv.summary}
                   </p>
 
                   {/* Scenarios - Clean Typography, No Nested Box */}
-                  <div className="space-y-2 mb-4 pt-1">
-                    <div className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                  <div className="space-y-2 pt-2">
+                    <div className="text-xs font-bold text-slate-200 uppercase tracking-wider">
                       Typische Einsatzfälle:
                     </div>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
                       {srv.scenarios.map((sc, sIdx) => (
                         <li key={sIdx} className="flex items-center gap-2">
-                          <CheckCircle2 size={14} className="text-amber-400 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0"></span>
                           <span>{sc}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="text-xs text-slate-400 font-semibold flex items-center gap-2">
-                    <ShieldCheck size={16} className="text-emerald-400" />
+                  <div className="pt-2 text-xs text-slate-400 font-semibold flex items-center gap-2">
+                    <ShieldCheck size={15} className="text-amber-400 shrink-0" />
                     <span>{srv.highlights}</span>
                   </div>
                 </div>
 
-                <div className="flex md:flex-col justify-end items-end gap-3 border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-6 min-w-[220px]">
+                <div className="flex md:flex-col justify-end items-stretch gap-3 w-full md:w-[230px] shrink-0 pt-2 md:pt-0">
                   {srv.image && (
-                    <div className="relative w-full h-28 rounded-xl overflow-hidden bg-slate-900 border border-white/10 hidden md:block group">
+                    <div className="relative w-full h-32 rounded-2xl overflow-hidden bg-slate-900 border border-white/10 hidden md:block group">
                       <img
                         src={srv.image}
                         alt={srv.title}
                         loading="lazy"
-                        width={220}
-                        height={112}
+                        width={230}
+                        height={128}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   )}
                   <Link
                     href={`/leistungen/${srv.slug}`}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black py-3 px-5 rounded-xl text-xs sm:text-sm shadow-md transition-all active:scale-95"
+                    className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3 px-5 rounded-xl text-xs sm:text-sm shadow-md transition-all active:scale-95"
                   >
                     <span>Zur Leistungsseite</span>
                     <ArrowRight size={15} className="rtl:rotate-180" />
                   </Link>
 
                   <a
-                    href="tel:+4915565500442"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-5 rounded-xl text-xs transition-all border border-white/10"
+                    href="#anfrage-unten"
+                    className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-slate-200 font-bold py-3 px-5 rounded-xl text-xs transition-all border border-white/10"
                   >
-                    <Phone size={14} className="text-amber-400" />
-                    <span>0155 65500442</span>
+                    <span>Direkt anfragen ↓</span>
                   </a>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
+
+        {/* Bottom Direct Contact & Inquiry Destination */}
+        <section id="anfrage-unten" className="mt-14 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="space-y-1 text-center sm:text-left">
+            <h2 className="text-xl sm:text-2xl font-black text-white">
+              Soforthilfe oder Transporttermin gewünscht?
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300">
+              Sprechen Sie direkt mit unserem Fahrer Adam und unserem Team – 24h Notruf oder unverbindliche Preisanfrage.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
+            <a
+              href="tel:+4915565500442"
+              className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-500 text-white font-black py-3.5 px-6 rounded-xl text-xs sm:text-sm shadow-lg shadow-red-600/25 transition-all"
+            >
+              <Phone size={16} className="fill-white" />
+              <span>24h Notruf: 0155 65500442</span>
+            </a>
+            <Link
+              href="/#kontakt"
+              className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3.5 px-6 rounded-xl text-xs sm:text-sm transition-all"
+            >
+              <span>Zum Anfrageformular</span>
+              <ArrowRight size={15} className="rtl:rotate-180" />
+            </Link>
+          </div>
+        </section>
 
       </div>
     </main>

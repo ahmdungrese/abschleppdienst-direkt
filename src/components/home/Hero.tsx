@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden animate-fade-in">
         <img
           src="/images/hero/hero-renault-master-clean.jpg"
-          alt="Abschleppdienst Direkt - 24h Pannenhilfe & Fahrzeugtransport in Bochum und im Ruhrgebiet"
+          alt="Abschleppdienst Direkt - 24h Pannenhilfe in Bochum & Fahrzeugüberführung von A nach B bundesweit"
           className="w-full h-full object-cover object-[center_right] filter brightness-[0.92] contrast-[1.05]"
           loading="eager"
         />
@@ -27,10 +27,15 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-10 max-w-6xl">
         <div className="max-w-2xl sm:max-w-3xl space-y-6 text-center sm:text-left py-2">
           
-          {/* Live Status Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/85 border border-amber-500/40 text-amber-300 text-xs font-bold tracking-wide backdrop-blur-md shadow-xl">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>24/7 Notdienst-Rufbereitschaft • Bochum &amp; Ruhrgebiet</span>
+          {/* Live Status Indicator - High-End Minimalist Editorial Style */}
+          <div className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-slate-200">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+            </span>
+            <span className="text-amber-400">24/7 Notdienst-Rufbereitschaft</span>
+            <span className="text-white/40">•</span>
+            <span className="text-slate-300">Bochum &amp; Ruhrgebiet</span>
           </div>
 
           {/* Direct Authentic Headline with Official Brand */}
@@ -40,7 +45,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-2 text-lg sm:text-2xl font-bold text-slate-100 tracking-tight leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              24h Abschleppdienst, Pannenhilfe &amp; Fahrzeugüberführung im Ruhrgebiet
+              24h Abschleppdienst &amp; Pannenhilfe in Bochum • Fahrzeugüberführung von A nach B bundesweit
             </p>
           </div>
 

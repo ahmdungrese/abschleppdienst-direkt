@@ -92,7 +92,7 @@ export default function Header() {
                 <ShieldCheck size={18} className="text-amber-400" />
                 <span>{t('services')}</span>
               </div>
-              <span className="text-[10px] bg-amber-500 text-slate-950 font-black px-2 py-0.5 rounded-full">Alle</span>
+              <span className="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Alle</span>
             </Link>
 
             <Link
@@ -104,7 +104,7 @@ export default function Header() {
                 <Calculator size={18} className="text-amber-400" />
                 <span>{t('calculator')}</span>
               </div>
-              <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded-full border border-emerald-500/30">Online</span>
+              <span className="text-[10px] text-slate-300 font-bold uppercase tracking-wider">Direkt</span>
             </Link>
 
             <Link
@@ -125,7 +125,7 @@ export default function Header() {
                 <BookOpen size={18} className="text-amber-400" />
                 <span>{t('blog')}</span>
               </div>
-              <span className="text-[10px] bg-amber-500/20 text-amber-300 font-bold px-2 py-0.5 rounded-full border border-amber-500/30">Praxis</span>
+              <span className="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Praxis</span>
             </Link>
 
             <Link
@@ -160,21 +160,20 @@ export default function Header() {
           <div className="mt-6 pt-5 border-t border-white/10 grid grid-cols-2 gap-3">
             <a
               href="tel:+4915565500442"
-              className="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black py-3 rounded-xl text-xs shadow-md"
+              className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-500 text-white font-black py-3 rounded-xl text-xs shadow-md shadow-red-600/25"
             >
-              <Phone size={14} className="fill-slate-950" />
-              <span>Sofort anrufen</span>
+              <Phone size={14} className="fill-white" />
+              <span>24h Notruf</span>
             </a>
 
-            <a
-              href="https://wa.me/4915565500442?text=Hallo%20Wassem%2C%20ich%20brauche%20Hilfe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl text-xs shadow-md"
+            <Link
+              href="/#kontakt"
+              onClick={closeMenu}
+              className="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3 rounded-xl text-xs shadow-md"
             >
-              <MessageCircle size={14} />
-              <span>WhatsApp</span>
-            </a>
+              <Calculator size={14} />
+              <span>Preisanfrage</span>
+            </Link>
           </div>
         </div>
       )}
