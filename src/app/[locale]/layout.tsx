@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { localizedAlternates } from '@/lib/seo';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -8,83 +9,79 @@ import Footer from '@/components/layout/Footer';
 import { BRAND } from '@/config/brand';
 import "../globals.css";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(BRAND.url),
-  title: {
-    default: `${BRAND.name} | 24h Abschleppdienst, Pannenhilfe & Überführung`,
-    template: `%s | ${BRAND.name}`
-  },
-  description: `${BRAND.name} (${BRAND.slogan}): Ihr inhabergeführter 24h Abschleppdienst & Pannenhilfe in Bochum sowie bundesweite Fahrzeugüberführung von A nach B in ganz Deutschland. Motorschadenservice, Vor-Ort Starthilfe auf A40, A43 & A448 und 100% Einzelfahrten bis 3,5t.`,
-  keywords: [
-    "Abschleppdienst Direkt",
-    "Abschleppdienst Bochum",
-    "Pannenhilfe Bochum",
-    "Abschleppdienst 44803 Bochum",
-    "24h Abschleppdienst Ruhrgebiet",
-    "Fahrzeugüberführung A nach B",
-    "Auto überführen NRW",
-    "Abschleppen A40 A43 A448",
-    "Starthilfe Bochum",
-    "Transport zum Autoplatz"
-  ],
-  authors: [{ name: BRAND.name }],
-  creator: BRAND.name,
-  publisher: BRAND.name,
-  formatDetection: {
-    telephone: true,
-    date: false,
-    address: true,
-    email: true,
-  },
-  icons: {
-    icon: '/icon.png',
-    apple: '/apple-icon.png',
-  },
-  alternates: {
-    canonical: '/',
-    languages: {
-      'de-DE': '/de',
-      'ar': '/ar',
-      'en': '/en',
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    metadataBase: new URL(BRAND.url),
+    title: {
+      default: `${BRAND.name} | 24h Abschleppdienst, Pannenhilfe & Überführung`,
+      template: `%s | ${BRAND.name}`
     },
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'de_DE',
-    url: BRAND.url,
-    siteName: BRAND.name,
-    title: `${BRAND.name} | 24h Abschleppdienst, Pannenhilfe & Überführung`,
-    description: 'Schnell. Einfach. Fair. Inhabergeführte 24h Pannenhilfe & Abschleppdienst in Bochum sowie zuverlässige Fahrzeugüberführung von A nach B bundesweit in ganz Deutschland.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: `${BRAND.name} - 24h Abschleppdienst & Pannenhilfe`
-      }
+    description: `${BRAND.name} (${BRAND.slogan}): Ihr inhabergeführter 24h Abschleppdienst & Pannenhilfe in Bochum sowie bundesweite Fahrzeugüberführung von A nach B in ganz Deutschland. Motorschadenservice, Vor-Ort Starthilfe auf A40, A43 & A448 und 100% Einzelfahrten bis 3,5t.`,
+    keywords: [
+      "Abschleppdienst Direkt",
+      "Abschleppdienst Bochum",
+      "Pannenhilfe Bochum",
+      "Abschleppdienst 44803 Bochum",
+      "24h Abschleppdienst Ruhrgebiet",
+      "Fahrzeugüberführung A nach B",
+      "Auto überführen NRW",
+      "Abschleppen A40 A43 A448",
+      "Starthilfe Bochum",
+      "Transport zum Autoplatz"
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `${BRAND.name} | 24h Abschleppdienst, Pannenhilfe & Überführung`,
-    description: 'Schnell. Einfach. Fair. Inhabergeführte Pannenhilfe und Fahrzeugtransport in Bochum & ganz NRW.',
-    images: ['/og-image.png'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    authors: [{ name: BRAND.name }],
+    creator: BRAND.name,
+    publisher: BRAND.name,
+    formatDetection: {
+      telephone: true,
+      date: false,
+      address: true,
+      email: true,
+    },
+    icons: {
+      icon: '/icon.png',
+      apple: '/apple-icon.png',
+    },
+    alternates: localizedAlternates(locale),
+    openGraph: {
+      type: 'website',
+      locale: locale === 'ar' ? 'ar' : locale === 'en' ? 'en_US' : 'de_DE',
+      url: `${BRAND.url}/${locale}`,
+      siteName: BRAND.name,
+      title: `${BRAND.name} | 24h Abschleppdienst, Pannenhilfe & Überführung`,
+      description: 'Schnell. Einfach. Fair. Inhabergeführte 24h Pannenhilfe & Abschleppdienst in Bochum sowie zuverlässige Fahrzeugüberführung von A nach B bundesweit in ganz Deutschland.',
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: `${BRAND.name} - 24h Abschleppdienst & Pannenhilfe`
+        }
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${BRAND.name} | 24h Abschleppdienst, Pannenhilfe & Überführung`,
+      description: 'Schnell. Einfach. Fair. Inhabergeführte Pannenhilfe und Fahrzeugtransport in Bochum & ganz NRW.',
+      images: ['/og-image.png'],
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google-site-verification-placeholder',
-  },
-};
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google-site-verification-placeholder',
+    },
+  };
+}
 
 export const dynamic = 'force-dynamic';
 

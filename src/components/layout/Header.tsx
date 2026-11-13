@@ -37,7 +37,7 @@ export default function Header() {
             <Link href="/rechner" className="hover:text-amber-400 transition-colors">{t('calculator')}</Link>
             <Link href="/einsatzgebiet" className="hover:text-amber-400 transition-colors">{t('area')}</Link>
             <Link href="/blog" className="hover:text-amber-400 transition-colors">{t('blog')}</Link>
-            <Link href="/#faq" className="hover:text-amber-400 transition-colors">FAQ</Link>
+            <Link href="/faq" className="hover:text-amber-400 transition-colors">FAQ</Link>
             <Link href="/ueber-uns" className="hover:text-amber-400 transition-colors">{t('about')}</Link>
             <Link href="/#kontakt" className="hover:text-amber-400 transition-colors">{t('contact')}</Link>
           </nav>
@@ -129,7 +129,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/#faq"
+              href="/faq"
               onClick={closeMenu}
               className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/5 hover:text-amber-400 transition-colors"
             >

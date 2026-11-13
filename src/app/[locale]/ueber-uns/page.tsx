@@ -3,14 +3,16 @@ import { Link } from '@/i18n/routing';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { Truck, ShieldCheck, Award, Phone, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: "Über uns & Unser Team | Abschleppdienst Direkt",
-  description: "Lernen Sie unser engagiertes Team von Abschleppdienst Direkt in Bochum kennen: 10 Jahre Straßenerfahrung, modernste Plateau-Technik bis 3,5t, 100% Einzelfahrten und transparente Festpreise im Ruhrgebiet & bundesweit.",
-  alternates: {
-    canonical: '/ueber-uns',
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Über uns & Unser Team",
+    description: "Lernen Sie unser engagiertes Team von Abschleppdienst Direkt in Bochum kennen: 10 Jahre Straßenerfahrung, modernste Plateau-Technik bis 3,5t, 100% Einzelfahrten und transparente Festpreise im Ruhrgebiet & bundesweit.",
+    alternates: localizedAlternates(locale, '/ueber-uns'),
+  };
+}
 
 export default async function UeberUnsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

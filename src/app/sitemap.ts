@@ -58,6 +58,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     });
 
+    // FAQ / Wissensdatenbank
+    routes.push({
+      url: `${baseUrl}/${locale}/faq`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    });
+
     // Einsatzgebiet & Streckennetz
     routes.push({
       url: `${baseUrl}/${locale}/einsatzgebiet`,

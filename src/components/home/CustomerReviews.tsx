@@ -1,6 +1,7 @@
 "use client";
 
-import { Star, ShieldCheck, MapPin, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
+import { Star, ShieldCheck, MapPin, CheckCircle2, ChevronDown } from 'lucide-react';
 import { useLocale } from 'next-intl';
 
 interface Review {
@@ -13,8 +14,11 @@ interface Review {
   highlight: { de: string; ar: string; en: string };
 }
 
+const INITIAL_VISIBLE = 3;
+
 export default function CustomerReviews() {
   const locale = useLocale();
+  const [showAll, setShowAll] = useState(false);
   const isAr = locale === 'ar';
   const isEn = locale === 'en';
   const langKey = isAr ? 'ar' : isEn ? 'en' : 'de';
@@ -183,7 +187,13 @@ export default function CustomerReviews() {
         {/* Clean Editorial Reviews List (Divided Rows, Zero Nested Boxes) */}
         <div className="divide-y divide-white/10 border-b border-white/10">
           {reviews.map((rev, idx) => (
-            <article key={idx} className="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
+            <article
+              key={idx}
+              className={`py-8 grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start ${
+                // Extra reviews stay in the HTML (SEO) and are only visually collapsed
+                showAll || idx < INITIAL_VISIBLE ? 'grid' : 'hidden'
+              }`}
+            >
               
               {/* Left Column: Customer Info & Rating */}
               <div className="md:col-span-4 space-y-1.5">
@@ -225,6 +235,29 @@ export default function CustomerReviews() {
             </article>
           ))}
         </div>
+
+        {/* Show more / less toggle */}
+        {reviews.length > INITIAL_VISIBLE && (
+          <div className="mt-6 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAll(!showAll)}
+              aria-expanded={showAll}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber-400/40 text-slate-200 font-bold text-xs sm:text-sm transition-colors cursor-pointer"
+            >
+              <span>
+                {showAll
+                  ? (isAr ? "عرض أقل" : isEn ? "Show fewer reviews" : "Weniger anzeigen")
+                  : (isAr
+                    ? `عرض المزيد من التقييمات (${reviews.length - INITIAL_VISIBLE}+)`
+                    : isEn
+                    ? `Show more reviews (+${reviews.length - INITIAL_VISIBLE})`
+                    : `Weitere Bewertungen anzeigen (+${reviews.length - INITIAL_VISIBLE})`)}
+              </span>
+              <ChevronDown size={15} className={`text-amber-400 transition-transform ${showAll ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
+        )}
 
         {/* Bottom Notice */}
         <div className="mt-8 text-center text-xs text-slate-400 flex flex-wrap items-center justify-center gap-2">

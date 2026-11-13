@@ -2,11 +2,16 @@ import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { ArrowLeft, Shield, FileText } from 'lucide-react';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: "Impressum | Abschleppdienst Direkt",
-  description: "Gesetzliche Anbieterkennzeichnung gemäß § 5 DDG für Abschleppdienst Direkt - Inhaber Wassem Al Dalati in Bochum.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Impressum",
+    description: "Gesetzliche Anbieterkennzeichnung gemäß § 5 DDG für Abschleppdienst Direkt - Inhaber Wassem Al Dalati in Bochum.",
+    alternates: localizedAlternates(locale, '/impressum'),
+  };
+}
 
 export default async function ImpressumPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

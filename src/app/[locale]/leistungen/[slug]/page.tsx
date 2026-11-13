@@ -4,8 +4,11 @@ import { Link } from '@/i18n/routing';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { Truck, Wrench, Zap, Map, ArrowLeft, ArrowRight, ShieldCheck, CheckCircle2, Phone, MessageCircle, Clock, ChevronRight, BookOpen } from 'lucide-react';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 import ServiceInquirySection from '@/components/services/ServiceInquirySection';
 import { blogArticles } from '@/data/blogArticles';
+import { faqsData } from '@/data/faqs';
+import { getFaqIdsForService } from '@/data/topicLinks';
 
 interface ServiceDetail {
   slug: string;
@@ -467,20 +470,18 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const service = serviceDatabase[slug];
   if (!service) return {};
 
   return {
-    title: `${service.title} | Abschleppdienst Direkt`,
+    title: service.title,
     description: service.subtitle,
-    alternates: {
-      canonical: `/leistungen/${slug}`,
-    },
+    alternates: localizedAlternates(locale, `/leistungen/${slug}`),
     openGraph: {
       title: `${service.title} | Abschleppdienst Direkt`,
       description: service.subtitle,
-      url: `https://abschleppdienst-direkt.de/de/leistungen/${slug}`,
+      url: `https://abschleppdienst-direkt.de/${locale}/leistungen/${slug}`,
     },
   };
 }
@@ -508,6 +509,11 @@ export default async function ServiceDetailPage({
     if (slug === 'werkstatt-autoplatz' && (article.slug.includes('motorschaden') || article.slug.includes('überführung') || article.slug.includes('ueberfuehrung'))) return true;
     return false;
   }).slice(0, 3);
+
+  // Topic tree: questions customers typically ask about this specific service
+  const relatedFaqs = getFaqIdsForService(slug)
+    .map((id) => faqsData.find((item) => item.id === id))
+    .filter((item): item is (typeof faqsData)[number] => Boolean(item));
 
   return (
     <>
@@ -653,6 +659,42 @@ export default async function ServiceDetailPage({
             title={service.title}
             pricingHint={service.pricingHint}
           />
+
+          {/* 5b. Topic tree: related questions -> deep link into the FAQ knowledge base */}
+          {relatedFaqs.length > 0 && (
+            <div className="pt-8 border-t border-white/10 space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <h2 className="text-lg sm:text-xl font-black text-white">
+                  {isAr
+                    ? "أسئلة شائعة مرتبطة بهذه الخدمة"
+                    : isEn
+                    ? "Common Questions About This Service"
+                    : "Häufige Fragen zu dieser Leistung"}
+                </h2>
+                <Link
+                  href="/faq"
+                  className="text-xs font-bold text-slate-400 hover:text-amber-400 transition-colors inline-flex items-center gap-1"
+                >
+                  <span>{isAr ? "جميع الأسئلة" : isEn ? "All questions" : "Alle Fragen"}</span>
+                  <ChevronRight size={14} className="rtl:rotate-180" />
+                </Link>
+              </div>
+
+              <ul className="border-t border-b border-white/10 divide-y divide-white/10">
+                {relatedFaqs.map((faq) => (
+                  <li key={faq.id}>
+                    <Link
+                      href={`/faq#${faq.id}`}
+                      className="group py-3.5 flex items-center justify-between gap-4 text-xs sm:text-sm font-semibold text-slate-200 hover:text-amber-400 transition-colors"
+                    >
+                      <span>{faq[currentLang].question}</span>
+                      <ArrowRight size={14} className="rtl:rotate-180 text-amber-400 shrink-0" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* 6. Contextual Semantic Silo: Praxis-Ratgeber & Fachwissen passend zu dieser Leistung */}
           {relatedGuides.length > 0 && (

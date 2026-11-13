@@ -19,6 +19,7 @@ import {
   UserCheck
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
 export async function generateMetadata({
   params
@@ -33,11 +34,9 @@ export async function generateMetadata({
   const trans = article.translations[currentLang];
 
   return {
-    title: `${trans.metaTitle}`,
+    title: { absolute: trans.metaTitle },
     description: trans.metaDescription,
-    alternates: {
-      canonical: `/blog/${slug}`,
-    },
+    alternates: localizedAlternates(locale, `/blog/${slug}`),
     openGraph: {
       title: `${trans.title} | Abschleppdienst Direkt`,
       description: trans.subtitle,

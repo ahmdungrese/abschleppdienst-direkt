@@ -3,14 +3,16 @@ import { Link } from '@/i18n/routing';
 import { Car, ShieldAlert, Bus, Navigation, Zap, Package, Truck, ArrowRight, ArrowLeft, ShieldCheck, CheckCircle2, Phone, AlertTriangle, Map } from 'lucide-react';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: "Alle Leistungen & Fachdetails | Abschleppdienst Direkt",
-  description: "Detaillierte Übersicht aller 6 Kernleistungen von Abschleppdienst Direkt in Bochum & NRW: PKW, SUV, Transporter & Busse bis 7m, Fahrzeugüberführung von A nach B, Profi-Starthilfe (NOCO Boost) und Warentransport bis 3,5t.",
-  alternates: {
-    canonical: '/leistungen',
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Alle Leistungen & Fachdetails",
+    description: "Detaillierte Übersicht aller 6 Kernleistungen von Abschleppdienst Direkt in Bochum & NRW: PKW, SUV, Transporter & Busse bis 7m, Fahrzeugüberführung von A nach B, Profi-Starthilfe (NOCO Boost) und Warentransport bis 3,5t.",
+    alternates: localizedAlternates(locale, '/leistungen'),
+  };
+}
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

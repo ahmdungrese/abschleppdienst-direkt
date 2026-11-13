@@ -21,14 +21,16 @@ import {
   Truck
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: "Einsatzgebiet & Streckennetz: Bochum, Ruhrgebiet & NRW | Abschleppdienst Direkt",
-  description: "Zonierte Eintreffzeiten: Express in 15–30 Min. in Bochum, Dortmund, Essen, Herne, Witten. Erweiterte Zone (40–60 Min.), Sauerland-Spezialbergung & bundesweite Überführungen.",
-  alternates: {
-    canonical: '/einsatzgebiet',
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Einsatzgebiet & Streckennetz: Bochum, Ruhrgebiet & NRW",
+    description: "Zonierte Eintreffzeiten: Express in 15–30 Min. in Bochum, Dortmund, Essen, Herne, Witten. Erweiterte Zone (40–60 Min.), Sauerland-Spezialbergung & bundesweite Überführungen.",
+    alternates: localizedAlternates(locale, '/einsatzgebiet'),
+  };
+}
 
 export default async function EinsatzgebietPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

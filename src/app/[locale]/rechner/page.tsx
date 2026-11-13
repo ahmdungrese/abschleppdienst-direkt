@@ -5,14 +5,16 @@ import RealWorldPriceExamples from '@/components/calculator/RealWorldPriceExampl
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { ArrowLeft, ShieldCheck, CheckCircle2, Info, HelpCircle } from 'lucide-react';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: "Kostenrechner für Autotransport & Abschleppen | Abschleppdienst Direkt",
-  description: "Ermitteln Sie die voraussichtlichen Transportkosten für Bochum, Ruhrgebiet & ganz NRW. Transparente Festpreise ab 50 € Grundpauschale zzgl. 1,50 €/km.",
-  alternates: {
-    canonical: '/rechner',
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Kostenrechner für Autotransport & Abschleppen",
+    description: "Ermitteln Sie die voraussichtlichen Transportkosten für Bochum, Ruhrgebiet & ganz NRW. Transparente Festpreise ab 50 € Grundpauschale zzgl. 1,50 €/km.",
+    alternates: localizedAlternates(locale, '/rechner'),
+  };
+}
 
 export default async function CalculatorPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

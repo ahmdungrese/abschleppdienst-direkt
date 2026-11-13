@@ -2,11 +2,16 @@ import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { ArrowLeft, ShieldCheck } from 'lucide-react';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: "Datenschutzerklärung | Abschleppdienst Direkt",
-  description: "Datenschutzerklärung gemäß DSGVO für Abschleppdienst Direkt - Inh. Wassem Al Dalati.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Datenschutzerklärung",
+    description: "Datenschutzerklärung gemäß DSGVO für Abschleppdienst Direkt - Inh. Wassem Al Dalati.",
+    alternates: localizedAlternates(locale, '/datenschutz'),
+  };
+}
 
 export default async function DatenschutzPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

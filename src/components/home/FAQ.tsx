@@ -1,14 +1,33 @@
 "use client";
 
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { useLocale } from 'next-intl';
 import { 
   ChevronDown, HelpCircle, AlertTriangle, Search, X, 
-  Phone, ShieldCheck, Sparkles 
+  Phone, Sparkles, ArrowRight
 } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 import { faqsData, faqCategories, FAQCategory } from '@/data/faqs';
+import { faqTopicLinks } from '@/data/topicLinks';
 
-export default function FAQ() {
+// The 6 questions customers ask most often – shown on the homepage.
+// All other questions live on the dedicated /faq page.
+const FEATURED_FAQ_IDS = [
+  'anfahrtszeit-bochum',
+  'feste-pauschalpreise',
+  'versicherung-schutzbrief-adac',
+  'freie-werkstattwahl',
+  'autobahn-sicherheit',
+  'zahlungsmethoden-vor-ort',
+];
+
+interface FAQProps {
+  /** "home" = short teaser with the most important questions, "full" = complete searchable knowledge base (/faq) */
+  variant?: 'home' | 'full';
+}
+
+export default function FAQ({ variant = 'home' }: FAQProps) {
+  const isFull = variant === 'full';
   const locale = useLocale();
   const currentLang = (locale === 'ar' ? 'ar' : locale === 'en' ? 'en' : 'de') as 'de' | 'ar' | 'en';
   const isAr = currentLang === 'ar';
@@ -16,6 +35,29 @@ export default function FAQ() {
   const [activeCategory, setActiveCategory] = useState<FAQCategory>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  // Deep links: /faq#<question-id> (used by service pages & the homepage topic tree)
+  // opens the matching question and scrolls to it.
+  useEffect(() => {
+    if (!isFull) return;
+    const openFromHash = () => {
+      const id = decodeURIComponent(window.location.hash.replace('#', ''));
+      const index = faqsData.findIndex(item => item.id === id);
+      if (index === -1) return;
+      setActiveCategory('all');
+      setSearchQuery('');
+      setOpenIndex(index);
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    };
+    const timer = window.setTimeout(openFromHash, 0);
+    window.addEventListener('hashchange', openFromHash);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('hashchange', openFromHash);
+    };
+  }, [isFull]);
 
   // Drag-to-scroll & Touch handling for Category Tabs
   const tabsContainerRef = useRef<HTMLDivElement>(null);
@@ -72,7 +114,12 @@ export default function FAQ() {
       ctaTitle: "Ihre persönliche Frage war nicht dabei?",
       ctaText: "Rufen Sie uns direkt an! Unser erfahrener Fahrer Adam gibt Ihnen sofort eine ehrliche und 100 % kostenlose Ersteinschätzung.",
       ctaCall: "24h Notruf: 0155 65500442",
-      showingCount: "Fragen angezeigt"
+      showingCount: "Fragen angezeigt",
+      allFaqs: `Alle ${faqsData.length} Fragen & Antworten ansehen`,
+      moreOnTopic: "Mehr zu diesem Thema:",
+      linkService: "Passende Leistung",
+      linkArticle: "Ausführlicher Ratgeber",
+      linkPages: { '/rechner': "Preis berechnen", '/einsatzgebiet': "Einsatzgebiet & Anfahrtszeiten", '/starthilfe-bochum': "Profi-Starthilfe" }
     },
     ar: {
       badge: "قاعدة المعرفة والأسئلة الشائعة",
@@ -84,7 +131,12 @@ export default function FAQ() {
       ctaTitle: "هل لديك سؤال خاص لم تجده هنا؟",
       ctaText: "اتصل بنا مباشرة! يقدم لك سائقنا الخبير آدم وفريقنا استشارة هاتفية فورية، أمينة ومجانية 100%.",
       ctaCall: "اتصل بالطوارئ: 0155 65500442",
-      showingCount: "سؤال معروض"
+      showingCount: "سؤال معروض",
+      allFaqs: `عرض جميع الأسئلة والأجوبة (${faqsData.length})`,
+      moreOnTopic: "المزيد حول هذا الموضوع:",
+      linkService: "الخدمة المناسبة",
+      linkArticle: "الدليل المفصّل",
+      linkPages: { '/rechner': "احسب السعر", '/einsatzgebiet': "منطقة الخدمة وأوقات الوصول", '/starthilfe-bochum': "تشغيل البطارية الاحترافي" }
     },
     en: {
       badge: "Knowledge Base & FAQ",
@@ -96,12 +148,22 @@ export default function FAQ() {
       ctaTitle: "Haven't found your specific question?",
       ctaText: "Call us directly! Our experienced driver Adam provides an honest, 100% free initial evaluation over the phone.",
       ctaCall: "Call Emergency Dispatch: 0155 65500442",
-      showingCount: "questions shown"
+      showingCount: "questions shown",
+      allFaqs: `View all ${faqsData.length} questions & answers`,
+      moreOnTopic: "More on this topic:",
+      linkService: "Matching service",
+      linkArticle: "In-depth guide",
+      linkPages: { '/rechner': "Calculate price", '/einsatzgebiet': "Service area & arrival times", '/starthilfe-bochum': "Pro jump start" }
     }
   }[currentLang];
 
   // Filtered FAQs based on active category tab and search input
   const filteredFaqs = useMemo(() => {
+    if (!isFull) {
+      return FEATURED_FAQ_IDS
+        .map(id => faqsData.find(item => item.id === id))
+        .filter((item): item is (typeof faqsData)[number] => Boolean(item));
+    }
     return faqsData.filter(item => {
       const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
       if (!matchesCategory) return false;
@@ -115,7 +177,7 @@ export default function FAQ() {
         content.highlight.toLowerCase().includes(q)
       );
     });
-  }, [activeCategory, searchQuery, currentLang]);
+  }, [isFull, activeCategory, searchQuery, currentLang]);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -136,11 +198,12 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-slate-950 text-white border-b border-white/10 relative overflow-hidden" dir={isAr ? "rtl" : "ltr"}>
+    <section id="faq" className={`${isFull ? 'pb-16 sm:pb-24' : 'py-16 sm:py-24'} bg-slate-950 text-white border-b border-white/10 relative overflow-hidden`} dir={isAr ? "rtl" : "ltr"}>
       <div className="container mx-auto px-4 max-w-5xl relative z-10">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-10 sm:mb-12">
+        {/* Section Header (the /faq page renders its own H1 instead) */}
+        {!isFull && (
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-3">
             <Sparkles size={15} className="text-amber-400 shrink-0" />
             <span>{ui.badge}</span>
@@ -153,8 +216,11 @@ export default function FAQ() {
             {ui.subtitle}
           </p>
         </div>
+        )}
 
-        {/* Search & Filter Controls - Open Editorial Layout (Zero Outer Box) */}
+        {/* Search & Filter Controls - only in the full knowledge base */}
+        {isFull && (
+        <>
         <div className="mb-8 space-y-4">
           <div className="relative flex items-center">
             <Search className={`absolute ${isAr ? 'right-4' : 'left-4'} text-slate-400 pointer-events-none`} size={18} />
@@ -231,6 +297,8 @@ export default function FAQ() {
             </button>
           )}
         </div>
+        </>
+        )}
 
         {/* Clean Editorial Divided Accordion List (No Separate Box per Question, No Nested Boxes) */}
         {filteredFaqs.length > 0 ? (
@@ -238,13 +306,15 @@ export default function FAQ() {
             {filteredFaqs.map((faq, index) => {
               const isOpen = openIndex === index;
               const content = faq[currentLang];
+              const topic = faqTopicLinks[faq.id];
 
               return (
-                <div key={faq.id} className="py-5 sm:py-6 transition-colors hover:bg-white/[0.01]">
+                <div key={faq.id} id={faq.id} className="py-5 sm:py-6 transition-colors hover:bg-white/[0.01] scroll-mt-24">
                   <button
                     type="button"
                     onClick={() => toggleFAQ(index)}
-                    className="w-full text-left flex items-start justify-between gap-4 cursor-pointer"
+                    aria-expanded={isOpen}
+                    className="w-full text-start flex items-start justify-between gap-4 cursor-pointer"
                   >
                     <div className="flex items-start gap-3 flex-grow">
                       {faq.isWarning ? (
@@ -272,11 +342,35 @@ export default function FAQ() {
                     />
                   </button>
 
-                  {isOpen && (
-                    <div className="mt-3 pl-7 rtl:pl-0 rtl:pr-7 text-slate-300 text-xs sm:text-sm leading-relaxed">
-                      <p>{content.answer}</p>
-                    </div>
-                  )}
+                  {/* Answer is always rendered in the HTML (readable by Google), only visually collapsed */}
+                  <div className={`${isOpen ? 'block' : 'hidden'} mt-3 pl-7 rtl:pl-0 rtl:pr-7 text-slate-300 text-xs sm:text-sm leading-relaxed`}>
+                    <p>{content.answer}</p>
+
+                    {/* Topic tree: continue reading one level deeper */}
+                    {topic && (
+                      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs">
+                        <span className="text-slate-400 font-semibold">{ui.moreOnTopic}</span>
+                        {topic.service && (
+                          <Link href={`/leistungen/${topic.service}`} className="inline-flex items-center gap-1 font-bold text-amber-400 hover:underline">
+                            <span>{ui.linkService}</span>
+                            <ArrowRight size={12} className="rtl:rotate-180" />
+                          </Link>
+                        )}
+                        {topic.article && (
+                          <Link href={`/blog/${topic.article}`} className="inline-flex items-center gap-1 font-bold text-amber-400 hover:underline">
+                            <span>{ui.linkArticle}</span>
+                            <ArrowRight size={12} className="rtl:rotate-180" />
+                          </Link>
+                        )}
+                        {topic.page && (
+                          <Link href={topic.page} className="inline-flex items-center gap-1 font-bold text-amber-400 hover:underline">
+                            <span>{ui.linkPages[topic.page]}</span>
+                            <ArrowRight size={12} className="rtl:rotate-180" />
+                          </Link>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
               );
             })}
@@ -295,6 +389,19 @@ export default function FAQ() {
             >
               {ui.resetSearch}
             </button>
+          </div>
+        )}
+
+        {/* Homepage teaser: link to the complete FAQ page */}
+        {!isFull && (
+          <div className="mt-6 flex justify-center sm:justify-start">
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber-400/40 text-amber-400 font-bold text-xs sm:text-sm transition-colors"
+            >
+              <span>{ui.allFaqs}</span>
+              <ArrowRight size={15} className="rtl:rotate-180" />
+            </Link>
           </div>
         )}
 
@@ -317,22 +424,24 @@ export default function FAQ() {
               <Phone size={16} className="fill-white" />
               <span>{ui.ctaCall}</span>
             </a>
-            <a
-              href="#kontakt"
+            <Link
+              href="/#kontakt"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm transition-all cursor-pointer text-center"
             >
               <span>{isAr ? "طلب الخدمة الآن ↓" : "Zur Preisanfrage ↓"}</span>
-            </a>
+            </Link>
           </div>
         </div>
 
-        {/* Google FAQPage Schema Markup (JSON-LD) */}
+        {/* Google FAQPage Schema Markup (JSON-LD) – only on /faq, where every answer is on the page */}
+        {isFull && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(faqSchema)
           }}
         />
+        )}
 
       </div>
     </section>

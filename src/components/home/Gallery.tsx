@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Camera, ShieldCheck, X, ZoomIn, Truck, Building2 } from 'lucide-react';
+import { ShieldCheck, X, ZoomIn, Truck, Building2, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface PhotoItem {
   id: number;
@@ -20,6 +20,43 @@ export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState<'all' | 'truck' | 'trade'>('all');
   const [selectedPhoto, setSelectedPhoto] = useState<PhotoItem | null>(null);
   const [activeModalImage, setActiveModalImage] = useState<string | null>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  // Swipe carousel helpers (native scroll-snap: touch swipe works without JS)
+  const slideStep = () => {
+    const track = trackRef.current;
+    const first = track?.firstElementChild as HTMLElement | null;
+    if (!track || !first) return 0;
+    return first.offsetWidth + parseFloat(getComputedStyle(track).columnGap || '0');
+  };
+
+  const scrollBySlide = (dir: 1 | -1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const rtl = getComputedStyle(track).direction === 'rtl';
+    track.scrollBy({ left: dir * slideStep() * (rtl ? -1 : 1), behavior: 'smooth' });
+  };
+
+  const scrollToSlide = (index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const rtl = getComputedStyle(track).direction === 'rtl';
+    track.scrollTo({ left: index * slideStep() * (rtl ? -1 : 1), behavior: 'smooth' });
+  };
+
+  const handleTrackScroll = () => {
+    const track = trackRef.current;
+    const step = slideStep();
+    if (!track || !step) return;
+    setActiveSlide(Math.round(Math.abs(track.scrollLeft) / step));
+  };
+
+  const changeCategory = (cat: 'all' | 'truck' | 'trade') => {
+    setActiveCategory(cat);
+    setActiveSlide(0);
+    trackRef.current?.scrollTo({ left: 0 });
+  };
 
   // All 7 Real Photos (100% Unbranded & Verified)
   const allPhotos: PhotoItem[] = [
@@ -103,7 +140,7 @@ export default function Gallery() {
     : allPhotos.filter(p => p.category === activeCategory);
 
   return (
-    <section id="galerie" className="py-20 sm:py-28 bg-slate-900 text-white border-b border-white/10 relative">
+    <section id="galerie" className="py-16 sm:py-24 bg-slate-900 text-white border-b border-white/10 relative">
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         
         {/* Header */}
@@ -117,10 +154,10 @@ export default function Gallery() {
         </div>
 
         {/* Filter Category Tabs */}
-        <div className="flex justify-center flex-wrap gap-2.5 mb-12">
+        <div className="flex justify-center flex-wrap gap-2.5 mb-8">
           <button
             type="button"
-            onClick={() => setActiveCategory('all')}
+            onClick={() => changeCategory('all')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
               activeCategory === 'all'
                 ? 'bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20'
@@ -132,7 +169,7 @@ export default function Gallery() {
 
           <button
             type="button"
-            onClick={() => setActiveCategory('truck')}
+            onClick={() => changeCategory('truck')}
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
               activeCategory === 'truck'
                 ? 'bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20'
@@ -145,7 +182,7 @@ export default function Gallery() {
 
           <button
             type="button"
-            onClick={() => setActiveCategory('trade')}
+            onClick={() => changeCategory('trade')}
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all ${
               activeCategory === 'trade'
                 ? 'bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20'
@@ -157,8 +194,13 @@ export default function Gallery() {
           </button>
         </div>
 
-        {/* Gallery Grid of ALL PHOTOS (Single-Layer Clean Cards, No Box-Inside-Box) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Swipe Carousel: all photos stay in the HTML (SEO), but only one row is visible */}
+        <div className="relative">
+          <div
+            ref={trackRef}
+            onScroll={handleTrackScroll}
+            className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth pb-2"
+          >
           {filteredPhotos.map((item) => (
             <div
               key={item.id}
@@ -166,7 +208,7 @@ export default function Gallery() {
                 setSelectedPhoto(item);
                 setActiveModalImage(item.image);
               }}
-              className="cursor-pointer group rounded-2xl overflow-hidden bg-slate-950/70 border border-white/10 hover:border-amber-400/50 transition-all duration-300 flex flex-col justify-between shadow-lg"
+              className="snap-start shrink-0 w-[85%] sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] cursor-pointer group rounded-2xl overflow-hidden bg-slate-950/70 border border-white/10 hover:border-amber-400/50 transition-colors duration-300 flex flex-col justify-between shadow-lg"
             >
               {/* Photo Thumbnail Flush at Top */}
               <div className="h-52 w-full overflow-hidden relative bg-slate-950">
@@ -214,10 +256,50 @@ export default function Gallery() {
               </div>
             </div>
           ))}
+          </div>
+
+          {/* Desktop arrows */}
+          <button
+            type="button"
+            onClick={() => scrollBySlide(-1)}
+            disabled={activeSlide === 0}
+            aria-label="Vorheriges Bild"
+            className="hidden sm:flex absolute top-20 -start-4 lg:-start-5 w-11 h-11 rounded-full bg-slate-950/90 border border-white/15 text-white hover:bg-amber-500 hover:text-slate-950 disabled:opacity-0 disabled:pointer-events-none items-center justify-center shadow-xl transition-all cursor-pointer"
+          >
+            <ChevronLeft size={20} className="rtl:rotate-180" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollBySlide(1)}
+            aria-label="Nächstes Bild"
+            className="hidden sm:flex absolute top-20 -end-4 lg:-end-5 w-11 h-11 rounded-full bg-slate-950/90 border border-white/15 text-white hover:bg-amber-500 hover:text-slate-950 items-center justify-center shadow-xl transition-all cursor-pointer"
+          >
+            <ChevronRight size={20} className="rtl:rotate-180" />
+          </button>
+        </div>
+
+        {/* Dots + counter */}
+        <div className="mt-5 flex items-center justify-center gap-4">
+          <div className="flex items-center gap-1.5">
+            {filteredPhotos.map((item, i) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => scrollToSlide(i)}
+                aria-label={`Bild ${i + 1} von ${filteredPhotos.length}`}
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                  i === activeSlide ? 'w-6 bg-amber-400' : 'w-1.5 bg-white/25 hover:bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
+          <span className="text-xs font-mono text-slate-400">
+            {Math.min(activeSlide + 1, filteredPhotos.length)} / {filteredPhotos.length}
+          </span>
         </div>
 
         {/* DSGVO Notice */}
-        <div className="mt-10 text-center text-xs text-slate-400">
+        <div className="mt-6 text-center text-xs text-slate-400">
           🔒 Aus Datenschutzgründen (DSGVO) werden Kundenkennzeichen unkenntlich gemacht.
         </div>
 

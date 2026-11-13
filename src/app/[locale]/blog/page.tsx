@@ -5,21 +5,23 @@ import BlogExplorer from '@/components/blog/BlogExplorer';
 import { blogArticles } from '@/data/blogArticles';
 import { ShieldCheck, Phone, MessageCircle, ArrowLeft, Wrench, Sparkles, BookOpen, Clock } from 'lucide-react';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: "Ratgeber & Praxis-Wissen: Abschleppen & Transport | Abschleppdienst Direkt",
-  description: "Praxisnahe Ratgeber aus 10 Jahren Straßenerfahrung in Bochum & im Ruhrgebiet: Wie PKW-, SUV-, Transporter-, E-Auto- und Falschtank-Einsätze wirklich ablaufen. Ehrlich, sicher und stressfrei von Abschleppdienst Direkt.",
-  alternates: {
-    canonical: '/blog',
-  },
-  openGraph: {
-    title: "Ratgeber & Praxis-Wissen: Abschleppen & Transport | Abschleppdienst Direkt",
-    description: "Ehrliche Praxisberichte und Schritt-für-Schritt-Abläufe für sichere Transporte in Bochum und im Ruhrgebiet.",
-    url: "https://abschleppdienst-direkt.de/de/blog",
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Ratgeber & Praxis-Wissen: Abschleppen & Transport",
+    description: "Praxisnahe Ratgeber aus 10 Jahren Straßenerfahrung in Bochum & im Ruhrgebiet: Wie PKW-, SUV-, Transporter-, E-Auto- und Falschtank-Einsätze wirklich ablaufen. Ehrlich, sicher und stressfrei von Abschleppdienst Direkt.",
+    alternates: localizedAlternates(locale, '/blog'),
+    openGraph: {
+      title: "Ratgeber & Praxis-Wissen: Abschleppen & Transport | Abschleppdienst Direkt",
+      description: "Ehrliche Praxisberichte und Schritt-für-Schritt-Abläufe für sichere Transporte in Bochum und im Ruhrgebiet.",
+      url: `https://abschleppdienst-direkt.de/${locale}/blog`,
+    },
+  };
+}
 
 export default async function BlogOverviewPage({
   params

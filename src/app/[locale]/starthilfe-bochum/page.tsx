@@ -3,14 +3,16 @@ import { Link } from '@/i18n/routing';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { Zap, ShieldCheck, CheckCircle2, AlertTriangle, Phone, MessageCircle, ArrowLeft, ArrowRight, BatteryCharging, Sparkles, Cpu, Clock, Check, X } from 'lucide-react';
 import type { Metadata } from 'next';
+import { localizedAlternates } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: "Profi-Starthilfe Bochum (800€ NOCO Boost Max 5250A) | Abschleppdienst Direkt",
-  description: "Professionelle Vor-Ort Starthilfe in Bochum & A40/A43 mit dem 800 € High-End Starthilfegerät NOCO Boost Max GB250+ (5250A). 100% funkenfrei & sicherer Schutz für moderne Steuergeräte. Vor Ort in 20-40 Min.",
-  alternates: {
-    canonical: '/starthilfe-bochum',
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Profi-Starthilfe Bochum (800€ NOCO Boost Max 5250A)",
+    description: "Professionelle Vor-Ort Starthilfe in Bochum & A40/A43 mit dem 800 € High-End Starthilfegerät NOCO Boost Max GB250+ (5250A). 100% funkenfrei & sicherer Schutz für moderne Steuergeräte. Vor Ort in 20-40 Min.",
+    alternates: localizedAlternates(locale, '/starthilfe-bochum'),
+  };
+}
 
 export default async function StarthilfeBochumPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

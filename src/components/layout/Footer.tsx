@@ -45,6 +45,7 @@ export default function Footer() {
               <li><Link href="/starthilfe-bochum" className="hover:text-amber-400 transition-colors text-red-400 font-semibold">Profi-Starthilfe (NOCO Boost)</Link></li>
               <li><Link href="/einsatzgebiet" className="hover:text-amber-400 transition-colors">Einsatzgebiet &amp; Autobahnen</Link></li>
               <li><Link href="/rechner" className="hover:text-amber-400 transition-colors">Interaktiver Kostenrechner</Link></li>
+              <li><Link href="/faq" className="hover:text-amber-400 transition-colors">Häufige Fragen (FAQ)</Link></li>
               <li><Link href="/#galerie" className="hover:text-amber-400 transition-colors">Einsätze vor Ort</Link></li>
               <li><Link href="/#kontakt" className="hover:text-amber-400 transition-colors">24h Kontakt &amp; Notruf</Link></li>
             </ul>

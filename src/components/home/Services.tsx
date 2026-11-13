@@ -311,11 +311,11 @@ export default function Services() {
   ];
 
   return (
-    <section id="leistungen" className="py-20 sm:py-28 bg-slate-900/60 text-white border-b border-white/10 relative">
+    <section id="leistungen" className="py-16 sm:py-24 bg-slate-900/60 text-white border-b border-white/10 relative">
       <div className="container mx-auto px-4 max-w-5xl relative z-10">
         
         {/* Section Header - Calm, Prestigious & Editorial */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-amber-400 mb-3">
             <ShieldCheck size={16} className="text-amber-400 shrink-0" />
             <span>{isAr ? "دليل خدماتنا الشامل • حتى 3.5 طن" : isEn ? "Full Service Scope • Up to 3.5 Tonnes" : "Leistungsspektrum • Bis 3,5 Tonnen"}</span>
@@ -332,86 +332,57 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Editorial Service Catalog (No Box Cards! Clean, Prestigious Editorial Rows with Dividers) */}
-        <div className="border-t border-b border-white/10 divide-y divide-white/10">
-          {servicesList.map((service, index) => {
+        {/* Compact Service Overview: one short line per service.
+            The full explanation opens in the detail window on click and lives on /leistungen/[slug] for Google. */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {servicesList.map((service) => {
             const Icon = service.icon;
             return (
               <article
-                key={index}
-                className="py-8 sm:py-10 transition-colors hover:bg-white/[0.015]"
+                key={service.slug}
+                className="group relative flex flex-col rounded-2xl bg-slate-950/60 border border-white/10 hover:border-amber-400/50 transition-colors"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-                  
-                  {/* Left Column: Icon + Header + Narrative Description */}
-                  <div className="lg:col-span-7 space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-400 flex items-center justify-center shrink-0">
-                        <Icon size={20} strokeWidth={2.2} />
-                      </div>
-                      <div>
-                        <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block">
-                          {service.tag}
-                        </span>
-                        <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                          {service.title}
-                        </h3>
-                      </div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedService(service)}
+                  aria-haspopup="dialog"
+                  className="flex-grow text-start p-5 cursor-pointer rounded-t-2xl"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-400 flex items-center justify-center shrink-0">
+                      <Icon size={20} strokeWidth={2.2} />
                     </div>
-
-                    <p className="text-sm text-slate-300 leading-relaxed font-normal pl-0 sm:pl-13">
-                      {service.desc}
-                    </p>
-
-                    {/* Feature Bullets (Clean Editorial Text with subtle amber dots, NOT boxed tags) */}
-                    <div className="pt-2 pl-0 sm:pl-13 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-400">
-                      {service.features.map((feat, fIdx) => (
-                        <span key={fIdx} className="flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                          <span className="text-slate-300 font-medium">{feat}</span>
-                        </span>
-                      ))}
-                    </div>
+                    <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider leading-snug">
+                      {service.tag}
+                    </span>
                   </div>
 
-                  {/* Right Column: Pricing & Clean Action Triggers (No Boxes) */}
-                  <div className="lg:col-span-5 flex flex-col justify-between h-full pt-2 lg:pt-0 border-t lg:border-t-0 border-white/5 space-y-4">
-                    <div className="text-xs text-slate-400">
-                      <span className="text-slate-200 font-semibold block mb-1">
-                        {isAr ? "التسعير المعتمد:" : isEn ? "Transparent Pricing:" : "Abrechnung & Richtpreis:"}
-                      </span>
-                      <p className="text-xs text-slate-300 leading-relaxed">
-                        {service.pricing}
-                      </p>
-                    </div>
+                  <h3 className="text-base sm:text-lg font-black text-white tracking-tight leading-snug group-hover:text-amber-400 transition-colors">
+                    {service.title}
+                  </h3>
 
-                    <div className="flex flex-wrap items-center gap-3 pt-2">
-                      <button
-                        type="button"
-                        onClick={() => setSelectedService(service)}
-                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold text-slate-950 bg-amber-500 hover:bg-amber-400 px-4 py-2.5 rounded-xl transition-all cursor-pointer shadow-md shadow-amber-500/15"
-                      >
-                        <span>{t('viewDetails')}</span>
-                        <ArrowRight size={15} className="rtl:rotate-180" />
-                      </button>
+                  <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed line-clamp-2">
+                    {service.desc}
+                  </p>
+                </button>
 
-                      <a
-                        href="#kontakt"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-200 hover:text-amber-400 px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:border-amber-400/40 transition-colors"
-                      >
-                        <span>{isAr ? "طلب الخدمة ↓" : isEn ? "Request Service ↓" : "Anfragen ↓"}</span>
-                      </a>
+                <div className="px-5 pb-4 pt-3 border-t border-white/10 flex items-center justify-between gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedService(service)}
+                    className="inline-flex items-center gap-1.5 text-xs font-extrabold text-amber-400 hover:text-amber-300 cursor-pointer"
+                  >
+                    <span>{t('viewDetails')}</span>
+                    <ArrowRight size={14} className="rtl:rotate-180 group-hover:translate-x-0.5 transition-transform" />
+                  </button>
 
-                      <Link
-                        href={`/leistungen/${service.slug}`}
-                        className="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-amber-400 font-semibold px-2 py-1 transition-colors"
-                      >
-                        <span>{isAr ? "صفحة التفاصيل" : isEn ? "Specialist Page" : "Fachseite"}</span>
-                        <ExternalLink size={12} />
-                      </Link>
-                    </div>
-                  </div>
-
+                  <Link
+                    href={`/leistungen/${service.slug}`}
+                    className="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-amber-400 font-semibold transition-colors"
+                  >
+                    <span>{isAr ? "صفحة التفاصيل" : isEn ? "Specialist Page" : "Fachseite"}</span>
+                    <ExternalLink size={12} />
+                  </Link>
                 </div>
               </article>
             );
@@ -419,7 +390,7 @@ export default function Services() {
         </div>
 
         {/* Bottom Editorial Assurance */}
-        <div className="mt-12 text-center sm:text-left text-xs sm:text-sm text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 text-center sm:text-left text-xs sm:text-sm text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>
             {isAr
               ? "هل تحتاج إلى خدمة غير مذكورة أعلاه أو لديك حالة خاصة؟ تواصل معنا هاتفياً مباشرة لنقدم لك الحل الأمسب."
@@ -442,7 +413,12 @@ export default function Services() {
       {/* INTERACTIVE DETAIL WINDOW (MODAL WITH H1, H2 & DETAILS) */}
       {/* ======================================================== */}
       {selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/85 backdrop-blur-md animate-fadeIn">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/85 backdrop-blur-md animate-fadeIn"
+          onClick={() => setSelectedService(null)}
+          role="dialog"
+          aria-modal="true"
+        >
           <div
             className="bg-slate-900 border border-white/20 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative text-white"
             onClick={(e) => e.stopPropagation()}

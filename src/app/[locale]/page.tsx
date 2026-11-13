@@ -5,7 +5,7 @@ import Services from '@/components/home/Services';
 import Area from '@/components/home/Area';
 import AboutWassem from '@/components/home/AboutWassem';
 import Gallery from '@/components/home/Gallery';
-import CustomerReviews from '@/components/home/CustomerReviews';
+// import CustomerReviews from '@/components/home/CustomerReviews';
 import FAQ from '@/components/home/FAQ';
 import Contact from '@/components/home/Contact';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
@@ -24,7 +24,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <Area />
         <AboutWassem />
         <Gallery />
-        <CustomerReviews />
+        {/* Temporarily hidden: placeholder texts. Re-enable once real Google reviews are available. */}
+        {/* <CustomerReviews /> */}
         <ExpertiseSection />
         <FAQ />
         <Contact />
